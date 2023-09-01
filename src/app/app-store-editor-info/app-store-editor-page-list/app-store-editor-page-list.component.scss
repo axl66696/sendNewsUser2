@@ -1,0 +1,29 @@
+.main-block{
+  width: 100%;
+  height: 100%;
+  padding: 0.5rem;
+}
+
+.main-card{
+  width: 100%;
+  background-color: var(--surface-section);
+}
+
+.dialog-body{
+  height: 100%;
+}
+
+.table-box{
+  width: 50%;
+}
+
+.dark-input{
+  background-color: var(--black-o-12, rgba(19, 20, 20, 0.12));
+  border-radius: var(--border-radius-input, 4px);
+  border: 1px solid var(--outline-variant, #B5BFBB);
+}
+
+:host ::ng-deep .p-button.p-button-icon-only .pi{
+    font-size: 0.8rem;
+}
+
