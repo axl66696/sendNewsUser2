@@ -6,10 +6,12 @@
     "start": "ng serve --port 10009",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "run:all": "node node_modules/@angular-architects/module-federation/src/server/mf-dev-server.js"
   },
   "private": true,
   "dependencies": {
+    "@angular-architects/module-federation": "^16.0.4",
     "@angular/animations": "^16.2.0-next.0",
     "@angular/common": "^16.2.0-next.0",
     "@angular/compiler": "^16.2.0-next.0",
@@ -20,8 +22,8 @@
     "@angular/router": "^16.2.0-next.0",
     "@his-base/jetstream-manager": "git+https://gitlab.aservice.com.tw/hpc-his/base/jetstream-manager.git#develop",
     "@his-base/jetstream-ws": "git+https://gitlab.aservice.com.tw/hpc-his/base/jetstream-ws.git#v1.0.1",
-    "@his-viewmodel/app-store-editor": "git+https://gitlab.aservice.com.tw/hpc-dev/viewmodel/app-store-editor.git",
     "@his-viewmodel/app-page-editor": "git+https://gitlab.aservice.com.tw/hpc-dev/viewmodel/app-page-editor.git",
+    "@his-viewmodel/app-store-editor": "git+https://gitlab.aservice.com.tw/hpc-dev/viewmodel/app-store-editor.git",
     "primeflex": "^3.3.1",
     "primeicons": "^6.0.1",
     "primeng": "^16.2.0",
@@ -40,6 +42,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "ngx-build-plus": "^16.0.0",
     "typescript": "~5.1.3"
   }
 }
