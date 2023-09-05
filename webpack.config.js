@@ -5,11 +5,11 @@ module.exports = withModuleFederationPlugin({
   name: 'app-store-editor',
 
   exposes: {
-    './Component': './src/app/app.component.ts',
+    './routesremote': './src/app/app.routes.ts',
   },
 
   shared: {
-    ...shareAll({ singleton: true, strictVersion: true, requiredVersion: 'auto' }),
+    ...shareAll({ singleton: true, strictVersion: false, requiredVersion: 'auto' }),
   },
 
 });

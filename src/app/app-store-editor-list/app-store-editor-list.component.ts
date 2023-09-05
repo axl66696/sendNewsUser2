@@ -63,4 +63,7 @@ export class AppStoreEditorListComponent {
       this.resultApps = jsonCodec.decode(msg.data) as AppStore[];
     })
   }
+  showAlert(){
+    alert("存檔")
+  }
 }

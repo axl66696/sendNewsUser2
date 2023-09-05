@@ -11,9 +11,11 @@ $gutter: 1rem; //for primeflex grid system
 
 body {
   height: 100vh;
+  width: 100%;
 }
 
 app-root {
   height: 100vh;
   display: block;
+  width: 100%;
 }

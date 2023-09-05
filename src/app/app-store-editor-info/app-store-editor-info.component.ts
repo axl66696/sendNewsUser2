@@ -5,7 +5,7 @@ import { InputTextModule } from "primeng/inputtext";
 import { CalendarModule } from 'primeng/calendar';
 import { FormsModule } from '@angular/forms';
 import { AppStoreEditorToolbarComponent } from '../app-store-editor-toolbar/app-store-editor-toolbar.component';
-import { Router, RouterLink } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { AppStore } from '@his-viewmodel/app-store-editor';
 import { Observable } from 'rxjs';
 import { DropdownModule } from 'primeng/dropdown';
@@ -53,7 +53,7 @@ export class AppStoreEditorInfoComponent {
   deleteVisible: boolean = false;
   #appStoresService = inject(AppStoreService);
   router = inject(Router);
-
+  route = inject(ActivatedRoute)
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
@@ -663,7 +663,7 @@ export class AppStoreEditorInfoComponent {
 
   onConfirmDelete() {
     this.#appStoresService.pubAppStore(this.appStore, 'appStore.delete')
-    this.router.navigate(['/']);
+    this.router.navigate(['..'],{relativeTo:this.route});
   }
 
   onCreateClick() {

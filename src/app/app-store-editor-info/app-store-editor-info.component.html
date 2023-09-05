@@ -208,7 +208,7 @@
 
 <ng-template #createToolbar>
   <div class="flex align-items-center">
-    <p-button label="查詢" [routerLink]="['/list']" routerLinkActive="router-link-active" ></p-button>
+    <p-button label="查詢" [routerLink]="['list']" routerLinkActive="router-link-active" ></p-button>
   </div>
   <div class="flex align-items-center">
     <p-button (click)="onClearClick()" label="清除內容" styleClass="p-button-secondary"></p-button>
@@ -220,7 +220,7 @@
 
 <ng-template #updateToolbar>
   <div class="flex align-items-center">
-    <p-button label="查詢" [routerLink]="['/list']" routerLinkActive="router-link-active" ></p-button>
+    <p-button label="查詢" [routerLink]="['..']" routerLinkActive="router-link-active" ></p-button>
   </div>
   <div class="flex align-items-center">
     <p-dialog [style]="{width: '20vw'}" [(visible)]="deleteVisible" [closable]="false" [modal]="true">
