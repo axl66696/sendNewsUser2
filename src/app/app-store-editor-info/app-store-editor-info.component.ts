@@ -588,7 +588,7 @@ export class AppStoreEditorInfoComponent {
     this.languageOptions = ['Angular16']
 
     this.authNeed = false;
-    this.previewTitle = '應用程式標題'
+    this.previewTitle = $localize`應用程式標題`
 
     if(this._id)
     {
@@ -603,7 +603,7 @@ export class AppStoreEditorInfoComponent {
           this.appPages = [...this.appStore.appPages]
       })
 
-      this.title = ['網頁建檔系統', '應用程式', '應用程式內容']
+      this.title = [$localize`網頁建檔系統`, $localize`應用程式`, $localize`應用程式內容`]
     }
     else
     {
@@ -615,7 +615,7 @@ export class AppStoreEditorInfoComponent {
       this.showIconStyle = this.editableApp.appIcon;
       this.appPages = [...this.appStore.appPages];
 
-      this.title = ['網頁建檔系統', '應用程式', '新增應用程式']
+      this.title = [$localize`網頁建檔系統`, $localize`應用程式`, $localize`新增應用程式`]
     }
   }
 

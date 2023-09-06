@@ -4,6 +4,12 @@
 	"newProjectRoot": "projects",
 	"projects": {
 		"app-store-editor": {
+      "i18n":{
+        "sourceLocale": "zh-Hant",
+        "locales": {
+          "en-Us": "src/assets/i18n/en-Us/messages.json"
+        }
+      },
 			"projectType": "application",
 			"schematics": {
 				"@schematics/angular:component": {
@@ -44,6 +50,16 @@
 						"commonChunk": false
 					},
 					"configurations": {
+            "zh-Hant": {
+              "localize": [
+                "zh-Hant"
+              ]
+            },
+            "en-Us": {
+              "localize": [
+                "en-Us"
+              ]
+            },
 						"production": {
 							"budgets": [
 								{
@@ -80,7 +96,13 @@
 						},
 						"development": {
 							"browserTarget": "app-store-editor:build:development"
-						}
+						},
+            "zh-Hant": {
+              "browserTarget": "app-store-editor:build:zh-Hant"
+            },
+            "en-Us": {
+              "browserTarget": "app-store-editor:build:en-Us"
+            }
 					},
 					"defaultConfiguration": "development",
 					"options": {
@@ -94,7 +116,13 @@
 					"options": {
 						"browserTarget": "app-store-editor:build",
 						"extraWebpackConfig": "webpack.config.js"
-					}
+					},
+          "configurations": {
+            "zh-Hant": {
+              "format": "json",
+              "outputPath": "src/assets/i18n/zh-Hant"
+            }
+          }
 				},
 				"test": {
 					"builder": "@angular-devkit/build-angular:karma",

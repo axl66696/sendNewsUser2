@@ -9,33 +9,38 @@
     <div class="p-3 h-full flex flex-column" style="width: 100%;">
       <div class="card flex-1 p-2">
         <div *ngIf="!_id; else editTitle">
-          <h5>新增應用程式</h5>
+          <h5 i18n>新增應用程式</h5>
         </div>
         <ng-template #editTitle>
-          <h5>編輯應用程式</h5>
+          <h5 i18n>編輯應用程式</h5>
         </ng-template>
         <div class="grid">
           <div class="col-12 xl:col-10">
             <div class="grid">
               <div class="col-6">
-                <h6>應用程式名稱</h6>
+                <h6 i18n>應用程式名稱</h6>
                 <input type="text" pInputText [(ngModel)]="editableApp.appTitle" style="width: 100%;">
               </div>
               <div class="col-6">
-                <h6>應用程式代號</h6>
+                <h6 i18n>應用程式代號</h6>
                 <input type="text" pInputText [(ngModel)]="editableApp._id" [disabled]="true" style="width: 100%;">
               </div>
               <div class="col-6">
-                <h6>類別</h6>
-                <p-dropdown [options]="typeOptions" [(ngModel)]="editableApp.appType" placeholder="請選擇" [showClear]="true" [style]="{'width':'100%'}"></p-dropdown>
+                <h6 i18n>類別</h6>
+                <p-dropdown [options]="typeOptions"
+                            [(ngModel)]="editableApp.appType"
+                            i18n-placeholder
+                            placeholder="請選擇"
+                            [showClear]="true"
+                            [style]="{'width':'100%'}"></p-dropdown>
               </div>
               <div class="col-6 flex gap-4 align-items-end justify-content-start">
                 <div class="authorityBox">
                   <p-checkbox name="group1" [binary]="true" [(ngModel)]="authNeed" id="authNeed"></p-checkbox>
-                  <label for="authNeed">是否需要授權</label>
+                  <label for="authNeed" i18n>是否需要授權</label>
                 </div>
                 <div class="iconBox">
-                  <h6>圖標</h6>
+                  <h6 i18n>圖標</h6>
                   <p-button (click)="onDialog()" class="icon-selector">
                     <ng-template pTemplate="icon">
                       <span class="pi {{showIconStyle}}"></span>
@@ -45,7 +50,7 @@
                     <ng-template pTemplate="header">
                       <div class="flex flex-1 justify-content-between">
                         <div>
-                          <span class="text-xl font-bold">選擇圖標</span>
+                          <span class="text-xl font-bold" i18n>選擇圖標</span>
                         </div>
                         <div>
                           <p-button icon="pi pi-times" (click)="onCancelSelect()"></p-button>
@@ -60,8 +65,8 @@
                       </ng-container>
                     </div>
                     <ng-template pTemplate="footer">
-                      <p-button icon="pi pi-times" (click)="onCancelSelect()" label="Cancel" styleClass="p-button-secondary"></p-button>
-                      <p-button icon="pi pi-check" (click)="onConfirmIcon()" label="Ok"></p-button>
+                      <p-button icon="pi pi-times" (click)="onCancelSelect()" i18n-label label="取消" styleClass="p-button-secondary"></p-button>
+                      <p-button icon="pi pi-check" (click)="onConfirmIcon()" i18n-label label="確定"></p-button>
                     </ng-template>
                   </p-dialog>
                 </div>
@@ -96,13 +101,14 @@
             </div>
           </div>
           <div class="col-12">
-            <h6>網頁路徑</h6>
+            <h6 i18n>網頁路徑</h6>
             <input type="text" pInputText [(ngModel)]="editableApp.appUrl" style="width: 100%;">
           </div>
           <div class="col-4">
-            <h6>首頁清單</h6>
+            <h6 i18n>首頁清單</h6>
             <p-dropdown [options]="appPages"
                         [(ngModel)]="editableApp.appHome"
+                        i18n-placeholder
                         placeholder="請選擇"
                         [showClear]="true"
                         [style]="{'width':'100%'}"
@@ -110,21 +116,30 @@
                         [filter]="true"></p-dropdown>
           </div>
           <div class="col-4">
-            <h6>使用語言</h6>
-            <p-dropdown [options]="languageOptions" [(ngModel)]="editableApp.appLanguage" placeholder="請選擇" [showClear]="true" [style]="{'width':'100%'}"></p-dropdown>
+            <h6 i18n>使用語言</h6>
+            <p-dropdown [options]="languageOptions"
+                        [(ngModel)]="editableApp.appLanguage"
+                        i18n-placeholder
+                        placeholder="請選擇"
+                        [showClear]="true"
+                        [style]="{'width':'100%'}"></p-dropdown>
           </div>
           <div class="col-4">
-            <h6>版本</h6>
+            <h6 i18n>版本</h6>
             <input type="text" pInputText [(ngModel)]="editableApp.versionNo" style="width: 100%;">
           </div>
           <div class="col-12">
             <div class="flex flex-wrap justify-content-start align-content-center gap-2 addBox">
-                <h6>應用頁面</h6>
-                <button pButton pRipple label="加入" (click)="onModifyClick()" class="p-button-rounded p-button-outlined icon-add"></button>
-                <p-dialog [(visible)]="tableVisible" [position]="'bottom'" [modal]="true" [style]="{ width: '100%', height: '90vh' , margin: '0'}" class="page-list" [closable]="false">
+                <h6 i18n>應用頁面</h6>
+                <button pButton pRipple i18n-label label="加入" (click)="onModifyClick()" class="p-button-rounded p-button-outlined icon-add"></button>
+                <p-dialog [(visible)]="tableVisible"
+                          [position]="'bottom'"
+                          [modal]="true"
+                          [style]="{ width: '100%', height: '90vh' , margin: '0'}"
+                          class="page-list" [closable]="false">
                   <ng-template pTemplate="header">
                     <div class="flex flex-1 justify-content-between align-items-center">
-                        <span class="text-xl font-bold">加入應用頁面</span>
+                        <span class="text-xl font-bold" i18n>加入應用頁面</span>
                         <button pButton pRipple icon="pi pi-times" class="p-button-text p-button-rounded" (click)="onCancelModify()"></button>
                     </div>
                   </ng-template>
@@ -137,25 +152,25 @@
             <p-table [value]="appPages" dataKey="id" [rows]="10" [loading]="false" [rowHover]="true" responsiveLayout="scroll">
               <ng-template pTemplate="header">
                 <tr>
-                  <th pSortableColumn="id" style="min-width: 4rem">
+                  <th pSortableColumn="id" style="min-width: 4rem" i18n>
                     頁面代碼
                     <p-sortIcon field="id"></p-sortIcon>
                   </th>
-                  <th pSortableColumn="title" style="min-width: 4rem">
+                  <th pSortableColumn="title" style="min-width: 4rem" i18n>
                     頁面標題
                     <p-sortIcon field="title"></p-sortIcon>
                   </th>
-                  <th pSortableColumn="path" style="min-width: 16rem">
+                  <th pSortableColumn="path" style="min-width: 16rem" i18n>
                       頁面連結路徑
                       <p-sortIcon field="path"></p-sortIcon>
                   </th>
-                  <th style="min-width: 12rem">
+                  <th style="min-width: 12rem" i18n>
                       輸出模組名稱
                   </th>
-                  <th style="min-width: 12rem">
+                  <th style="min-width: 12rem" i18n>
                       版本
                   </th>
-                  <th style="min-width: 4rem">
+                  <th style="min-width: 4rem" i18n>
                       刪除
                   </th>
                 </tr>
@@ -192,26 +207,26 @@
 
 <ng-template #createToolbar>
   <div class="flex align-items-center">
-    <p-button label="查詢" [routerLink]="['list']" routerLinkActive="router-link-active" ></p-button>
+    <p-button i18n-label label="查詢" [routerLink]="['list']" routerLinkActive="router-link-active" ></p-button>
   </div>
   <div class="flex align-items-center">
-    <p-button (click)="onClearClick()" label="清除內容" styleClass="p-button-secondary"></p-button>
+    <p-button (click)="onClearClick()" i18n-label label="清除內容" styleClass="p-button-secondary"></p-button>
   </div>
   <div class="flex align-items-center">
-    <p-button label="完成" (onClick)="onCreateClick()"></p-button>
+    <p-button i18n-label label="完成" (onClick)="onCreateClick()"></p-button>
   </div>
 </ng-template>
 
 <ng-template #updateToolbar>
   <div class="flex align-items-center">
-    <p-button label="查詢" [routerLink]="['..']" routerLinkActive="router-link-active" ></p-button>
+    <p-button i18n-label label="查詢" [routerLink]="['..']" routerLinkActive="router-link-active" ></p-button>
   </div>
   <div class="flex align-items-center">
     <p-dialog [style]="{width: '20vw'}" [(visible)]="deleteVisible" [closable]="false" [modal]="true">
       <ng-template pTemplate="header">
         <div class="flex flex-1 justify-content-between">
           <div>
-            <span class="text-xl font-bold">刪除應用頁面</span>
+            <span class="text-xl font-bold" i18n>刪除應用頁面</span>
           </div>
           <div>
             <p-button icon="pi pi-times" (click)="onCancelDelete()"></p-button>
@@ -224,22 +239,22 @@
             <i class="pi pi-question-circle font-bold notification-icon"></i>
           </div>
           <div>
-            <span class="text-xl font-bold notification-text">您是否要刪除應用頁面</span>
+            <span class="text-xl font-bold notification-text" i18n>您是否要刪除應用頁面</span>
           </div>
         </div>
-        <p>當應用頁面被永久刪除，便不能再復原，且資料庫所儲存的資料亦同步刪除。</p>
+        <p i18n>當應用頁面被永久刪除，便不能再復原，且資料庫所儲存的資料亦同步刪除。</p>
       </ng-template>
       <ng-template pTemplate="footer">
-        <p-button icon="pi pi-times" (click)="onCancelDelete()" label="取消" styleClass="p-button-secondary"></p-button>
-        <p-button icon="pi pi-check" (click)="onConfirmDelete()" label="確定"></p-button>
+        <p-button icon="pi pi-times" (click)="onCancelDelete()" i18n-label label="取消" styleClass="p-button-secondary"></p-button>
+        <p-button icon="pi pi-check" (click)="onConfirmDelete()" i18n-label label="確定"></p-button>
       </ng-template>
     </p-dialog>
-    <p-button label="刪除" styleClass="p-button-secondary" (onClick)="onDeleteClick()"></p-button>
+    <p-button i18n-label label="刪除" styleClass="p-button-secondary" (onClick)="onDeleteClick()"></p-button>
   </div>
   <div class="flex align-items-center">
-    <p-button (click)="onClearClick()" label="復原" styleClass="p-button-secondary"></p-button>
+    <p-button (click)="onClearClick()" i18n-label label="復原" styleClass="p-button-secondary"></p-button>
   </div>
   <div class="flex align-items-center">
-    <p-button label="完成" (onClick)="onSaveClick()"></p-button>
+    <p-button i18n-label label="完成" (onClick)="onSaveClick()"></p-button>
   </div>
 </ng-template>

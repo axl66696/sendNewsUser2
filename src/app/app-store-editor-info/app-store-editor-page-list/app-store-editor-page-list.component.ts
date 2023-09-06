@@ -48,7 +48,7 @@ export class AppStoreEditorPageListComponent {
   @Output() cancel = new EventEmitter<any>();
   @Output() apply = new EventEmitter<any>();
 
-  condition: string = '請選擇查詢條件： ';
+  condition: string = $localize`請選擇查詢條件： `;
   selectedSort = 1;
   selectedDrop!: string;
   draggedPage: AppPage | undefined | null;

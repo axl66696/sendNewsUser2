@@ -5,27 +5,27 @@
     </div>
       <div class="flex align-items-center labelBox">
         <p-radioButton name="sortCol" value=1 [(ngModel)]="selectedSort" id="sort1"></p-radioButton>
-        <label for="sort1">頁面代號</label>
+        <label for="sort1" i18n>頁面代號</label>
       </div>
       <div class="flex align-items-center labelBox">
         <p-radioButton name="sortCol" value=2 [(ngModel)]="selectedSort" id="sort2"></p-radioButton>
-        <label for="sort2">頁面標題</label>
+        <label for="sort2" i18n>頁面標題</label>
       </div>
       <div class="flex align-items-center labelBox">
         <p-radioButton name="sortCol" value=3 [(ngModel)]="selectedSort" id="sort3"></p-radioButton>
-        <label for="sort3">維護人員</label>
+        <label for="sort3" i18n>維護人員</label>
       </div>
     <div class="col-fixed" style="min-width: 240px;">
-      <p-dropdown [options]="" [(ngModel)]="selectedDrop" placeholder="請選擇" [showClear]="true" [style]="{'width':'240px'}"></p-dropdown>
+      <p-dropdown [options]="" [(ngModel)]="selectedDrop" i18n-placeholder placeholder="請選擇" [showClear]="true" [style]="{'width':'240px'}"></p-dropdown>
     </div>
-      <p-button styleClass="p-button-secondary" label="查詢"></p-button>
+      <p-button styleClass="p-button-secondary" i18n-label label="查詢"></p-button>
     <div class="col">
       <div class="flex flex-wrap justify-content-end buttonBox">
         <div>
-          <p-button label="取消" styleClass="p-button-secondary" (onClick)="onCancelClick()"></p-button>
+          <p-button i18n-label label="取消" styleClass="p-button-secondary" (onClick)="onCancelClick()"></p-button>
         </div>
         <div>
-          <p-button label="帶入" (onClick)="onApplyClick()"></p-button>
+          <p-button i18n-label label="帶入" (onClick)="onApplyClick()"></p-button>
         </div>
       </div>
     </div>
@@ -39,18 +39,18 @@
               <tr>
                 <th style="min-width: 2rem">
                 </th>
-                <th pSortableColumn="_id" style="min-width: 4rem">
+                <th pSortableColumn="_id" style="min-width: 4rem" i18n>
                     頁面代碼
                     <p-sortIcon field="_id"></p-sortIcon>
                 </th>
-                <th pSortableColumn="pageTitle" style="min-width: 4rem">
+                <th pSortableColumn="pageTitle" style="min-width: 4rem" i18n>
                     頁面標題
                     <p-sortIcon field="pageTitle"></p-sortIcon>
                 </th>
-                <th style="min-width: 4rem">
+                <th style="min-width: 4rem" i18n>
                     版本
                 </th>
-                <th pSortableColumn="maintainer" style="min-width: 4rem">
+                <th pSortableColumn="maintainer" style="min-width: 4rem" i18n>
                     維護人員
                     <p-sortIcon field="maintainer"></p-sortIcon>
                 </th>
@@ -80,10 +80,10 @@
       </div>
       <div class="card table-box m-0 p-1 flex flex-column gap-1">
         <div>
-          <h5 class="m-0">加入應用頁面</h5>
+          <h5 class="m-0" i18n>加入應用頁面</h5>
         </div>
         <div>
-          <input type="text" pInputText placeholder="頁面整合查詢" class="dark-input" style="width: 100%; height: 40px;">
+          <input type="text" pInputText i18n-placeholder placeholder="頁面整合查詢" class="dark-input" style="width: 100%; height: 40px;">
         </div>
         <div class="h-full w-full" pDroppable="appPages" (onDrop)="drop()">
           <p-table [value]="appPagesSelected" dataKey="_id" [rows]="10" [loading]="false" [tableStyle]="{ 'width': '100%' }" [rowHover]="true" responsiveLayout="scroll">
@@ -91,18 +91,18 @@
               <tr>
                 <th style="min-width: 2rem">
                 </th>
-                <th pSortableColumn="_id" style="min-width: 4rem">
+                <th pSortableColumn="_id" style="min-width: 4rem" i18n>
                     頁面代碼
                     <p-sortIcon field="_id"></p-sortIcon>
                 </th>
-                <th pSortableColumn="pageTitle" style="min-width: 4rem">
+                <th pSortableColumn="pageTitle" style="min-width: 4rem" i18n>
                     頁面標題
                     <p-sortIcon field="pageTitle"></p-sortIcon>
                 </th>
-                <th style="min-width: 4rem">
+                <th style="min-width: 4rem" i18n>
                     版本
                 </th>
-                <th pSortableColumn="maintainer" style="min-width: 4rem">
+                <th pSortableColumn="maintainer" style="min-width: 4rem" i18n>
                     維護人員
                     <p-sortIcon field="maintainer"></p-sortIcon>
                 </th>

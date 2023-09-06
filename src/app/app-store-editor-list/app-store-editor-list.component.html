@@ -13,34 +13,34 @@
             {{condition}}
           </div>
           <div class="col-fixed">
-            <p-dropdown [options]="typeOptions" [(ngModel)]="selectedDrop" placeholder="請選擇類別" [showClear]="true" [style]="{'width':'240px'}"></p-dropdown>
+            <p-dropdown [options]="typeOptions" [(ngModel)]="searchValue" i18n-placeholder placeholder="請選擇類別" [showClear]="true" [style]="{'width':'240px'}"></p-dropdown>
           </div>
           <div class="col-fixed">
-            <p-button label="查詢"></p-button>
+            <p-button i18n-label label="查詢" (onClick)="onSearchClick()"></p-button>
           </div>
         </div>
       </div>
       <div class="p-card flex-1 p-2">
-        <h5>應用程式清單</h5>
+        <h5 i18n>應用程式清單</h5>
           <p-table [value]="resultApps" dataKey="id" [rows]="10" [loading]="false" [rowHover]="true" responsiveLayout="scroll">
             <ng-template pTemplate="header">
               <tr>
-                <th pSortableColumn="_id" style="min-width: 3rem">
+                <th pSortableColumn="_id" style="min-width: 3rem" i18n>
                     代碼
                     <p-sortIcon field="_id"></p-sortIcon>
                 </th>
-                <th pSortableColumn="appType" style="min-width: 3rem">
+                <th pSortableColumn="appType" style="min-width: 3rem" i18n>
                     類別
                     <p-sortIcon field="appType"></p-sortIcon>
                 </th>
-                <th pSortableColumn="appTitle" style="min-width: 18rem">
+                <th pSortableColumn="appTitle" style="min-width: 18rem" i18n>
                     應用程式名稱
-                    <p-sortIcon field="moduleName"></p-sortIcon>
+                    <p-sortIcon field="appTitle"></p-sortIcon>
                 </th>
-                <th style="min-width: 12rem">
+                <th style="min-width: 12rem" i18n>
                     網頁路徑
                 </th>
-                <th style="min-width: 12rem">
+                <th style="min-width: 12rem" i18n>
                     版本
                 </th>
               </tr>
@@ -72,6 +72,6 @@
 
 <ng-template #listToolbar>
   <div class="flex align-items-center">
-    <p-button label="建檔" [routerLink]="['..']"></p-button>
+    <p-button i18n-label label="建檔" [routerLink]="['..']"></p-button>
   </div>
 </ng-template>
