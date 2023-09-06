@@ -5,6 +5,7 @@ import { AppStoreEditorInfoComponent } from './app-store-editor-info/app-store-e
 import { AppStoreEditorListComponent } from './app-store-editor-list/app-store-editor-list.component';
 import { AppStoreEditorToolbarComponent } from './app-store-editor-toolbar/app-store-editor-toolbar.component';
 import { AppStoreService } from './app-store.service';
+import { HeaderComponent } from '@his-component/header/dist/header'
 
 @Component({
   selector: 'app-root',
@@ -13,7 +14,8 @@ import { AppStoreService } from './app-store.service';
             RouterOutlet,
             AppStoreEditorInfoComponent,
             AppStoreEditorListComponent,
-            AppStoreEditorToolbarComponent],
+            AppStoreEditorToolbarComponent,
+            HeaderComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })

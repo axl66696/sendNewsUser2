@@ -39,11 +39,15 @@ export class AppStoreEditorListComponent {
   resultApps$?: Observable<Msg>;
   resultApps: AppStore[] = [];
   searchValue!: string;
+  title!: string[];
+  typeOptions!: string[];
 
-  ngOnInit(): void {
+  async ngOnInit() {
+    this.title = ['網頁建檔系統', '應用程式' ,'應用程式清單'];
+    this.typeOptions = ['行政', '醫療', '藥局']
     this.appStores$ = this.#appStoreService.getAppStoreList();
 
-    this.appStores$.subscribe((msg: Msg) => {
+    await this.appStores$.subscribe((msg: Msg) => {
       const jsonCodec = JSONCodec();
       this.appStores = jsonCodec.decode(msg.data) as AppStore[];
       this.resultApps = [...this.appStores]

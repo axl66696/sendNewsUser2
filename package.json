@@ -22,6 +22,8 @@
     "@angular/router": "^16.2.0-next.0",
     "@his-base/jetstream-manager": "git+https://gitlab.aservice.com.tw/hpc-his/base/jetstream-manager.git#develop",
     "@his-base/jetstream-ws": "git+https://gitlab.aservice.com.tw/hpc-his/base/jetstream-ws.git#v1.0.1",
+    "@his-component/header": "git+https://gitlab.aservice.com.tw/hpc-his/component/header.git#develop",
+    "@his-component/tool-bar": "git+https://gitlab.aservice.com.tw/hpc-his/component/tool-bar.git#develop",
     "@his-viewmodel/app-page-editor": "git+https://gitlab.aservice.com.tw/hpc-dev/viewmodel/app-page-editor.git",
     "@his-viewmodel/app-store-editor": "git+https://gitlab.aservice.com.tw/hpc-dev/viewmodel/app-store-editor.git",
     "primeflex": "^3.3.1",

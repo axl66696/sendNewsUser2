@@ -51,9 +51,13 @@ export class AppStoreEditorInfoComponent {
   authNeed!: boolean;
   previewTitle!: string;
   deleteVisible: boolean = false;
+  typeOptions!: string[];
+  languageOptions!: string[];
+  title!: string[]
   #appStoresService = inject(AppStoreService);
   router = inject(Router);
   route = inject(ActivatedRoute)
+
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
@@ -580,6 +584,8 @@ export class AppStoreEditorInfoComponent {
 
       "pi-spinner"
     ];
+    this.typeOptions = ['行政', '醫療', '藥局'];
+    this.languageOptions = ['Angular16']
 
     this.authNeed = false;
     this.previewTitle = '應用程式標題'
@@ -596,6 +602,8 @@ export class AppStoreEditorInfoComponent {
           this.showIconStyle = this.editableApp.appIcon;
           this.appPages = [...this.appStore.appPages]
       })
+
+      this.title = ['網頁建檔系統', '應用程式', '應用程式內容']
     }
     else
     {
@@ -606,6 +614,8 @@ export class AppStoreEditorInfoComponent {
       this.editableApp.appIcon = this.appStore.appIcon
       this.showIconStyle = this.editableApp.appIcon;
       this.appPages = [...this.appStore.appPages];
+
+      this.title = ['網頁建檔系統', '應用程式', '新增應用程式']
     }
   }
 

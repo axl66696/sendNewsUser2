@@ -1,12 +1,8 @@
 <div class="flex flex-column" style="width: 100%; height: 100%;">
   <div class="flex toolbar">
-    <his-app-store-editor-toolbar [customTemplate]="!_id ? createToolbar : updateToolbar">
-      <div *ngIf="!_id; else edit" class="toolbar-title">
-        <h6>網頁建檔系統 /應用程式 /新增應用程式</h6>
-      </div>
-      <ng-template #edit>
-        <h6>網頁建檔系統 /應用程式 /編輯應用程式</h6>
-      </ng-template>
+    <his-app-store-editor-toolbar
+      [customTemplate]="!_id ? createToolbar : updateToolbar"
+      [title]="title">
     </his-app-store-editor-toolbar>
   </div>
   <div class="flex flex-1">
@@ -31,7 +27,7 @@
               </div>
               <div class="col-6">
                 <h6>類別</h6>
-                <p-dropdown [options]="" [(ngModel)]="editableApp.appType" placeholder="請選擇" [showClear]="true" [style]="{'width':'100%'}"></p-dropdown>
+                <p-dropdown [options]="typeOptions" [(ngModel)]="editableApp.appType" placeholder="請選擇" [showClear]="true" [style]="{'width':'100%'}"></p-dropdown>
               </div>
               <div class="col-6 flex gap-4 align-items-end justify-content-start">
                 <div class="authorityBox">
@@ -40,7 +36,11 @@
                 </div>
                 <div class="iconBox">
                   <h6>圖標</h6>
-                  <button pButton pRipple (click)="onDialog()" icon="pi {{showIconStyle}}" class="icon-selector"></button>
+                  <p-button (click)="onDialog()" class="icon-selector">
+                    <ng-template pTemplate="icon">
+                      <span class="pi {{showIconStyle}}"></span>
+                    </ng-template>
+                  </p-button>
                   <p-dialog header="Header" [(visible)]="visible" [style]="{ width: '580px' }" [closable]="false">
                     <ng-template pTemplate="header">
                       <div class="flex flex-1 justify-content-between">
@@ -101,11 +101,17 @@
           </div>
           <div class="col-4">
             <h6>首頁清單</h6>
-            <p-dropdown [options]="" [(ngModel)]="editableApp.appHome" placeholder="請選擇" [showClear]="true" [style]="{'width':'100%'}"></p-dropdown>
+            <p-dropdown [options]="appPages"
+                        [(ngModel)]="editableApp.appHome"
+                        placeholder="請選擇"
+                        [showClear]="true"
+                        [style]="{'width':'100%'}"
+                        optionLabel="pageTitle"
+                        [filter]="true"></p-dropdown>
           </div>
           <div class="col-4">
             <h6>使用語言</h6>
-            <p-dropdown [options]="" [(ngModel)]="editableApp.appLanguage" placeholder="請選擇" [showClear]="true" [style]="{'width':'100%'}"></p-dropdown>
+            <p-dropdown [options]="languageOptions" [(ngModel)]="editableApp.appLanguage" placeholder="請選擇" [showClear]="true" [style]="{'width':'100%'}"></p-dropdown>
           </div>
           <div class="col-4">
             <h6>版本</h6>

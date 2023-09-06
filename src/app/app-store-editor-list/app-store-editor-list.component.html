@@ -1,9 +1,8 @@
 <div class="flex flex-column" style="width: 100%; height: 100%;">
   <div class="flex toolbar">
-    <his-app-store-editor-toolbar [customTemplate]="listToolbar">
-      <div class="toolbar-title">
-        <h6>網頁建檔系統 /應用程式</h6>
-      </div>
+    <his-app-store-editor-toolbar
+      [customTemplate]="listToolbar"
+      [title]="title">
     </his-app-store-editor-toolbar>
   </div>
   <div class="flex flex-1">
@@ -14,9 +13,11 @@
             {{condition}}
           </div>
           <div class="col-fixed">
-            <p-dropdown [options]="" [(ngModel)]="selectedDrop" placeholder="請選擇類別" [showClear]="true" [style]="{'width':'240px'}"></p-dropdown>
+            <p-dropdown [options]="typeOptions" [(ngModel)]="selectedDrop" placeholder="請選擇類別" [showClear]="true" [style]="{'width':'240px'}"></p-dropdown>
           </div>
+          <div class="col-fixed">
             <p-button label="查詢"></p-button>
+          </div>
         </div>
       </div>
       <div class="p-card flex-1 p-2">
