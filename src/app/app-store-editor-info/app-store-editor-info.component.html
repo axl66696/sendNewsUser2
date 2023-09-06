@@ -1,11 +1,11 @@
-<div class="flex flex-column" style="width: 100vw; height: 100%;">
-  <div class="flex">
+<div class="flex flex-column" style="width: 100%; height: 100%;">
+  <div class="flex toolbar">
     <his-app-store-editor-toolbar [customTemplate]="!_id ? createToolbar : updateToolbar">
       <div *ngIf="!_id; else edit" class="toolbar-title">
-        <p>網頁建檔系統 /應用程式 /新增應用程式</p>
+        <h6>網頁建檔系統 /應用程式 /新增應用程式</h6>
       </div>
       <ng-template #edit>
-        <p>網頁建檔系統 /應用程式 /編輯應用程式</p>
+        <h6>網頁建檔系統 /應用程式 /編輯應用程式</h6>
       </ng-template>
     </his-app-store-editor-toolbar>
   </div>
@@ -33,45 +33,43 @@
                 <h6>類別</h6>
                 <p-dropdown [options]="" [(ngModel)]="editableApp.appType" placeholder="請選擇" [showClear]="true" [style]="{'width':'100%'}"></p-dropdown>
               </div>
-              <div class="col-2 flex gap-2 align-items-end justify-content-start pb-3">
-                <div class="">
+              <div class="col-6 flex gap-4 align-items-end justify-content-start">
+                <div class="authorityBox">
                   <p-checkbox name="group1" [binary]="true" [(ngModel)]="authNeed" id="authNeed"></p-checkbox>
-                </div>
-                <div class="">
                   <label for="authNeed">是否需要授權</label>
                 </div>
-              </div>
-              <div class="col-4">
-                <h6>圖標</h6>
-                <button pButton pRipple (click)="onDialog()" icon="pi {{showIconStyle}}" class="icon-selector"></button>
-                <p-dialog header="Header" [(visible)]="visible" [style]="{ width: '580px' }" [closable]="false">
-                  <ng-template pTemplate="header">
-                    <div class="flex flex-1 justify-content-between">
-                      <div>
-                        <span class="text-xl font-bold">選擇圖標</span>
+                <div class="iconBox">
+                  <h6>圖標</h6>
+                  <button pButton pRipple (click)="onDialog()" icon="pi {{showIconStyle}}" class="icon-selector"></button>
+                  <p-dialog header="Header" [(visible)]="visible" [style]="{ width: '580px' }" [closable]="false">
+                    <ng-template pTemplate="header">
+                      <div class="flex flex-1 justify-content-between">
+                        <div>
+                          <span class="text-xl font-bold">選擇圖標</span>
+                        </div>
+                        <div>
+                          <p-button icon="pi pi-times" (click)="onCancelSelect()"></p-button>
+                        </div>
                       </div>
-                      <div>
-                        <p-button icon="pi pi-times" (click)="onCancelSelect()"></p-button>
-                      </div>
+                    </ng-template>
+                    <div class="flex flex-wrap justify-content-between">
+                      <ng-container *ngFor="let icon of iconList">
+                        <div class="flex text-center" style="min-height: 50px; min-width: 50px;">
+                          <button pButton icon="pi {{icon}}" class="icon-selector" (click)="onSelectIcon(icon)"></button>
+                        </div>
+                      </ng-container>
                     </div>
-                  </ng-template>
-                  <div class="flex flex-wrap justify-content-between">
-                    <ng-container *ngFor="let icon of iconList">
-                      <div class="flex text-center" style="min-height: 50px; min-width: 50px;">
-                        <button pButton icon="pi {{icon}}" class="icon-selector" (click)="onSelectIcon(icon)"></button>
-                      </div>
-                    </ng-container>
-                  </div>
-                  <ng-template pTemplate="footer">
-                    <p-button icon="pi pi-times" (click)="onCancelSelect()" label="Cancel" styleClass="p-button-secondary"></p-button>
-                    <p-button icon="pi pi-check" (click)="onConfirmIcon()" label="Ok"></p-button>
-                  </ng-template>
-                </p-dialog>
+                    <ng-template pTemplate="footer">
+                      <p-button icon="pi pi-times" (click)="onCancelSelect()" label="Cancel" styleClass="p-button-secondary"></p-button>
+                      <p-button icon="pi pi-check" (click)="onConfirmIcon()" label="Ok"></p-button>
+                    </ng-template>
+                  </p-dialog>
+                </div>
               </div>
             </div>
           </div>
           <div class="col-4 xl:col-2">
-            <div class="px-4 py-5 back" style="min-height: 160px; min-width: 175px;">
+            <div class="appBox back" style="min-width: 175px">
               <div class="card p-1" style="height: 100%;">
                 <div class="flex flex-column gap-2">
                   <div class="flex flex-wrap justify-content-between">
@@ -114,21 +112,14 @@
             <input type="text" pInputText [(ngModel)]="editableApp.versionNo" style="width: 100%;">
           </div>
           <div class="col-12">
-            <div class="flex flex-wrap justify-content-start align-content-center gap-2">
-              <div class="flex">
+            <div class="flex flex-wrap justify-content-start align-content-center gap-2 addBox">
                 <h6>應用頁面</h6>
-              </div>
-              <div class="flex">
                 <button pButton pRipple label="加入" (click)="onModifyClick()" class="p-button-rounded p-button-outlined icon-add"></button>
-                <p-dialog [(visible)]="tableVisible" [modal]="true" [style]="{ width: '100vw', height: '90vh' }" class="page-list" [closable]="false">
+                <p-dialog [(visible)]="tableVisible" [position]="'bottom'" [modal]="true" [style]="{ width: '100%', height: '90vh' , margin: '0'}" class="page-list" [closable]="false">
                   <ng-template pTemplate="header">
-                    <div class="flex flex-1 justify-content-between">
-                      <div>
+                    <div class="flex flex-1 justify-content-between align-items-center">
                         <span class="text-xl font-bold">加入應用頁面</span>
-                      </div>
-                      <div>
                         <button pButton pRipple icon="pi pi-times" class="p-button-text p-button-rounded" (click)="onCancelModify()"></button>
-                      </div>
                     </div>
                   </ng-template>
                   <his-app-store-editor-page-list [appPagesList]="appPages"
@@ -136,43 +127,30 @@
                                                   (cancel)="onCancelModify()"
                                                   (apply)="onApplyModify($event)"></his-app-store-editor-page-list>
                 </p-dialog>
-              </div>
             </div>
             <p-table [value]="appPages" dataKey="id" [rows]="10" [loading]="false" [rowHover]="true" responsiveLayout="scroll">
               <ng-template pTemplate="header">
                 <tr>
                   <th pSortableColumn="id" style="min-width: 4rem">
-                    <div class="flex justify-content-start align-items-center">
-                      頁面代碼
-                      <p-sortIcon field="id"></p-sortIcon>
-                    </div>
+                    頁面代碼
+                    <p-sortIcon field="id"></p-sortIcon>
                   </th>
                   <th pSortableColumn="title" style="min-width: 4rem">
-                    <div class="flex justify-content-start align-items-center">
-                      頁面標題
-                      <p-sortIcon field="title"></p-sortIcon>
-                    </div>
+                    頁面標題
+                    <p-sortIcon field="title"></p-sortIcon>
                   </th>
                   <th pSortableColumn="path" style="min-width: 16rem">
-                    <div class="flex  align-items-center" >
                       頁面連結路徑
                       <p-sortIcon field="path"></p-sortIcon>
-                    </div>
                   </th>
                   <th style="min-width: 12rem">
-                    <div class="flex justify-content-start align-items-center">
                       輸出模組名稱
-                    </div>
                   </th>
                   <th style="min-width: 12rem">
-                    <div class="flex justify-content-start align-items-center">
                       版本
-                    </div>
                   </th>
                   <th style="min-width: 4rem">
-                    <div class="flex justify-content-start align-items-center">
                       刪除
-                    </div>
                   </th>
                 </tr>
               </ng-template>

@@ -9,6 +9,12 @@ $gutter: 1rem; //for primeflex grid system
 @import "styles/theme.scss";
 @import "primeicons/primeicons.css";
 
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   height: 100vh;
   width: 100%;

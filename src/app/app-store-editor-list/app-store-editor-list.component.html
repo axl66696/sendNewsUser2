@@ -1,58 +1,46 @@
-<div class="flex flex-column" style="width: 100vw; height: 100%;">
-  <div class="flex">
+<div class="flex flex-column" style="width: 100%; height: 100%;">
+  <div class="flex toolbar">
     <his-app-store-editor-toolbar [customTemplate]="listToolbar">
       <div class="toolbar-title">
-        <p>網頁建檔系統 /應用程式 /應用程式清單</p>
+        <h6>網頁建檔系統 /應用程式</h6>
       </div>
     </his-app-store-editor-toolbar>
   </div>
   <div class="flex flex-1">
-    <div class="px-3 pb-3 h-full flex flex-column" style="width: 100%;">
-      <div class="card p-2">
+    <div class="section h-full w-full flex flex-column">
+      <div class="p-card p-2">
         <div class="align-items-center grid formgrid">
           <div class="align-self-center col-fixed">
             {{condition}}
           </div>
-          <div class="col-fixed" style="min-width: 240px;">
+          <div class="col-fixed">
             <p-dropdown [options]="" [(ngModel)]="selectedDrop" placeholder="請選擇類別" [showClear]="true" [style]="{'width':'240px'}"></p-dropdown>
           </div>
-          <div class="col-1">
             <p-button label="查詢"></p-button>
-          </div>
         </div>
       </div>
-      <div class="card flex-1 p-2">
-        <div>
+      <div class="p-card flex-1 p-2">
+        <h5>應用程式清單</h5>
           <p-table [value]="resultApps" dataKey="id" [rows]="10" [loading]="false" [rowHover]="true" responsiveLayout="scroll">
             <ng-template pTemplate="header">
               <tr>
-                <th pSortableColumn="_id" style="min-width: 4rem">
-                  <div class="flex justify-content-start align-items-center">
+                <th pSortableColumn="_id" style="min-width: 3rem">
                     代碼
                     <p-sortIcon field="_id"></p-sortIcon>
-                  </div>
                 </th>
-                <th pSortableColumn="appType" style="min-width: 4rem">
-                  <div class="flex justify-content-start align-items-center">
+                <th pSortableColumn="appType" style="min-width: 3rem">
                     類別
                     <p-sortIcon field="appType"></p-sortIcon>
-                  </div>
                 </th>
-                <th pSortableColumn="appTitle" style="min-width: 16rem">
-                  <div class="flex  align-items-center" >
+                <th pSortableColumn="appTitle" style="min-width: 18rem">
                     應用程式名稱
                     <p-sortIcon field="moduleName"></p-sortIcon>
-                  </div>
                 </th>
                 <th style="min-width: 12rem">
-                  <div class="flex justify-content-start align-items-center">
                     網頁路徑
-                  </div>
                 </th>
                 <th style="min-width: 12rem">
-                  <div class="flex justify-content-start align-items-center">
                     版本
-                  </div>
                 </th>
               </tr>
             </ng-template>
@@ -76,7 +64,6 @@
               </tr>
             </ng-template>
           </p-table>
-        </div>
       </div>
     </div>
   </div>

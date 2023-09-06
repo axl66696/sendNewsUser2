@@ -1,34 +1,26 @@
-<div class="flex flex-column dialog-body gap-2">
-  <div class="flex align-items-center grid formgrid">
+<div class="flex flex-column dialog-body">
+  <div class="flex align-items-center grid formgrid featureBar">
     <div class="align-self-center col-fixed">
       {{condition}}
     </div>
-    <div class="xl:col-1 sm:col-12">
-      <div class="align-items-center">
+      <div class="flex align-items-center labelBox">
         <p-radioButton name="sortCol" value=1 [(ngModel)]="selectedSort" id="sort1"></p-radioButton>
-        <label for="sort1">代號</label>
+        <label for="sort1">頁面代號</label>
       </div>
-    </div>
-    <div class="xl:col-1 sm:col-12">
-      <div class="align-items-center">
+      <div class="flex align-items-center labelBox">
         <p-radioButton name="sortCol" value=2 [(ngModel)]="selectedSort" id="sort2"></p-radioButton>
-        <label for="sort2">類別</label>
+        <label for="sort2">頁面標題</label>
       </div>
-    </div>
-    <div class="xl:col-1 sm:col-12">
-      <div class="align-items-center">
+      <div class="flex align-items-center labelBox">
         <p-radioButton name="sortCol" value=3 [(ngModel)]="selectedSort" id="sort3"></p-radioButton>
         <label for="sort3">維護人員</label>
       </div>
-    </div>
     <div class="col-fixed" style="min-width: 240px;">
       <p-dropdown [options]="" [(ngModel)]="selectedDrop" placeholder="請選擇" [showClear]="true" [style]="{'width':'240px'}"></p-dropdown>
     </div>
-    <div class="col-1">
-      <p-button label="查詢"></p-button>
-    </div>
+      <p-button styleClass="p-button-secondary" label="查詢"></p-button>
     <div class="col">
-      <div class="flex flex-wrap justify-content-end gap-1">
+      <div class="flex flex-wrap justify-content-end buttonBox">
         <div>
           <p-button label="取消" styleClass="p-button-secondary" (onClick)="onCancelClick()"></p-button>
         </div>
@@ -48,27 +40,19 @@
                 <th style="min-width: 2rem">
                 </th>
                 <th pSortableColumn="_id" style="min-width: 4rem">
-                  <div class="flex justify-content-start align-items-center">
                     頁面代碼
                     <p-sortIcon field="_id"></p-sortIcon>
-                  </div>
                 </th>
                 <th pSortableColumn="pageTitle" style="min-width: 4rem">
-                  <div class="flex justify-content-start align-items-center">
                     頁面標題
                     <p-sortIcon field="pageTitle"></p-sortIcon>
-                  </div>
                 </th>
                 <th style="min-width: 4rem">
-                  <div class="flex justify-content-start align-items-center">
                     版本
-                  </div>
                 </th>
                 <th pSortableColumn="maintainer" style="min-width: 4rem">
-                  <div class="flex justify-content-start align-items-center">
                     維護人員
                     <p-sortIcon field="maintainer"></p-sortIcon>
-                  </div>
                 </th>
               </tr>
             </ng-template>
@@ -108,27 +92,19 @@
                 <th style="min-width: 2rem">
                 </th>
                 <th pSortableColumn="_id" style="min-width: 4rem">
-                  <div class="flex justify-content-start align-items-center">
                     頁面代碼
                     <p-sortIcon field="_id"></p-sortIcon>
-                  </div>
                 </th>
                 <th pSortableColumn="pageTitle" style="min-width: 4rem">
-                  <div class="flex justify-content-start align-items-center">
                     頁面標題
                     <p-sortIcon field="pageTitle"></p-sortIcon>
-                  </div>
                 </th>
                 <th style="min-width: 4rem">
-                  <div class="flex justify-content-start align-items-center">
                     版本
-                  </div>
                 </th>
                 <th pSortableColumn="maintainer" style="min-width: 4rem">
-                  <div class="flex justify-content-start align-items-center">
                     維護人員
                     <p-sortIcon field="maintainer"></p-sortIcon>
-                  </div>
                 </th>
               </tr>
             </ng-template>

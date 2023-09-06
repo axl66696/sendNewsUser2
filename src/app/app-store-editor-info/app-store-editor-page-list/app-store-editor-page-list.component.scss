@@ -1,29 +1,48 @@
-.main-block{
+.main-block {
   width: 100%;
   height: 100%;
   padding: 0.5rem;
 }
 
-.main-card{
+.main-card {
   width: 100%;
   background-color: var(--surface-section);
 }
 
-.dialog-body{
+.dialog-body {
   height: 100%;
+  gap: var(--spacing-md);
 }
 
-.table-box{
+.table-box {
   width: 50%;
 }
 
-.dark-input{
-  background-color: var(--black-o-12, rgba(19, 20, 20, 0.12));
-  border-radius: var(--border-radius-input, 4px);
-  border: 1px solid var(--outline-variant, #B5BFBB);
+.dark-input {
+  background-color: var(--black-o-12);
+  border-radius: 4px;
+  border: 1px solid var(--outline-variant);
 }
 
-:host ::ng-deep .p-button.p-button-icon-only .pi{
+.labelBox {
+  gap: 6px;
+  margin: 0 8px;
+}
+
+.buttonBox {
+  gap: var(--spacing-md);
+}
+
+:host ::ng-deep {
+  .p-button.p-button-icon-only .pi {
     font-size: 0.8rem;
+  }
+  .featureBar {
+    .p-button {
+      min-width: auto;
+    }
+  }
+  .p-dropdown {
+    min-height: 40px;
+  }
 }
-

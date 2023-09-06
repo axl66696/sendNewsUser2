@@ -1,3 +1,27 @@
 his-app-store-editor-toolbar{
   width: 100%;
 }
+
+.labelBox {
+  gap: 6px;
+  margin: 0 8px;
+}
+
+:host ::ng-deep {
+  .section {
+    gap: 8px;
+  }
+  .p-button {
+    min-width: auto;
+  }
+  .table {
+    width: 100%;
+  }
+  .p-dropdown {
+    min-height: 40px;
+  }
+  h5 {
+    margin: 0;
+    margin-bottom: var(--spacing-sm);
+  }
+}
