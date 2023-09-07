@@ -61,25 +61,27 @@
 }
 
 :host ::ng-deep {
-  .icon-selector {
-    .p-button.p-button-icon-only{
-      width: 40px;
-      height: 40px;
+  .iconBox {
+    .icon-selector {
+      .p-button.p-button-icon-only{
+        width: 40px;
+        height: 40px;
+      }
     }
     .p-button.p-button-icon-only .pi {
       font-size: 1.5rem;
     }
-  }
-  .p-dialog {
-    .p-button.p-button-icon-only .pi {
-      font-size: 1rem;
+    .p-dialog {
+      .p-button.p-button-icon-only .pi {
+        font-size: 1rem;
+      }
     }
-  }
-  .p-dropdown {
-    min-height: 40px;
-  }
-  .col-6 {
-    padding: 4px 8px;
+    .p-dropdown {
+      min-height: 40px;
+    }
+    .col-6 {
+      padding: 4px 8px;
+    }
   }
 }
 

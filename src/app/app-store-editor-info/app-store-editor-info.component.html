@@ -41,11 +41,7 @@
                 </div>
                 <div class="iconBox">
                   <h6 i18n>圖標</h6>
-                  <p-button (click)="onDialog()" class="icon-selector">
-                    <ng-template pTemplate="icon">
-                      <span class="pi {{showIconStyle}}"></span>
-                    </ng-template>
-                  </p-button>
+                  <button pButton pRipple (click)="onDialog()" icon="pi {{showIconStyle}}" class="icon-selector"></button>
                   <p-dialog header="Header" [(visible)]="visible" [style]="{ width: '580px' }" [closable]="false">
                     <ng-template pTemplate="header">
                       <div class="flex flex-1 justify-content-between">
@@ -107,7 +103,7 @@
           <div class="col-4">
             <h6 i18n>首頁清單</h6>
             <p-dropdown [options]="appPages"
-                        [(ngModel)]="editableApp.appHome"
+                        [(ngModel)]="editableApp.appHome.display"
                         i18n-placeholder
                         placeholder="請選擇"
                         [showClear]="true"
