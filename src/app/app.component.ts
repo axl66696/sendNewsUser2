@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { AppStoreEditorInfoComponent } from './app-store-editor-info/app-store-editor-info.component';
@@ -8,7 +8,7 @@ import { AppStoreService } from './app-store.service';
 import { HeaderComponent } from '@his-component/header/dist/header'
 
 @Component({
-  selector: 'app-root',
+  selector: 'his-app-store-editor',
   standalone: true,
   imports: [CommonModule,
             RouterOutlet,
@@ -19,7 +19,7 @@ import { HeaderComponent } from '@his-component/header/dist/header'
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit, OnDestroy {
   title = 'app-store-editor';
 
   #appStoreService: AppStoreService = inject(AppStoreService);
