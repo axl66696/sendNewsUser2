@@ -16,4 +16,6 @@ export class AppStoreEditorToolbarComponent {
   @Input() customTemplate!: TemplateRef<any>;
 
   @Input() title!: string[];
+
+  sideButton: boolean = false
 }

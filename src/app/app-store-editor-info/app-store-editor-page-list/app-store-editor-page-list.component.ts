@@ -28,6 +28,11 @@ import { JSONCodec, Msg } from '@his-base/jetstream-ws';
   providers: [AppStoreService]
 })
 export class AppStoreEditorPageListComponent {
+
+  /** 應用程式所含頁面
+   * @type {AppPage[]}
+   * @memberof AppStoreEditorPageListComponent
+   */
   appPagesSelected!: AppPage[];
   @Input()
   set appPagesList(value: AppPage[]){
@@ -35,6 +40,10 @@ export class AppStoreEditorPageListComponent {
     this.appPagesInclude = [...this.appPagesSelected];
   }
 
+  /** 編輯視窗是否顯示
+   * @type {any}
+   * @memberof AppStoreEditorPageListComponent
+   */
   #visible: any;
   @Input()
   set visible(value: any) {
@@ -45,17 +54,54 @@ export class AppStoreEditorPageListComponent {
     }
   }
 
+  /** 關閉編輯視窗並取消編輯
+   * @memberof AppStoreEditorPageListComponent
+   */
   @Output() cancel = new EventEmitter<any>();
+
+  /** 關閉編輯視窗並套用編輯
+   * @memberof AppStoreEditorPageListComponent
+   */
   @Output() apply = new EventEmitter<any>();
 
+  /** 查詢條件標題
+   * @type {string}
+   * @memberof AppStoreEditorPageListComponent
+   */
   condition: string = $localize`請選擇查詢條件： `;
+
   selectedSort = 1;
+
+  /** 查詢結果標題
+   * @type {string}
+   * @memberof AppStoreEditorPageListComponent
+   */
   selectedDrop!: string;
+
+  /** 拖曳清單功能用
+   * @type {(AppPage | undefined | null)}
+   * @memberof AppStoreEditorPageListComponent
+   */
   draggedPage: AppPage | undefined | null;
   draggedReversePage: AppPage | undefined | null;
+
+  /** 所有應用頁面清單
+   * @type {AppPage[]}
+   * @memberof AppStoreEditorPageListComponent
+   */
   origAppPages: AppPage[] = [];
+
+  /** 尚未包含應用頁面清單
+   * @type {AppPage[]}
+   * @memberof AppStoreEditorPageListComponent
+   */
   appPages: AppPage[] = [];
   appPages$!: Observable<Msg>;
+
+  /** 已包含應用頁面清單
+   * @type {AppPage[]}
+   * @memberof AppStoreEditorPageListComponent
+   */
   appPagesInclude: AppPage[] = [];
   #appStoreService = inject(AppStoreService);
 
@@ -75,6 +121,10 @@ export class AppStoreEditorPageListComponent {
     this.appPagesInclude = [...this.appPagesSelected];
   }
 
+  /** 區分已包含及未包含的應用頁面
+   * @param appPages
+   * @returns
+   */
   filtExisted(appPages: AppPage[]) {
     let resultPages: AppPage[] = [...appPages];
     for(let i = 0; i < (this.appPagesInclude as AppPage[]).length; i++){

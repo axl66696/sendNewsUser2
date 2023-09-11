@@ -28,41 +28,44 @@
               <div class="col-6">
                 <h6 i18n>類別</h6>
                 <p-dropdown [options]="typeOptions"
-                            [(ngModel)]="editableApp.appType"
+                            [(ngModel)]="appType"
                             i18n-placeholder
                             placeholder="請選擇"
                             [showClear]="true"
-                            [style]="{'width':'100%'}"></p-dropdown>
+                            [style]="{'width':'100%'}"
+                            optionLabel="type"></p-dropdown>
               </div>
-              <div class="col-6 flex gap-4 align-items-end justify-content-start">
+              <div class="col-fixed flex gap-4 align-items-end justify-content-start">
                 <div class="authorityBox">
-                  <p-checkbox name="group1" [binary]="true" [(ngModel)]="authNeed" id="authNeed"></p-checkbox>
+                  <p-checkbox name="group1" [binary]="true" [(ngModel)]="editableApp.isAuth" id="authNeed"></p-checkbox>
                   <label for="authNeed" i18n>是否需要授權</label>
                 </div>
+              </div>
+              <div class="col flex align-items-end justify-content-start">
                 <div class="iconBox">
                   <h6 i18n>圖標</h6>
-                  <button pButton pRipple (click)="onDialog()" icon="pi {{showIconStyle}}" class="icon-selector"></button>
-                  <p-dialog header="Header" [(visible)]="visible" [style]="{ width: '580px' }" [closable]="false">
+                  <button pButton pRipple (click)="onDialog()" icon="pi {{showIconStyle}}" class="icon-selector" [style]="appType.showColor"></button>
+                  <p-dialog header="Header" [(visible)]="visible" [style]="{ width: '769px', height: '59.1%' }" [closable]="false">
                     <ng-template pTemplate="header">
-                      <div class="flex flex-1 justify-content-between">
-                        <div>
-                          <span class="text-xl font-bold" i18n>選擇圖標</span>
+                      <div class="flex flex-1 justify-content-between align-items-center">
+                        <div class="align-items-center">
+                          <span class="text-xl font-bold text-center" i18n>選擇圖標</span>
                         </div>
-                        <div>
+                        <div class="cross">
                           <p-button icon="pi pi-times" (click)="onCancelSelect()"></p-button>
                         </div>
                       </div>
                     </ng-template>
-                    <div class="flex flex-wrap justify-content-between">
+                    <div class="flex flex-wrap align-content-start align-items-start pick-box">
                       <ng-container *ngFor="let icon of iconList">
-                        <div class="flex text-center" style="min-height: 50px; min-width: 50px;">
-                          <button pButton icon="pi {{icon}}" class="icon-selector" (click)="onSelectIcon(icon)"></button>
+                        <div class="flex text-center" style="min-height: 56px; min-width: 56px;">
+                          <button pButton icon="pi {{icon}}" class="icon-selected" [class]="appType.color" (click)="onSelectIcon(icon)"></button>
                         </div>
                       </ng-container>
                     </div>
                     <ng-template pTemplate="footer">
-                      <p-button icon="pi pi-times" (click)="onCancelSelect()" i18n-label label="取消" styleClass="p-button-secondary"></p-button>
-                      <p-button icon="pi pi-check" (click)="onConfirmIcon()" i18n-label label="確定"></p-button>
+                      <p-button (click)="onCancelSelect()" i18n-label label="取消" styleClass="p-button-secondary"></p-button>
+                      <p-button (click)="onConfirmIcon()" i18n-label label="確定"></p-button>
                     </ng-template>
                   </p-dialog>
                 </div>
@@ -74,7 +77,7 @@
               <div class="card p-1" style="height: 100%;">
                 <div class="flex flex-column gap-2">
                   <div class="flex flex-wrap justify-content-between">
-                    <div class="flex align-items-center justify-content-center icon-preview">
+                    <div class="flex align-items-center justify-content-center icon-preview" [style]="appType.showColor"  >
                       <i class="pi {{showIconStyle}}" style="color: white; font-size: 2rem"></i>
                     </div>
                     <div class="flex align-items-center justify-content-center w-2rem h-2rem">

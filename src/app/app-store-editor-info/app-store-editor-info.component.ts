@@ -48,17 +48,25 @@ export class AppStoreEditorInfoComponent {
   appPages: AppPage[] = []
   editableApp!: AppStore;
   selectedDrop!: string;
-  authNeed!: boolean;
   previewTitle!: string;
   deleteVisible: boolean = false;
-  typeOptions!: string[];
+  typeOptions!: {
+    type: string,
+    color: string,
+    showColor: string
+  }[];
   languageOptions!: string[];
-  title!: string[]
+  title!: string[];
+  appType!: {
+    type: string,
+    color: string,
+    showColor: string
+  }
   #appStoresService = inject(AppStoreService);
   router = inject(Router);
   route = inject(ActivatedRoute)
 
-  ngOnInit(): void {
+  async ngOnInit() {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
     this.iconList = [
@@ -584,21 +592,51 @@ export class AppStoreEditorInfoComponent {
 
       "pi-spinner"
     ];
-    this.typeOptions = ['行政', '醫療', '藥局'];
+    this.typeOptions = [
+      {
+        type: '行政',
+        color: 'icon-administration',
+        showColor: 'background: var(--primary-main, #006D50)'
+      },
+      {
+        type: '醫療',
+        color: 'icon-medical',
+        showColor: 'background: var(--tertiary-main, #C77516)'
+      },
+      {
+        type: '藥局',
+        color: 'icon-drug',
+        showColor: 'background: var(--color-orange-500, #F76808)'
+      },
+      {
+        type: '門診',
+        color: 'icon-clinic',
+        showColor: 'background: var(--color-indigo-500, #3E63DD)'
+      }
+    ];
     this.languageOptions = ['Angular16']
 
-    this.authNeed = false;
+    this.appType = {
+      type: '門診',
+      color: 'icon-clinic',
+      showColor: 'background: var(--color-indigo-500, #3E63DD)'
+    }
+
     this.previewTitle = $localize`應用程式標題`
 
     if(this._id)
     {
       this.appStore$ = this.#appStoresService.getAppStore(this._id);
-      this.appStore$.subscribe((msg: Msg) => {
+      await this.appStore$.subscribe((msg: Msg) => {
           const jsonCodec = JSONCodec();
         // 處理資料邏輯的地方，取得reply回傳的資料
           console.log('Received message', jsonCodec.decode(msg.data));
           this.appStore = jsonCodec.decode(msg.data) as AppStore;
-          this.editableApp = Object.assign({}, this.appStore);
+          this.editableApp = Object.assign({}, this.appStore)
+          const currentType = this.typeOptions.find(x => {
+            return x.type === this.appStore.appType
+          })
+          this.appType = Object.assign({}, currentType);
           this.showIconStyle = this.editableApp.appIcon;
           this.appPages = [...this.appStore.appPages]
       })
@@ -607,8 +645,7 @@ export class AppStoreEditorInfoComponent {
     }
     else
     {
-      this.appStore = new AppStore();
-
+      this.appStore = new AppStore({appType: '門診'});
       this.editableApp = Object.assign({}, this.appStore);
       this.appStore.appIcon = 'pi-user';
       this.editableApp.appIcon = this.appStore.appIcon
@@ -638,6 +675,10 @@ export class AppStoreEditorInfoComponent {
   }
 
   onClearClick() {
+    const currentType = this.typeOptions.find(x => {
+      return x.type === this.appStore.appType
+    })
+    this.appType = Object.assign({}, currentType);
     this.editableApp.appTitle = this.appStore.appTitle;
     //this.editableApp.moduleName = this.appStore.moduleName;
     this.editableApp.versionNo = this.appStore.versionNo;
@@ -677,6 +718,7 @@ export class AppStoreEditorInfoComponent {
   }
 
   onCreateClick() {
+    this.editableApp.appType = this.appType.type
     this.appStore = Object.assign({}, this.editableApp);
     this.appStore.appPages = [...this.appPages];
     this.#appStoresService.pubAppStore(this.appStore, 'appStore.insert');

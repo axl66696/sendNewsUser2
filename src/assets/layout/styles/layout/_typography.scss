@@ -16,7 +16,6 @@ h6 {
     margin: 1.5rem 0 1rem 0;
     font-family: inherit;
     font-weight: 700;
-    line-height: 1.2;
 
     &:first-child {
         margin-top: 0;
@@ -24,36 +23,108 @@ h6 {
 }
 
 h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
+    line-height: 2.75rem;
+    letter-spacing: 0.08rem;
 }
 
 h2 {
-    font-size: 2rem;
+    font-size: 1.75rem;
+    line-height: 2.5rem;
+    letter-spacing: 0.07rem;
 }
 
 h3 {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    letter-spacing: 0.03rem;
 }
 
 h4,
-title-l {
+.title-l {
     font-size: 1.375rem;
     line-height: 1.875rem;
     letter-spacing: 0.0275rem;
 }
 
 h5,
-title-m {
+.title-m {
     font-size: 1.25rem;
     line-height: 1.75rem;
     letter-spacing: 0.025rem;
 }
 
 h6,
-title-s {
+.title-s {
     font-size: 1.125rem;
     line-height: 1.625rem;
     letter-spacing: 0.0225rem;
+}
+
+.body-l {
+    color: var(--surface-on-surface);
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: 1.5rem;
+    letter-spacing: 0.01125rem;
+}
+
+.body-m,
+p {
+    color: var(--surface-on-surface);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.25rem;
+    letter-spacing: 0.01rem;
+}
+.body-s {
+    color: var(--surface-on-surface);
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.25rem;
+    letter-spacing: 0.00875rem;
+}
+.label-l {
+    color: var(--surface-on-surface);
+    font-size: 1.125rem;
+    font-weight: 500;
+    line-height: 1.5rem;
+    letter-spacing: 0.01125rem;
+}
+.label-m {
+    color: var(--surface-on-surface);
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5rem;
+    letter-spacing: 0.01rem;
+}
+.label-s {
+    color: var(--surface-on-surface);
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.25rem;
+    letter-spacing: 0.00875rem;
+}
+.caption-l {
+    color: var(--surface-on-surface);
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.5rem;
+    letter-spacing: 0.01rem;
+}
+.caption-m {
+    color: var(--surface-on-surface);
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.25rem;
+    letter-spacing: 0.00875rem;
+}
+.caption-s {
+    color: var(--surface-on-surface);
+    font-size: 0.875rem;
+    font-weight: 300;
+    line-height: 1.125rem;
+    letter-spacing: 0.0075rem;
 }
 
 mark {
