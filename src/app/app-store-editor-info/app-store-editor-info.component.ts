@@ -1,5 +1,6 @@
+/* eslint-disable @typescript-eslint/no-inferrable-types */
 import { DialogModule } from 'primeng/dialog';
-import { Component, Input, inject } from '@angular/core';
+import { Component, Input, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { InputTextModule } from "primeng/inputtext";
 import { CalendarModule } from 'primeng/calendar';
@@ -35,33 +36,90 @@ import { JSONCodec, Msg } from '@his-base/jetstream-ws';
   templateUrl: './app-store-editor-info.component.html',
   styleUrls: ['./app-store-editor-info.component.scss']
 })
-export class AppStoreEditorInfoComponent {
+export class AppStoreEditorInfoComponent implements OnInit {
+  /** 要顯示的應用程式_id
+   * @type {string}
+   * @memberof AppStoreEditorInfoComponent
+   */
   @Input() _id!: string;
 
-  date: string = '';
+  /** 顯示的圖標樣式
+   * @type {string}
+   * @memberof AppStoreEditorInfoComponent
+   */
   showIconStyle: string = '';
+
+  /** 可選擇的圖標清單
+   * @type {string[]}
+   * @memberof AppStoreEditorInfoComponent
+   */
   iconList: string[] = [];
+
+  /** 圖標選擇視窗顯示
+   * @type {boolean}
+   * @memberof AppStoreEditorInfoComponent
+   */
   visible: boolean = false;
+
+  /** 所含應用頁面編輯視窗顯示
+   * @type {boolean}
+   * @memberof AppStoreEditorInfoComponent
+   */
   tableVisible: boolean = false;
+
   appStore!: AppStore;
   appStore$!: Observable<Msg>;
   appPages: AppPage[] = []
   editableApp!: AppStore;
-  selectedDrop!: string;
+
+  /** 應用程式預覽標題
+   * @type {string}
+   * @memberof AppStoreEditorInfoComponent
+   */
   previewTitle!: string;
+
+  /** 刪除視窗顯示
+   * @type {boolean}
+   * @memberof AppStoreEditorInfoComponent
+   */
   deleteVisible: boolean = false;
+
+  /** 類別及對應圖標顏色清單
+   * @type {{
+   *     type: string,
+   *     color: string,
+   *     showColor: string
+   *   }[]}
+   * @memberof AppStoreEditorInfoComponent
+   */
   typeOptions!: {
     type: string,
     color: string,
     showColor: string
   }[];
+
+  /** 應用程式語言種類
+   * @type {string[]}
+   * @memberof AppStoreEditorInfoComponent
+   */
   languageOptions!: string[];
+
   title!: string[];
+
+  /** 設定應用程式類別及圖標顏色
+   * @type {{
+   *     type: string,
+   *     color: string,
+   *     showColor: string
+   *   }}
+   * @memberof AppStoreEditorInfoComponent
+   */
   appType!: {
     type: string,
     color: string,
     showColor: string
   }
+
   #appStoresService = inject(AppStoreService);
   router = inject(Router);
   route = inject(ActivatedRoute)
@@ -656,24 +714,40 @@ export class AppStoreEditorInfoComponent {
     }
   }
 
+  /** 顯示選擇圖標視窗
+   * @memberof AppStoreEditorInfoComponent
+   */
   onDialog() {
     this.visible = true;
   }
 
+  /** 點選圖標預覽
+   * @param {string} icon
+   * @memberof AppStoreEditorInfoComponent
+   */
   onSelectIcon(icon: string) {
     this.showIconStyle = icon;
   }
 
+  /** 取消並復原選擇圖標
+   * @memberof AppStoreEditorInfoComponent
+   */
   onCancelSelect() {
     this.visible = false;
     this.showIconStyle = this.editableApp.appIcon;
   }
 
+  /** 確認圖標選擇
+   * @memberof AppStoreEditorInfoComponent
+   */
   onConfirmIcon() {
     this.visible = false;
     this.editableApp.appIcon = this.showIconStyle;
   }
 
+  /** 復原編輯或清除內容
+   * @memberof AppStoreEditorInfoComponent
+   */
   onClearClick() {
     const currentType = this.typeOptions.find(x => {
       return x.type === this.appStore.appType
@@ -687,36 +761,62 @@ export class AppStoreEditorInfoComponent {
     this.appPages = [...this.appStore.appPages]
   }
 
+  /** 開啟頁面編輯視窗
+   * @memberof AppStoreEditorInfoComponent
+   */
   onModifyClick() {
     this.tableVisible = true
   }
 
+  /** 取消頁面編輯
+   * @memberof AppStoreEditorInfoComponent
+   */
   onCancelModify() {
     this.tableVisible = false;
   }
 
+  /** 套用頁面編輯
+   * @param {AppPage[]} appPages
+   * @memberof AppStoreEditorInfoComponent
+   */
   onApplyModify(appPages: AppPage[]) {
     this.tableVisible = false;
     this.appPages = [...appPages];
   }
 
+  /** 移除指定頁面
+   * @param {AppPage} appPage
+   * @memberof AppStoreEditorInfoComponent
+   */
   onRemoveClick(appPage: AppPage) {
     this.appPages = this.appPages?.filter((v) => v._id !== appPage._id)
   }
 
+  /** 開啟刪除應用程式視窗
+   * @memberof AppStoreEditorInfoComponent
+   */
   onDeleteClick() {
     this.deleteVisible = true;
   }
 
+  /** 取消刪除
+   * @memberof AppStoreEditorInfoComponent
+   */
   onCancelDelete() {
     this.deleteVisible = false;
   }
 
+  /** 確認刪除
+   * @memberof AppStoreEditorInfoComponent
+   */
   onConfirmDelete() {
     this.#appStoresService.pubAppStore(this.appStore, 'appStore.delete')
     this.router.navigate(['..'],{relativeTo:this.route});
   }
 
+  /** 新增應用程式
+   * @memberof AppStoreEditorInfoComponent
+   */
   onCreateClick() {
     this.editableApp.appType = this.appType.type
     this.appStore = Object.assign({}, this.editableApp);
@@ -727,6 +827,9 @@ export class AppStoreEditorInfoComponent {
     this.appPages = [...this.appStore.appPages]
   }
 
+  /** 儲存應用程式編輯
+   * @memberof AppStoreEditorInfoComponent
+   */
   onSaveClick() {
     this.appStore = Object.assign({}, this.editableApp);
     this.appStore.appPages = [...this.appPages];

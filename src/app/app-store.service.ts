@@ -1,9 +1,7 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { Injectable, inject } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { AppStore } from '@his-viewmodel/app-store-editor';
-import { catchError, throwError } from 'rxjs';
-import { JetstreamWsService, RetentionPolicy, TransferInfo } from '@his-base/jetstream-ws';
-import { AckPolicy, DeliverPolicy, JetstreamMangerService, NatsConsumerConfig } from '@his-base/jetstream-manager';
+import { JetstreamWsService, TransferInfo } from '@his-base/jetstream-ws';
 
 @Injectable({
   providedIn: 'root'

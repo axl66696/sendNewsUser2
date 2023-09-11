@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { Component, EventEmitter, Input, OnInit, Output, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { FormsModule } from '@angular/forms';
@@ -27,7 +28,7 @@ import { JSONCodec, Msg } from '@his-base/jetstream-ws';
   styleUrls: ['./app-store-editor-page-list.component.scss'],
   providers: [AppStoreService]
 })
-export class AppStoreEditorPageListComponent {
+export class AppStoreEditorPageListComponent implements OnInit {
 
   /** 應用程式所含頁面
    * @type {AppPage[]}
@@ -133,6 +134,10 @@ export class AppStoreEditorPageListComponent {
     return resultPages
   }
 
+  /** 拖曳清單
+   * @param {AppPage} appPage
+   * @memberof AppStoreEditorPageListComponent
+   */
   dragStart(appPage: AppPage) {
     this.draggedPage = appPage;
   }
@@ -143,7 +148,7 @@ export class AppStoreEditorPageListComponent {
 
   drop() {
     if (this.draggedPage) {
-      let draggedPageIndex = this.findIndex(this.draggedPage);
+      const draggedPageIndex = this.findIndex(this.draggedPage);
       this.appPagesSelected = [...(this.appPagesSelected as AppPage[]), this.draggedPage];
       this.appPages = this.appPages?.filter((val, i) => i != draggedPageIndex);
       this.draggedPage = null;
@@ -152,7 +157,7 @@ export class AppStoreEditorPageListComponent {
 
   dropReverse() {
     if (this.draggedReversePage) {
-      let draggedPageIndex = this.findSelectedIndex(this.draggedReversePage);
+      const draggedPageIndex = this.findSelectedIndex(this.draggedReversePage);
       this.appPages = [...(this.appPages as AppPage[]), this.draggedReversePage];
       this.appPagesSelected = this.appPagesSelected?.filter((val, i) => i != draggedPageIndex);
       this.draggedReversePage = null;
@@ -189,18 +194,25 @@ export class AppStoreEditorPageListComponent {
     this.draggedReversePage = null;
   }
 
+  /** 變更應用頁面按鈕
+   * @param {AppPage} appPage
+   * @memberof AppStoreEditorPageListComponent
+   */
   onPlusPage(appPage: AppPage) {
-    let selectedPageIndex = this.findIndex(appPage);
+    const selectedPageIndex = this.findIndex(appPage);
     this.appPagesSelected = [...(this.appPagesSelected as AppPage[]), appPage]
     this.appPages = this.appPages?.filter((val, i) => i != selectedPageIndex)
   }
 
   onRemovePage(appPage: AppPage) {
-    let selectedPageIndex = this.findSelectedIndex(appPage);
+    const selectedPageIndex = this.findSelectedIndex(appPage);
     this.appPages = [...(this.appPages as AppPage[]), appPage]
     this.appPagesSelected = this.appPagesSelected?.filter((val, i) => i != selectedPageIndex)
   }
 
+  /** 關閉並還原編輯視窗事件
+   * @memberof AppStoreEditorPageListComponent
+   */
   onCancelClick() {
     this.cancel.emit('');
   }

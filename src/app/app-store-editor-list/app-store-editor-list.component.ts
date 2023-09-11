@@ -1,5 +1,5 @@
 import { CheckboxModule } from 'primeng/checkbox';
-import { Component, inject } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TableModule } from 'primeng/table';
 import { RadioButtonModule } from 'primeng/radiobutton';
@@ -30,16 +30,46 @@ import { JSONCodec, Msg } from '@his-base/jetstream-ws';
   styleUrls: ['./app-store-editor-list.component.scss'],
   providers: [AppStoreService]
 })
-export class AppStoreEditorListComponent {
+export class AppStoreEditorListComponent implements OnInit {
+  /** 應用程式清單
+   * @type {AppStore[]}
+   * @memberof AppStoreEditorListComponent
+   */
   appStores: AppStore[] = [];
-  selectedSort = 1;
+
   #appStoreService = inject(AppStoreService);
+
+  /** 查詢區塊標題
+   * @type {string}
+   * @memberof AppStoreEditorListComponent
+   */
   condition: string = $localize`請選擇查詢條件： `;
+
   appStores$!: Observable<Msg>;
   resultApps$?: Observable<Msg>;
+
+  /** 應用程式查詢結果清單
+   * @type {AppStore[]}
+   * @memberof AppStoreEditorListComponent
+   */
   resultApps: AppStore[] = [];
+
+  /** 查詢類別
+   * @type {string}
+   * @memberof AppStoreEditorListComponent
+   */
   searchValue!: string;
+
+  /** 頁面標題
+   * @type {string[]}
+   * @memberof AppStoreEditorListComponent
+   */
   title!: string[];
+
+  /** 應用程式類別清單
+   * @type {string[]}
+   * @memberof AppStoreEditorListComponent
+   */
   typeOptions!: string[];
 
   async ngOnInit() {
@@ -54,6 +84,9 @@ export class AppStoreEditorListComponent {
     })
   }
 
+  /** 用類別搜尋
+   * @memberof AppStoreEditorListComponent
+   */
   async onSearchClick() {
     if(!this.searchValue)
     {
