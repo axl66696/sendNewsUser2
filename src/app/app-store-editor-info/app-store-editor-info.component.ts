@@ -654,22 +654,22 @@ export class AppStoreEditorInfoComponent implements OnInit {
       {
         type: '行政',
         color: 'icon-administration',
-        showColor: 'background: var(--primary-main, #006D50)'
+        showColor: 'background: var(--primary-main)'
       },
       {
         type: '醫療',
         color: 'icon-medical',
-        showColor: 'background: var(--tertiary-main, #C77516)'
+        showColor: 'background: var(--tertiary-main)'
       },
       {
         type: '藥局',
         color: 'icon-drug',
-        showColor: 'background: var(--color-orange-500, #F76808)'
+        showColor: 'background: var(--orange-500)'
       },
       {
         type: '門診',
         color: 'icon-clinic',
-        showColor: 'background: var(--color-indigo-500, #3E63DD)'
+        showColor: 'background: var(--indigo-500)'
       }
     ];
     this.languageOptions = ['Angular16']
@@ -677,7 +677,7 @@ export class AppStoreEditorInfoComponent implements OnInit {
     this.appType = {
       type: '門診',
       color: 'icon-clinic',
-      showColor: 'background: var(--color-indigo-500, #3E63DD)'
+      showColor: 'background: var(--indigo-500)'
     }
 
     this.previewTitle = $localize`應用程式標題`

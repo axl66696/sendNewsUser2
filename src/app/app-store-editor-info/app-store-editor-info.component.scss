@@ -1,25 +1,25 @@
 .icon-selector {
   width: 56px;
   height: 56px;
-  border-radius: var(--border-radius-input, 4px);
-  background: var(--color-indigo-500, #3E63DD);
+  border-radius: 4px;
+  background: var(--indigo-500);
 }
 
 .icon-selected {
   width: 56px;
   height: 56px;
-  border-radius: var(--border-radius-input, 4px);
+  border-radius: 4px;
   background-color: transparent;
 }
 
 .icon-administration {
   color: var(--surface-on-surface);
   &:hover {
-    background: var(--primary-main, #237760);
+    background: var(--green-600);
   }
   &:focus,
   &:active {
-    background: var(--primary-main, #006D50);
+    background: var(--primary-main);
     color: var(--surface-overlay);
   }
 }
@@ -27,11 +27,11 @@
 .icon-medical {
   color: var(--surface-on-surface);
   &:hover {
-    background: var(--tertiary-main, #c59156);
+    background: var(--tertiary-500);
   }
   &:focus,
   &:active {
-    background: var(--tertiary-main, #C77516);
+    background: var(--tertiary-main);
     color: var(--surface-overlay);
   }
 }
@@ -39,11 +39,11 @@
 .icon-drug {
   color: var(--surface-on-surface);
   &:hover {
-    background: var(--color-orange-500, #ffa366);
+    background: var(--orange-700);
   }
   &:focus,
   &:active {
-    background: var(--color-orange-500, #F76808);
+    background: var(--orange-500);
     color: var(--surface-overlay);
   }
 }
@@ -51,11 +51,11 @@
 .icon-clinic{
   color: var(--surface-on-surface);
   &:hover {
-    background: var(--color-indigo-500, #8fa1da);
+    background: var(--indigo-700);
   }
   &:focus,
   &:active {
-    background: var(--color-indigo-500, #3E63DD);
+    background: var(--indigo-500);
     color: var(--surface-overlay);
   }
 }
@@ -132,6 +132,9 @@
         font-size: 38px;
       }
     }
+    .p-dialog .p-dialog-content {
+      background-color: var(--surface-card);
+    }
     .p-dropdown {
       min-height: 40px;
     }
@@ -160,8 +163,8 @@ his-app-store-editor-toolbar {
 
 .pick-box {
   border-radius: var(--border-radius-input, 4px);
-  border: 1px solid var(--outline, #626966);
-  background: var(--surface-card, #FFF);
+  border: 1px solid var(--outline);
+  background: var(--surface-card);
   padding: var(--spacing-md, 12px) var(--spacing-lg, 16px);
   gap: 8px var(--spacing-sm, 8px);
   height: 100%;

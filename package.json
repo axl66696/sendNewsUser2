@@ -10,7 +10,10 @@
     "run:all": "node node_modules/@angular-architects/module-federation/src/server/mf-dev-server.js",
     "i18n:gen": "ng extract-i18n -c zh-Hant",
     "start:en": "ng serve -c en-Us",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "compodoc:build": "compodoc -p tsconfig.doc.json",
+    "compodoc:build-and-serve": "compodoc -p tsconfig.doc.json -s",
+    "compodoc:serve": "compodoc -s --port 8088"
   },
   "private": true,
   "dependencies": {
@@ -46,6 +49,7 @@
     "@angular/cli": "~16.2.0-rc.1",
     "@angular/compiler-cli": "^16.2.0-next.0",
     "@angular/localize": "^16.2.3",
+    "@compodoc/compodoc": "^1.1.21",
     "@types/jasmine": "~4.3.0",
     "@typescript-eslint/eslint-plugin": "5.62.0",
     "@typescript-eslint/parser": "5.62.0",
