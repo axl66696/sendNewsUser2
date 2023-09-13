@@ -1,0 +1,136 @@
+<!-- eslint-disable @angular-eslint/template/elements-content -->
+<div class="flex flex-column dialog-body">
+  <div class="flex align-items-center grid formgrid featureBar">
+    <div class="align-self-center col-fixed">
+      {{condition}}
+    </div>
+      <div class="flex align-items-center labelBox">
+        <p-radioButton name="sortCol" value=1 [(ngModel)]="selectedSort" id="sort1"></p-radioButton>
+        <label for="sort1" i18n>頁面代號</label>
+      </div>
+      <div class="flex align-items-center labelBox">
+        <p-radioButton name="sortCol" value=2 [(ngModel)]="selectedSort" id="sort2"></p-radioButton>
+        <label for="sort2" i18n>頁面標題</label>
+      </div>
+      <div class="flex align-items-center labelBox">
+        <p-radioButton name="sortCol" value=3 [(ngModel)]="selectedSort" id="sort3"></p-radioButton>
+        <label for="sort3" i18n>維護人員</label>
+      </div>
+    <div class="col-fixed" style="min-width: 240px;">
+      <p-dropdown [options]="" [(ngModel)]="selectedDrop" i18n-placeholder placeholder="請選擇" [showClear]="true" [style]="{'width':'240px'}"></p-dropdown>
+    </div>
+      <p-button styleClass="p-button-secondary" i18n-label label="查詢"></p-button>
+    <div class="col">
+      <div class="flex flex-wrap justify-content-end buttonBox">
+        <div>
+          <p-button i18n-label label="取消" styleClass="p-button-secondary" (onClick)="onCancelClick()"></p-button>
+        </div>
+        <div>
+          <p-button i18n-label label="帶入" (onClick)="onApplyClick()"></p-button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="flex flex-1">
+    <div class="card flex flex-1 h-full main-card p-2 gap-2">
+      <div class="card table-box m-0 p-1">
+        <div class="h-full w-full" pDroppable="appPages" (onDrop)="dropReverse()">
+          <p-table [value]="appPages" dataKey="_id" [rows]="10" [loading]="false" [rowHover]="true" responsiveLayout="scroll">
+            <ng-template pTemplate="header">
+              <tr>
+                <th style="min-width: 2rem">
+                </th>
+                <th pSortableColumn="_id" style="min-width: 4rem" i18n>
+                    頁面代碼
+                    <p-sortIcon field="_id"></p-sortIcon>
+                </th>
+                <th pSortableColumn="pageTitle" style="min-width: 4rem" i18n>
+                    頁面標題
+                    <p-sortIcon field="pageTitle"></p-sortIcon>
+                </th>
+                <th style="min-width: 4rem" i18n>
+                    版本
+                </th>
+                <th pSortableColumn="maintainer" style="min-width: 4rem" i18n>
+                    維護人員
+                    <p-sortIcon field="maintainer"></p-sortIcon>
+                </th>
+              </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-page>
+              <tr [pSelectableRow]="page" pDraggable="appPages" (onDragStart)="dragStart(page)" (onDragEnd)="dragEnd()">
+                <td>
+                  <button pButton pRipple icon="pi pi-plus" class="p-button-rounded p-button-success p-button-form edit-icon" (click)="onAddPage(page)"></button>
+                </td>
+                <td>
+                  {{ page._id }}
+                </td>
+                <td>
+                  {{ page.pageTitle }}
+                </td>
+                <td>
+                  {{ page.versionNo }}
+                </td>
+                <td>
+                  {{ page.maintainer.display }}
+                </td>
+              </tr>
+            </ng-template>
+          </p-table>
+        </div>
+      </div>
+      <div class="card table-box m-0 p-1 flex flex-column gap-1">
+        <div>
+          <h5 class="m-0" i18n>加入應用頁面</h5>
+        </div>
+        <div>
+          <input type="text" pInputText i18n-placeholder placeholder="頁面整合查詢" class="dark-input" style="width: 100%; height: 40px;">
+        </div>
+        <div class="h-full w-full" pDroppable="appPages" (onDrop)="drop()">
+          <p-table [value]="appPagesSelected" dataKey="_id" [rows]="10" [loading]="false" [tableStyle]="{ 'width': '100%' }" [rowHover]="true" responsiveLayout="scroll">
+            <ng-template pTemplate="header">
+              <tr>
+                <th style="min-width: 2rem">
+                </th>
+                <th pSortableColumn="_id" style="min-width: 4rem" i18n>
+                    頁面代碼
+                    <p-sortIcon field="_id"></p-sortIcon>
+                </th>
+                <th pSortableColumn="pageTitle" style="min-width: 4rem" i18n>
+                    頁面標題
+                    <p-sortIcon field="pageTitle"></p-sortIcon>
+                </th>
+                <th style="min-width: 4rem" i18n>
+                    版本
+                </th>
+                <th pSortableColumn="maintainer" style="min-width: 4rem" i18n>
+                    維護人員
+                    <p-sortIcon field="maintainer"></p-sortIcon>
+                </th>
+              </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-page>
+              <tr [pSelectableRow]="page" pDraggable="appPages" (onDragStart)="dragReverseStart(page)" (onDragEnd)="dragReverseEnd()">
+                <td>
+                  <button pButton pRipple icon="pi pi-minus" class="p-button-rounded p-button-warning p-button-form edit-icon" (click)="onRemovePage(page)"></button>
+                </td>
+                <td>
+                  {{ page._id }}
+                </td>
+                <td>
+                  {{ page.pageTitle }}
+                </td>
+                <td>
+                  {{ page.versionNo }}
+                </td>
+                <td>
+                  {{ page.maintainer.display }}
+                </td>
+              </tr>
+            </ng-template>
+          </p-table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

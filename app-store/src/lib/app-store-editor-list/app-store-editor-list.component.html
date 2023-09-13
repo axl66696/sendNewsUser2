@@ -1,0 +1,77 @@
+<div class="flex flex-column" style="width: 100%; height: 100%;">
+  <div class="flex toolbar">
+    <his-app-store-editor-toolbar
+      [customTemplate]="listToolbar"
+      [title]="title">
+    </his-app-store-editor-toolbar>
+  </div>
+  <div class="flex flex-1">
+    <div class="section h-full w-full flex flex-column">
+      <div class="p-card p-2">
+        <div class="align-items-center grid formgrid">
+          <div class="align-self-center col-fixed">
+            {{condition}}
+          </div>
+          <div class="col-fixed">
+            <p-dropdown [options]="typeOptions" [(ngModel)]="searchValue" i18n-placeholder placeholder="請選擇類別" [showClear]="true" [style]="{'width':'240px'}"></p-dropdown>
+          </div>
+          <div class="col-fixed">
+            <p-button i18n-label label="查詢" (onClick)="onSearchClick()"></p-button>
+          </div>
+        </div>
+      </div>
+      <div class="p-card flex-1 p-2">
+        <h5 i18n>應用程式清單</h5>
+          <p-table [value]="resultApps" dataKey="id" [rows]="10" [loading]="false" [rowHover]="true" responsiveLayout="scroll">
+            <ng-template pTemplate="header">
+              <tr>
+                <th pSortableColumn="_id" style="min-width: 3rem" i18n>
+                    代碼
+                    <p-sortIcon field="_id"></p-sortIcon>
+                </th>
+                <th pSortableColumn="appType" style="min-width: 3rem" i18n>
+                    類別
+                    <p-sortIcon field="appType"></p-sortIcon>
+                </th>
+                <th pSortableColumn="appTitle" style="min-width: 18rem" i18n>
+                    應用程式名稱
+                    <p-sortIcon field="appTitle"></p-sortIcon>
+                </th>
+                <th style="min-width: 12rem" i18n>
+                    網頁路徑
+                </th>
+                <th style="min-width: 12rem" i18n>
+                    版本
+                </th>
+              </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-appStore>
+              <tr [routerLink]="[appStore._id]" [pSelectableRow]="appStore">
+                <td>
+                  {{ appStore._id }}
+                </td>
+                <td>
+                  {{ appStore.appType }}
+                </td>
+                <td>
+                  {{ appStore.appTitle }}
+                </td>
+                <td>
+                  {{ appStore.appUrl }}
+                </td>
+                <td>
+                  {{ appStore.versionNo }}
+                </td>
+              </tr>
+            </ng-template>
+          </p-table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #listToolbar>
+  <div class="flex align-items-center">
+    <p-button i18n-label label="建檔" [routerLink]="['..']"></p-button>
+  </div>
+</ng-template>

@@ -1,0 +1,22 @@
+ [
+  {
+    "type": "行政",
+    "colorClass": "icon-administration",
+    "showColor": "background: var(--primary-main)"
+  },
+  {
+    "type": "醫療",
+    "colorClass": "icon-medical",
+    "showColor": "background: var(--tertiary-main)"
+  },
+  {
+    "type": "藥局",
+    "colorClass": "icon-drug",
+    "showColor": "background: var(--orange-500)"
+  },
+  {
+    "type": "門診",
+    "colorClass": "icon-clinic",
+    "showColor": "background: var(--indigo-500)"
+  }
+]

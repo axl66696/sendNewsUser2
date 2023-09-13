@@ -1,0 +1,78 @@
+{
+  "type": [
+  {
+    "_id": "1",
+    "appTitle": "aaaaaa",
+    "versionNo": "",
+    "appType": "",
+    "appHome": "",
+    "appLanguage": "",
+    "moduleName": "",
+    "appPages": [
+      {
+        "_id": "1",
+        "pageTitle": "",
+        "versionNo": "",
+        "pageUrl": "",
+        "pageRouter": "",
+        "maintainer": {
+          "code": "",
+          "display": ""
+        },
+        "moduleName": "",
+        "moduleType": "'module'"
+      },
+      {
+        "_id": "2",
+        "pageTitle": "",
+        "versionNo": "",
+        "pageUrl": "",
+        "pageRouter": "",
+        "maintainer": {
+          "code": "",
+          "display": ""
+        },
+        "moduleName": "",
+        "moduleType": "'module'"
+      }
+    ]
+  },
+  {
+    "_id": "2",
+    "appTitle": "",
+    "versionNo": "",
+    "appType": "",
+    "appHome": "",
+    "appLanguage": "",
+    "moduleName": "",
+    "appPages": [
+      {
+        "_id": "1",
+        "pageTitle": "",
+        "versionNo": "",
+        "pageUrl": "",
+        "pageRouter": "",
+        "maintainer": {
+          "code": "",
+          "display": ""
+        },
+        "moduleName": "",
+        "moduleType": "'module'"
+      },
+      {
+        "_id": "2",
+        "pageTitle": "",
+        "versionNo": "",
+        "pageUrl": "",
+        "pageRouter": "",
+        "maintainer": {
+          "code": "",
+          "display": ""
+        },
+        "moduleName": "",
+        "moduleType": "'module'"
+      }
+    ]
+  }
+]
+}
