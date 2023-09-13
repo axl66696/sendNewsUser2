@@ -8,12 +8,10 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "run:all": "node node_modules/@angular-architects/module-federation/src/server/mf-dev-server.js",
-    "i18n:gen": "ng extract-i18n -c zh-Hant",
-    "start:en": "ng serve -c en-Us",
-    "lint": "ng lint",
     "compodoc:build": "compodoc -p tsconfig.doc.json",
     "compodoc:build-and-serve": "compodoc -p tsconfig.doc.json -s",
-    "compodoc:serve": "compodoc -s --port 8088"
+    "compodoc:serve": "compodoc -s",
+    "lint": "ng lint"
   },
   "private": true,
   "dependencies": {
@@ -40,7 +38,7 @@
     "zone.js": "~0.13.0"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^16.2.0-rc.1",
+    "@angular-devkit/build-angular": "^16.2.1",
     "@angular-eslint/builder": "16.1.2",
     "@angular-eslint/eslint-plugin": "16.1.2",
     "@angular-eslint/eslint-plugin-template": "16.1.2",
@@ -48,7 +46,7 @@
     "@angular-eslint/template-parser": "16.1.2",
     "@angular/cli": "~16.2.0-rc.1",
     "@angular/compiler-cli": "^16.2.0-next.0",
-    "@angular/localize": "^16.2.3",
+    "@angular/localize": "^16.2.4",
     "@compodoc/compodoc": "^1.1.21",
     "@types/jasmine": "~4.3.0",
     "@typescript-eslint/eslint-plugin": "5.62.0",
@@ -61,6 +59,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "ng-packagr": "^16.2.0",
     "ngx-build-plus": "^16.0.0",
     "typescript": "~5.1.3"
   }

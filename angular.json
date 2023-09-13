@@ -3,13 +3,49 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "app-store-editor": {
-      "i18n": {
-        "sourceLocale": "zh-Hant",
-        "locales": {
-          "en-Us": "src/assets/i18n/en-Us/messages.json"
+    "app-store": {
+      "projectType": "library",
+      "root": "app-store",
+      "sourceRoot": "app-store/src",
+      "prefix": "his",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "app-store/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "app-store/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "app-store/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "app-store/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "app-store/**/*.ts",
+              "app-store/**/*.html"
+            ]
+          }
         }
-      },
+      }
+    },
+    "app-store-editor": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -23,43 +59,33 @@
           "standalone": true
         }
       },
-      "root": "",
-      "sourceRoot": "src",
+      "root": "app-store-editor",
+      "sourceRoot": "app-store-editor/src",
       "prefix": "his",
       "architect": {
         "build": {
           "builder": "ngx-build-plus:browser",
           "options": {
             "outputPath": "dist/app-store-editor",
-            "index": "src/index.html",
-            "main": "src/main.ts",
+            "index": "app-store-editor/src/index.html",
+            "main": "app-store-editor/src/main.ts",
             "polyfills": [
               "zone.js"
             ],
-            "tsConfig": "tsconfig.app.json",
+            "tsConfig": "app-store-editor/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              "app-store-editor/src/favicon.ico",
+              "app-store-editor/src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "app-store-editor/src/styles.scss"
             ],
             "scripts": [],
-            "extraWebpackConfig": "webpack.config.js",
+            "extraWebpackConfig": "app-store-editor/webpack.config.js",
             "commonChunk": false
           },
           "configurations": {
-            "zh-Hant": {
-              "localize": [
-                "zh-Hant"
-              ]
-            },
-            "en-Us": {
-              "localize": [
-                "en-Us"
-              ]
-            },
             "production": {
               "budgets": [
                 {
@@ -74,7 +100,7 @@
                 }
               ],
               "outputHashing": "all",
-              "extraWebpackConfig": "webpack.prod.config.js"
+              "extraWebpackConfig": "app-store-editor/webpack.prod.config.js"
             },
             "development": {
               "buildOptimizer": false,
@@ -92,36 +118,24 @@
           "configurations": {
             "production": {
               "browserTarget": "app-store-editor:build:production",
-              "extraWebpackConfig": "webpack.prod.config.js"
+              "extraWebpackConfig": "app-store-editor/webpack.prod.config.js"
             },
             "development": {
               "browserTarget": "app-store-editor:build:development"
-            },
-            "zh-Hant": {
-              "browserTarget": "app-store-editor:build:zh-Hant"
-            },
-            "en-Us": {
-              "browserTarget": "app-store-editor:build:en-Us"
             }
           },
           "defaultConfiguration": "development",
           "options": {
-            "port": 10009,
-            "publicHost": "http://localhost:10009",
-            "extraWebpackConfig": "webpack.config.js"
+            "port": 4320,
+            "publicHost": "http://localhost:4320",
+            "extraWebpackConfig": "app-store-editor/webpack.config.js"
           }
         },
         "extract-i18n": {
           "builder": "ngx-build-plus:extract-i18n",
           "options": {
             "browserTarget": "app-store-editor:build",
-            "extraWebpackConfig": "webpack.config.js"
-          },
-          "configurations": {
-            "zh-Hant": {
-              "format": "json",
-              "outputPath": "src/assets/i18n/zh-Hant"
-            }
+            "extraWebpackConfig": "app-store-editor/webpack.config.js"
           }
         },
         "test": {
@@ -131,14 +145,14 @@
               "zone.js",
               "zone.js/testing"
             ],
-            "tsConfig": "tsconfig.spec.json",
+            "tsConfig": "app-store-editor/tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              "app-store-editor/src/favicon.ico",
+              "app-store-editor/src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "app-store-editor/src/styles.scss"
             ],
             "scripts": []
           }
@@ -147,8 +161,8 @@
           "builder": "@angular-eslint/builder:lint",
           "options": {
             "lintFilePatterns": [
-              "src/**/*.ts",
-              "src/**/*.html"
+              "app-store-editor/**/*.ts",
+              "app-store-editor/**/*.html"
             ]
           }
         }
@@ -156,9 +170,6 @@
     }
   },
   "cli": {
-    "analytics": "d2c4ea27-c3a5-4258-8514-22f054316b59",
-    "schematicCollections": [
-      "@angular-eslint/schematics"
-    ]
+    "analytics": "0753126e-ed61-4853-9d14-81650da2a1ea"
   }
 }
