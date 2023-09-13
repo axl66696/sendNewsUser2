@@ -7,7 +7,7 @@ import { DropdownModule } from 'primeng/dropdown';
 import { ButtonModule } from 'primeng/button';
 import { DragDropModule } from 'primeng/dragdrop';
 import { TableModule } from 'primeng/table';
-import { AppPage } from '@his-viewmodel/app-page-editor';
+import { AppPage, AppPageReq } from '@his-viewmodel/app-page-editor';
 import { AppStoreService } from '../../app-store.service';
 import { InputTextModule } from 'primeng/inputtext';
 import { JSONCodec, Msg } from '@his-base/jetstream-ws';
@@ -38,6 +38,7 @@ export class AddPagesListComponent implements OnInit {
   set appPagesList(value: AppPage[]){
     this.appPagesSelected = [...value];
     this.appPagesInclude = [...this.appPagesSelected];
+    this.pageResult = [...this.appPagesSelected]
   }
 
   /** 編輯視窗是否顯示
@@ -70,14 +71,6 @@ export class AddPagesListComponent implements OnInit {
    */
   condition: string = $localize`請選擇查詢條件： `;
 
-  selectedSort = 1;
-
-  /** 查詢結果標題
-   * @type {string}
-   * @memberof AppStoreEditorPageListComponent
-   */
-  selectedDrop!: string;
-
   /** 拖曳清單功能用
    * @type {(AppPage | undefined | null)}
    * @memberof AppStoreEditorPageListComponent
@@ -109,6 +102,24 @@ export class AddPagesListComponent implements OnInit {
    */
   appPagesInclude: AppPage[] = [];
 
+  /** 已包含應用頁面查詢結果清單
+   * @type {AppPage[]}
+   * @memberof AddPagesListComponent
+   */
+  pageResult: AppPage[] = []
+
+  /** 未包含應用頁面查詢條件
+   * @type {AppPageReq}
+   * @memberof AddPagesListComponent
+   */
+  appPageReq: AppPageReq = new AppPageReq({searchType: 'pageTitle'});
+
+  /** 已包含應用頁面查詢條件
+   * @type {AppPageReq}
+   * @memberof AddPagesListComponent
+   */
+  selectedPageReq: AppPageReq = new AppPageReq({searchType: 'pageTitle'});
+
   #appStoreService = inject(AppStoreService);
 
   /** 讀取頁面資料並區分個頁面是否存在於應用程式中
@@ -119,6 +130,7 @@ export class AddPagesListComponent implements OnInit {
     //Add 'implements OnInit' to the class.
     this.getAppPages();
     this.appPagesInclude = [...this.appPagesSelected];
+    this.pageResult = [...this.appPagesSelected];
   }
 
   /** 區分已包含及未包含的應用頁面
@@ -128,9 +140,9 @@ export class AddPagesListComponent implements OnInit {
    */
   getExcludedPages(appPages: AppPage[]): AppPage[] {
     let result: AppPage[] = [...appPages];
-    for(let i = 0; i < (this.appPagesInclude as AppPage[]).length; i++){
-      result = result?.filter((x) => x._id != (this.appPagesInclude as AppPage[])[i]._id)
-    }
+    this.appPagesInclude.map(v => {
+      result = result?.filter((x) => x._id != v._id)
+    })
     return result
   }
 
@@ -157,6 +169,7 @@ export class AddPagesListComponent implements OnInit {
     if (this.draggedPage) {
       const draggedPageIndex = this.findPageIndex(this.draggedPage);
       this.appPagesSelected = [...(this.appPagesSelected as AppPage[]), this.draggedPage];
+      this.pageResult = [...this.appPagesSelected]
       this.appPages = this.appPages?.filter((x, i) => i != draggedPageIndex);
       this.draggedPage = null;
     }
@@ -170,6 +183,7 @@ export class AddPagesListComponent implements OnInit {
       const draggedPageIndex = this.findSelectedIndex(this.draggedReversePage);
       this.appPages = [...(this.appPages as AppPage[]), this.draggedReversePage];
       this.appPagesSelected = this.appPagesSelected?.filter((x, i) => i != draggedPageIndex);
+      this.pageResult = [...this.appPagesSelected]
       this.draggedReversePage = null;
     }
   }
@@ -181,12 +195,11 @@ export class AddPagesListComponent implements OnInit {
    */
   findPageIndex(appPage: AppPage): number {
     let index = -1;
-    for (let i = 0; i < (this.appPages as AppPage[]).length; i++) {
-        if (appPage._id === (this.appPages as AppPage[])[i]._id) {
-            index = i;
-            break;
-        }
-    }
+    this.appPages.find((x,i) => {
+      if (appPage._id === x._id) {
+        index = i
+      }
+    })
     return index;
   }
 
@@ -197,12 +210,11 @@ export class AddPagesListComponent implements OnInit {
    */
   findSelectedIndex(appPage: AppPage): number {
     let index = -1;
-    for (let i = 0; i < (this.appPagesSelected as AppPage[]).length; i++) {
-        if (appPage._id === (this.appPagesSelected as AppPage[])[i]._id) {
-            index = i;
-            break;
-        }
-    }
+    this.appPagesSelected.find((x,i) => {
+      if (appPage._id === x._id) {
+        index = i
+      }
+    })
     return index;
   }
 
@@ -227,6 +239,7 @@ export class AddPagesListComponent implements OnInit {
   onAddPage(appPage: AppPage) {
     const selectedPageIndex = this.findPageIndex(appPage);
     this.appPagesSelected = [...(this.appPagesSelected as AppPage[]), appPage]
+    this.pageResult = [...this.appPagesSelected]
     this.appPages = this.appPages?.filter((val, i) => i != selectedPageIndex)
   }
 
@@ -238,6 +251,7 @@ export class AddPagesListComponent implements OnInit {
     const selectedPageIndex = this.findSelectedIndex(appPage);
     this.appPages = [...(this.appPages as AppPage[]), appPage]
     this.appPagesSelected = this.appPagesSelected?.filter((val, i) => i != selectedPageIndex)
+    this.pageResult = [...this.appPagesSelected]
   }
 
   /** 關閉並還原編輯視窗事件
@@ -262,5 +276,34 @@ export class AddPagesListComponent implements OnInit {
     const jsonCodec = JSONCodec();
     this.origAppPages = jsonCodec.decode(this.appPages$.data) as AppPage[];
     this.appPages = this.getExcludedPages(this.origAppPages);
+  }
+
+  /** 未包含應用頁面查詢功能
+   * @memberof AddPagesListComponent
+   */
+  onSearchClick() {
+    if(this.appPageReq.searchType === 'pageTitle') {
+      this.appPages = this.getExcludedPages(this.origAppPages);
+
+      this.appPages = this.appPages.filter((x) => {
+        return x.pageTitle?.includes(this.appPageReq.searchValue)
+      })
+    }
+    else {
+      this.appPages = this.getExcludedPages(this.origAppPages);
+
+      this.appPages = this.appPages.filter((x) => {
+        return x.maintainer.display?.includes(this.appPageReq.searchValue)
+      })
+    }
+  }
+
+  /** 已包含應用頁面查詢功能
+   * @memberof AddPagesListComponent
+   */
+  onSelectedClick() {
+    this.pageResult = this.appPagesSelected.filter((x) => {
+      return x?.pageTitle.includes(this.selectedPageReq.searchValue)
+    })
   }
 }

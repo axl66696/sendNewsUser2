@@ -275,6 +275,9 @@ export class AppStoreEditorInfoComponent implements OnInit {
     this.#appStoresService.pubAppStore(this.appStore, 'appStore.update');
   }
 
+  /** 應用程式內容讀取及變數初始化
+   * @memberof AppStoreEditorInfoComponent
+   */
   async getAppStore() {
     const jsonCodec = JSONCodec();
 

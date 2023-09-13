@@ -126,8 +126,8 @@
           },
           "defaultConfiguration": "development",
           "options": {
-            "port": 4320,
-            "publicHost": "http://localhost:4320",
+            "port": 10009,
+            "publicHost": "http://localhost:10009",
             "extraWebpackConfig": "app-store-editor/webpack.config.js"
           }
         },

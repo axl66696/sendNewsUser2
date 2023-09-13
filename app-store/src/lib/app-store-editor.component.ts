@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-inferrable-types */
 import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
@@ -20,6 +21,8 @@ import { HeaderComponent } from '@his-directive/header/dist/header'
   styleUrls: ['./app-store-editor.component.scss']
 })
 export class AppStoreEditorComponent implements OnInit, OnDestroy {
+  headerHolder: string = "請輸入頁面標題";
+  detailTitle: string = "詳細資料";
 
   #appStoreService: AppStoreService = inject(AppStoreService);
 
