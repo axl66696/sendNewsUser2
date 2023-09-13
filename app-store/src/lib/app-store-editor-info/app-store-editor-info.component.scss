@@ -134,6 +134,7 @@
     }
     .p-dialog .p-dialog-content {
       background-color: var(--surface-card);
+      padding: var(--spacing-md);
     }
     .p-dropdown {
       min-height: 40px;
@@ -169,4 +170,8 @@ his-app-store-editor-toolbar {
   gap: 8px var(--spacing-sm, 8px);
   height: 100%;
   overflow: auto;
+
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--surface-card)
+  }
 }
