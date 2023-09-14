@@ -51,6 +51,7 @@ export class AddPagesListComponent implements OnInit {
     this.#isVisible = value;
     if(this.#isVisible){
       this.appPagesSelected = [...this.appPagesInclude];
+      this.pageResult = [...this.appPagesInclude];
       this.appPages = this.getExcludedPages(this.origAppPages);
     }
   }
@@ -140,7 +141,7 @@ export class AddPagesListComponent implements OnInit {
    */
   getExcludedPages(appPages: AppPage[]): AppPage[] {
     let result: AppPage[] = [...appPages];
-    this.appPagesInclude.map(v => {
+    this.appPagesSelected.map(v => {
       result = result?.filter((x) => x._id != v._id)
     })
     return result

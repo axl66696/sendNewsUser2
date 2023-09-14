@@ -74,27 +74,23 @@
             </div>
           </div>
           <div class="col-4 xl:col-2">
-            <div class="appBox back" style="min-width: 175px">
-              <div class="card p-1" style="height: 100%;">
-                <div class="flex flex-column gap-2">
-                  <div class="flex flex-wrap justify-content-between">
-                    <div class="flex align-items-center justify-content-center icon-preview" [style]="appType.showColor"  >
-                      <i class="pi {{showIconStyle}}" style="color: white; font-size: 2rem"></i>
+            <h6 i18n>預覽</h6>
+            <div class="back" style="min-width: 175px">
+              <div class="card flex app-preview" style="height: 100%;">
+                <div class="flex align-items-center justify-content-center icon-preview" [style]="appType.showColor"  >
+                  <i class="pi {{showIconStyle}}" style="color: white; font-size: 48px"></i>
+                </div>
+                <div class="flex flex-1 flex-column text-preview">
+                  <div class="flex align-items-center top-text">
+                    <div class="flex align-items-start">
+                      <p class="caption-s">v{{editableApp.versionNo}}</p>
                     </div>
-                    <div class="flex align-items-center justify-content-center w-2rem h-2rem">
-                      <i class="pi pi-star" style="font-size: 1.2rem;"></i>
-                    </div>
-                  </div>
-                  <div class="flex flex-wrap justify-content-between" style="height: 30px;">
-                    <div class="flex align-items-center justify-content-start">
-                      <h5>{{editableApp.appTitle || previewTitle}}</h5>
-                    </div>
-                    <div class="flex align-items-start justify-content-center">
-                      <i class="pi pi-angle-right" style="font-size: 1.2rem;"></i>
+                    <div class="flex align-items-center justify-content-center">
+                      <i class="pi pi-star" style="font-size: 18px;"></i>
                     </div>
                   </div>
-                  <div class="flex align-items-start justify-content-end">
-                    <p>v{{editableApp.versionNo}}</p>
+                  <div class="flex align-items-start align-self-stretch label-l">
+                    {{editableApp.appTitle || previewTitle}}
                   </div>
                 </div>
               </div>
@@ -149,7 +145,7 @@
                                       (apply)="onApplyModify($event)"></his-add-pages-list>
                 </p-dialog>
             </div>
-            <p-table [value]="appPages" dataKey="id" [rows]="10" [loading]="false" [rowHover]="true" responsiveLayout="scroll">
+            <p-table [value]="appPages" dataKey="id" [rows]="10" [loading]="false" [rowHover]="true" [reorderableColumns]="true" responsiveLayout="scroll">
               <ng-template pTemplate="header">
                 <tr>
                   <th pSortableColumn="id" style="min-width: 4rem" i18n>
@@ -175,8 +171,8 @@
                   </th>
                 </tr>
               </ng-template>
-              <ng-template pTemplate="body" let-appPage>
-                <tr>
+              <ng-template pTemplate="body" let-appPage let-index="rowIndex">
+                <tr [pReorderableRow]="index">
                   <td>
                     {{ appPage._id }}
                   </td>

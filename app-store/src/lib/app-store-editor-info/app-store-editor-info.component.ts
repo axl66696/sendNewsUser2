@@ -18,6 +18,8 @@ import { RadioButtonModule } from 'primeng/radiobutton';
 import { AddPagesListComponent } from './add-pages-list/add-pages-list.component';
 import { JSONCodec, Msg } from '@his-base/jetstream-ws';
 import { ColorType } from './color-type';
+import { ImageModule } from 'primeng/image';
+import { MatIconModule } from '@angular/material/icon';
 import { $localize } from '@angular/localize/init';
 import * as iconData from '../../assets/data/icon.json';
 import * as typeData from '../../assets/data/type.json'
@@ -36,7 +38,9 @@ import * as typeData from '../../assets/data/type.json'
             CheckboxModule,
             TableModule,
             RadioButtonModule,
-            AddPagesListComponent],
+            AddPagesListComponent,
+            ImageModule,
+            MatIconModule],
   templateUrl: './app-store-editor-info.component.html',
   styleUrls: ['./app-store-editor-info.component.scss']
 })

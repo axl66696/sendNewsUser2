@@ -1,7 +1,7 @@
 .icon-selector {
-  width: 56px;
-  height: 56px;
-  border-radius: 4px;
+  width: 72px;
+  height: 72px;
+  border-radius: 18px;
   background: var(--indigo-500);
 }
 
@@ -62,8 +62,9 @@
 
 .back {
   background-color: var(--surface-ground);
-  padding: var(--spacing-md) var(--spacing-xxl);
+  padding: var(--spacing-md);
 }
+
 .authorityBox {
   min-height: 40px;
   display: flex;
@@ -106,9 +107,9 @@
 }
 
 .icon-preview {
-  width: 50px;
-  height: 50px;
-  border-radius: 4px;
+  width: 72px;
+  height: 72px;
+  border-radius: 18px;
 }
 
 .icon-add {
@@ -174,4 +175,21 @@ his-app-store-editor-toolbar {
   ::-webkit-scrollbar-thumb {
     background-color: var(--surface-card)
   }
+}
+
+.text-preview {
+  gap: var(--spacing-xs);
+  align-items: flex-end;
+  align-self: stretch;
+}
+
+.top-text {
+  gap: var(--spacing-sm);
+}
+
+.app-preview {
+  padding: var(--spacing-md);
+  justify-content: center;
+  gap: var(--spacing-sm);
+  align-items: center;
 }
