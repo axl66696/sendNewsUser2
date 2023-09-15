@@ -115,9 +115,9 @@
                 <td class="col-md-9">
                             <code>CommonModule</code>
                             <code>RouterOutlet</code>
-                                <code><a href="../components/AppStoreEditorInfoComponent.html" target="_self" >AppStoreEditorInfoComponent</a></code>
-                                <code><a href="../components/AppStoreEditorListComponent.html" target="_self" >AppStoreEditorListComponent</a></code>
-                                <code><a href="../components/AppStoreEditorToolbarComponent.html" target="_self" >AppStoreEditorToolbarComponent</a></code>
+                                <code><a href="../components/AppStoreInfoComponent.html" target="_self" >AppStoreInfoComponent</a></code>
+                                <code><a href="../components/AppStoreListComponent.html" target="_self" >AppStoreListComponent</a></code>
+                                <code><a href="../components/AppStoreToolbarComponent.html" target="_self" >AppStoreToolbarComponent</a></code>
                             <code>HeaderComponent</code>
                 </td>
             </tr>
@@ -199,7 +199,7 @@
 
 
     <section data-compodoc="block-methods">
-    
+
     <h3 id="methods">
         Methods
     </h3>
@@ -287,7 +287,7 @@
     </table>
 </section>
     <section data-compodoc="block-properties">
-    
+
     <h3 id="inputs">
         Properties
     </h3>
@@ -332,9 +332,9 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnDestroy, OnInit, inject } from &#x27;@angular/core&#x27;;
 import { CommonModule } from &#x27;@angular/common&#x27;;
 import { RouterOutlet } from &#x27;@angular/router&#x27;;
-import { AppStoreEditorInfoComponent } from &#x27;./app-store-editor-info/app-store-editor-info.component&#x27;;
-import { AppStoreEditorListComponent } from &#x27;./app-store-editor-list/app-store-editor-list.component&#x27;;
-import { AppStoreEditorToolbarComponent } from &#x27;./app-store-editor-toolbar/app-store-editor-toolbar.component&#x27;;
+import { AppStoreInfoComponent } from &#x27;./app-store-info/app-store-info.component&#x27;;
+import { AppStoreListComponent } from &#x27;./app-store-list/app-store-list.component&#x27;;
+import { AppStoreToolbarComponent } from &#x27;./app-store-toolbar/app-store-toolbar.component&#x27;;
 import { AppStoreService } from &#x27;./app-store.service&#x27;;
 import { HeaderComponent } from &#x27;@his-directive/header/dist/header&#x27;
 
@@ -343,9 +343,9 @@ import { HeaderComponent } from &#x27;@his-directive/header/dist/header&#x27;
   standalone: true,
   imports: [CommonModule,
             RouterOutlet,
-            AppStoreEditorInfoComponent,
-            AppStoreEditorListComponent,
-            AppStoreEditorToolbarComponent,
+            AppStoreInfoComponent,
+            AppStoreListComponent,
+            AppStoreToolbarComponent,
             HeaderComponent],
   templateUrl: &#x27;./app-store-editor.component.html&#x27;,
   styleUrls: [&#x27;./app-store-editor.component.scss&#x27;]
@@ -397,11 +397,11 @@ export class AppStoreEditorComponent implements OnInit, OnDestroy {
 }
 
 :host ::ng-deep {
-  his-app-store-editor-list {
+  his-app-store-list {
     height: 100%;
     width: 100%;
   }
-  his-app-store-editor-info {
+  his-app-store-info {
     height: 100%;
     width: 100%;
   }
@@ -431,7 +431,7 @@ export class AppStoreEditorComponent implements OnInit, OnDestroy {
         </div>
     </div>
 
-    
+
 </div>
 
 <script src="../js/libs/vis.min.js"></script>
@@ -439,7 +439,7 @@ export class AppStoreEditorComponent implements OnInit, OnDestroy {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><div class="flex flex-column h-full">  <div class="flex">    <his-header      [value]=""></his-header>  </div>  <div class="flex flex-1 app">    <router-outlet/>  </div></div></div>'
-    var COMPONENTS = [{'name': 'AddPagesListComponent', 'selector': 'his-add-pages-list'},{'name': 'AppStoreEditorComponent', 'selector': 'his-app-store-editor'},{'name': 'AppStoreEditorInfoComponent', 'selector': 'his-app-store-editor-info'},{'name': 'AppStoreEditorListComponent', 'selector': 'his-app-store-editor-list'},{'name': 'AppStoreEditorToolbarComponent', 'selector': 'his-app-store-editor-toolbar'}];
+    var COMPONENTS = [{'name': 'AddPagesListComponent', 'selector': 'his-add-pages-list'},{'name': 'AppStoreEditorComponent', 'selector': 'his-app-store-editor'},{'name': 'AppStoreInfoComponent', 'selector': 'his-app-store-info'},{'name': 'AppStoreListComponent', 'selector': 'his-app-store-list'},{'name': 'AppStoreToolbarComponent', 'selector': 'his-app-store-toolbar'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'AppStoreEditorComponent'};
 </script>

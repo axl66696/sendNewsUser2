@@ -1,8 +1,9 @@
 .icon-selector {
+  min-width: 0px;
   width: 72px;
   height: 72px;
   border-radius: 18px;
-  background: var(--indigo-500);
+  box-shadow: 0px 3px 1.5px -1.5px rgba(0, 0, 0, 0.02), 0px 1.5px 1.5px 0px rgba(0, 0, 0, 0.14), 0px 1.5px 4.5px 0px rgba(0, 0, 0, 0.12);
 }
 
 .icon-selected {
@@ -10,54 +11,84 @@
   height: 56px;
   border-radius: 4px;
   background-color: transparent;
+  justify-content: center;
 }
 
 .icon-administration {
   color: var(--surface-on-surface);
   &:hover {
-    background: var(--green-600);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.00) 100%), var(--primary-main);
+    .icon-dialog {
+      color: var(--surface-overlay);
+    }
   }
   &:focus,
   &:active {
-    background: var(--primary-main);
-    color: var(--surface-overlay);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.00) 100%), var(--primary-main);
+    .icon-dialog {
+      color: var(--surface-overlay);
+    }
   }
 }
 
 .icon-medical {
   color: var(--surface-on-surface);
   &:hover {
-    background: var(--tertiary-500);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.00) 100%), var(--tertiary-main);
+    .icon-dialog {
+      color: var(--surface-overlay);
+    }
   }
   &:focus,
   &:active {
-    background: var(--tertiary-main);
-    color: var(--surface-overlay);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.00) 100%), var(--tertiary-main);
+    .icon-dialog {
+      color: var(--surface-overlay);
+    }
+  }
+  .icon-dialog {
+    font-size: 40px;
+    color: var(--surface-on-surface);
   }
 }
 
 .icon-drug {
   color: var(--surface-on-surface);
   &:hover {
-    background: var(--orange-700);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.00) 100%), var(--orange-500);
+    .icon-dialog {
+      color: var(--surface-overlay);
+    }
   }
   &:focus,
   &:active {
-    background: var(--orange-500);
-    color: var(--surface-overlay);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.00) 100%), var(--orange-500);
+    .icon-dialog {
+      color: var(--surface-overlay);
+    }
   }
 }
 
 .icon-clinic{
   color: var(--surface-on-surface);
   &:hover {
-    background: var(--indigo-700);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.00) 100%), var(--indigo-500);
+    .icon-dialog {
+      color: var(--surface-overlay);
+    }
   }
   &:focus,
   &:active {
-    background: var(--indigo-500);
-    color: var(--surface-overlay);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.00) 100%), var(--indigo-500);
+    .icon-dialog {
+      color: var(--surface-overlay);
+    }
   }
+}
+
+.icon-dialog {
+  font-size: 40px;
+  color: var(--surface-on-surface);
 }
 
 .back {
@@ -110,6 +141,7 @@
   width: 72px;
   height: 72px;
   border-radius: 18px;
+  box-shadow: 0px 3px 1.5px -1.5px rgba(0, 0, 0, 0.02), 0px 1.5px 1.5px 0px rgba(0, 0, 0, 0.14), 0px 1.5px 4.5px 0px rgba(0, 0, 0, 0.12);
 }
 
 .icon-add {
@@ -123,6 +155,20 @@
       .p-button.p-button-icon-only{
         width: 40px;
         height: 40px;
+      }
+    }
+    .icon-selector {
+      .p-button {
+        min-width: 0;
+        width: 72px;
+        height: 72px;
+      }
+    }
+    .pick-box {
+      .p-button {
+        min-width: 0;
+        width: 56px;
+        height: 56px;
       }
     }
     .p-button.p-button-icon-only .pi {
@@ -159,7 +205,7 @@
   font-size: 1.5rem;
 }
 
-his-app-store-editor-toolbar {
+his-app-store-toolbar {
   width: 100%;
 }
 
@@ -185,6 +231,11 @@ his-app-store-editor-toolbar {
 
 .top-text {
   gap: var(--spacing-sm);
+}
+
+.icon-content {
+  font-size: 48px;
+  color: var(--surface-0);
 }
 
 .app-preview {

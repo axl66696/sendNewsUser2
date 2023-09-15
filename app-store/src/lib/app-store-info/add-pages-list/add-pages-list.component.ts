@@ -28,7 +28,6 @@ import { JSONCodec, Msg } from '@his-base/jetstream-ws';
   providers: [AppStoreService]
 })
 export class AddPagesListComponent implements OnInit {
-
   /** 應用程式所含頁面
    * @type {AppPage[]}
    * @memberof AppStoreEditorPageListComponent
@@ -95,6 +94,11 @@ export class AddPagesListComponent implements OnInit {
    * @memberof AppStoreEditorPageListComponent
    */
   appPages: AppPage[] = [];
+
+  /** 接收replier訊息
+   * @type {Msg}
+   * @memberof AddPagesListComponent
+   */
   appPages$!: Msg;
 
   /** 已包含應用頁面清單

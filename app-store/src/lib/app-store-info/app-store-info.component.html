@@ -1,14 +1,14 @@
 <!-- eslint-disable @angular-eslint/template/elements-content -->
 <div class="flex flex-column" style="width: 100%; height: 100%;">
   <div class="flex toolbar">
-    <his-app-store-editor-toolbar
+    <his-app-store-toolbar
       [customTemplate]="!_id ? createToolbar : updateToolbar"
       [title]="title">
-    </his-app-store-editor-toolbar>
+    </his-app-store-toolbar>
   </div>
   <div class="flex flex-1">
     <div class="p-3 h-full flex flex-column" style="width: 100%;">
-      <div class="card flex-1 p-2">
+      <div class="p-card flex-1 p-2">
         <div *ngIf="!_id; else editTitle">
           <h5 i18n>新增應用程式</h5>
         </div>
@@ -16,7 +16,7 @@
           <h5 i18n>編輯應用程式</h5>
         </ng-template>
         <div class="grid">
-          <div class="col-12 xl:col-10">
+          <div class="col-12 xl:col">
             <div class="grid">
               <div class="col-6">
                 <h6 i18n>應用程式名稱</h6>
@@ -45,7 +45,11 @@
               <div class="col flex align-items-end justify-content-start">
                 <div class="iconBox">
                   <h6 i18n>圖標</h6>
-                  <button pButton pRipple (click)="onDialog()" icon="pi {{showIconStyle}}" class="icon-selector" [style]="appType.showColor"></button>
+                  <button pButton pRipple (click)="onDialog()" class="pi icon-selector" [style]="appType.showColor">
+                    <span class="material-symbols-outlined icon-content">
+                      {{showIconStyle}}
+                    </span>
+                  </button>
                   <p-dialog header="Header" [(visible)]="isIconVisible" [style]="{ width: '769px', height: '59.1%' }" [closable]="false">
                     <ng-template pTemplate="header">
                       <div class="flex flex-1 justify-content-between align-items-center">
@@ -60,7 +64,11 @@
                     <div class="flex flex-wrap align-content-start align-items-start pick-box">
                       <ng-container *ngFor="let icon of iconList">
                         <div class="flex text-center" style="min-height: 56px; min-width: 56px;">
-                          <button pButton icon="pi {{icon}}" class="icon-selected" [class]="appType.colorClass" (click)="onSelectIcon(icon)"></button>
+                          <button pButton class="icon-selected" [class]="appType.colorClass" (click)="onSelectIcon(icon)">
+                            <span class="material-symbols-outlined icon-dialog">
+                              {{icon}}
+                            </span>
+                          </button>
                         </div>
                       </ng-container>
                     </div>
@@ -73,12 +81,15 @@
               </div>
             </div>
           </div>
-          <div class="col-4 xl:col-2">
+          <div class="col-fixed" style="width: 344px;">
             <h6 i18n>預覽</h6>
             <div class="back" style="min-width: 175px">
-              <div class="card flex app-preview" style="height: 100%;">
+              <div class="p-card flex app-preview" style="height: 100%;">
                 <div class="flex align-items-center justify-content-center icon-preview" [style]="appType.showColor"  >
-                  <i class="pi {{showIconStyle}}" style="color: white; font-size: 48px"></i>
+                  <!-- <i class="pi {{showIconStyle}}" style="color: white; font-size: 48px"></i> -->
+                  <span class="material-symbols-outlined icon-content">
+                    {{showIconStyle}}
+                  </span>
                 </div>
                 <div class="flex flex-1 flex-column text-preview">
                   <div class="flex align-items-center top-text">
@@ -127,7 +138,6 @@
           <div class="col-12">
             <div class="flex flex-wrap justify-content-start align-content-center gap-2 addBox">
                 <h6 i18n>應用頁面</h6>
-                <button pButton pRipple i18n-label label="加入" (click)="onModifyClick()" class="p-button-rounded p-button-outlined icon-add"></button>
                 <p-dialog [(visible)]="isTableVisible"
                           [position]="'bottom'"
                           [modal]="true"
@@ -145,50 +155,58 @@
                                       (apply)="onApplyModify($event)"></his-add-pages-list>
                 </p-dialog>
             </div>
-            <p-table [value]="appPages" dataKey="id" [rows]="10" [loading]="false" [rowHover]="true" [reorderableColumns]="true" responsiveLayout="scroll">
+            <p-table [value]="appPages" dataKey="id" [rows]="10" [loading]="false" [rowHover]="true" responsiveLayout="scroll">
               <ng-template pTemplate="header">
                 <tr>
+                  <th style="width: 1rem;">
+                  </th>
+                  <th style="width: 2rem">
+                    <button pButton pRipple icon="pi pi-plus" (click)="onModifyClick()" class="p-button-rounded p-button-success p-button-form"></button>
+                  </th>
                   <th pSortableColumn="id" style="min-width: 4rem" i18n>
                     頁面代碼
-                    <p-sortIcon field="id"></p-sortIcon>
                   </th>
                   <th pSortableColumn="title" style="min-width: 4rem" i18n>
                     頁面標題
-                    <p-sortIcon field="title"></p-sortIcon>
                   </th>
                   <th pSortableColumn="path" style="min-width: 16rem" i18n>
-                      頁面連結路徑
-                      <p-sortIcon field="path"></p-sortIcon>
+                    頁面連結路徑
                   </th>
                   <th style="min-width: 12rem" i18n>
-                      輸出模組名稱
+                    輸出模組名稱
                   </th>
                   <th style="min-width: 12rem" i18n>
-                      版本
+                    版本
                   </th>
                   <th style="min-width: 4rem" i18n>
-                      刪除
+                    刪除
                   </th>
                 </tr>
               </ng-template>
               <ng-template pTemplate="body" let-appPage let-index="rowIndex">
-                <tr [pReorderableRow]="index">
-                  <td>
+                <tr pDraggable="appPage" [pReorderableRow]="index" [pSelectableRow]="appPage">
+                  <td pReorderableRowHandle>
+                    <span class="pi pi-bars"></span>
+                  </td>
+                  <td pReorderableRowHandle>
+                    <button pButton pRipple icon="pi pi-minus" class="p-button-rounded p-button-warning p-button-form" (click)="onRemoveClick(appPage)"></button>
+                  </td>
+                  <td pReorderableRowHandle>
                     {{ appPage._id }}
                   </td>
-                  <td>
+                  <td pReorderableRowHandle>
                     {{ appPage.pageTitle }}
                   </td>
-                  <td>
+                  <td pReorderableRowHandle>
                     {{ appPage.pageUrl }}
                   </td>
-                  <td>
+                  <td pReorderableRowHandle>
                     {{ appPage.moduleName }}
                   </td>
-                  <td>
+                  <td pReorderableRowHandle>
                     {{ appPage.versionNo }}
                   </td>
-                  <td>
+                  <td pReorderableRowHandle>
                     <button pButton icon="pi pi-trash" class="p-button-rounded p-button-outlined" (click)="onRemoveClick(appPage)"></button>
                   </td>
                 </tr>

@@ -29,7 +29,7 @@
   </div>
   <div class="flex flex-1">
     <div class="section flex flex-1 h-full main-card p-2 gap-2">
-      <div class="card table-box m-0">
+      <div class="p-card table-box m-0">
         <div class="h-full w-full" pDroppable="appPages" (onDrop)="dropReverse()">
           <p-table [value]="appPages" dataKey="_id" [rows]="10" [loading]="false" [rowHover]="true" responsiveLayout="scroll">
             <ng-template pTemplate="header">
@@ -75,7 +75,7 @@
           </p-table>
         </div>
       </div>
-      <div class="card table-box m-0 flex flex-column gap-1">
+      <div class="p-card table-box m-0 flex flex-column gap-1">
         <div>
           <h5 class="m-0" i18n>加入應用頁面</h5>
         </div>

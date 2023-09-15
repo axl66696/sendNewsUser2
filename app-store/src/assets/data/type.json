@@ -1,22 +1,22 @@
  [
   {
-    "type": "行政",
+    "type": "臨床服務",
     "colorClass": "icon-administration",
-    "showColor": "background: var(--primary-main)"
+    "showColor": "background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.00) 100%), var(--primary-main)"
   },
   {
-    "type": "醫療",
+    "type": "醫事輔助",
     "colorClass": "icon-medical",
-    "showColor": "background: var(--tertiary-main)"
+    "showColor": "background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.00) 100%), var(--tertiary-main)"
   },
   {
-    "type": "藥局",
+    "type": "醫務行政",
     "colorClass": "icon-drug",
-    "showColor": "background: var(--orange-500)"
+    "showColor": "background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.00) 100%), var(--orange-500)"
   },
   {
     "type": "門診",
     "colorClass": "icon-clinic",
-    "showColor": "background: var(--indigo-500)"
+    "showColor": "background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.00) 100%), var(--indigo-500)"
   }
 ]

@@ -1,9 +1,9 @@
 <div class="flex flex-column" style="width: 100%; height: 100%;">
   <div class="flex toolbar">
-    <his-app-store-editor-toolbar
+    <his-app-store-toolbar
       [customTemplate]="listToolbar"
       [title]="title">
-    </his-app-store-editor-toolbar>
+    </his-app-store-toolbar>
   </div>
   <div class="flex flex-1 list-container">
     <div class="section h-full w-full flex flex-column">
@@ -22,7 +22,7 @@
       </div>
       <div class="p-card flex-1 p-2">
         <h5 i18n>應用程式清單</h5>
-          <p-table [value]="resultApps" dataKey="id" [rows]="10" [loading]="false" [rowHover]="true" responsiveLayout="scroll">
+          <p-table [value]="appStores" dataKey="id" [rows]="10" [loading]="false" [rowHover]="true" responsiveLayout="scroll">
             <ng-template pTemplate="header">
               <tr>
                 <th pSortableColumn="_id" style="min-width: 3rem" i18n>

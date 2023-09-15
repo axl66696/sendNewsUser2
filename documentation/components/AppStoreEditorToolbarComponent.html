@@ -38,7 +38,7 @@
   <li class="breadcrumb-item">Components</li>
   <li class="breadcrumb-item"
   >
-  AppStoreEditorToolbarComponent</li>
+  AppStoreToolbarComponent</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -69,7 +69,7 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/app/app-store-editor-toolbar/app-store-editor-toolbar.component.ts</code>
+    <code>src/app/app-store-toolbar/app-store-toolbar.component.ts</code>
 </p>
 
 
@@ -95,7 +95,7 @@
 
             <tr>
                 <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>his-app-store-editor-toolbar</code></td>
+                <td class="col-md-9"><code>his-app-store-toolbar</code></td>
             </tr>
 
             <tr>
@@ -114,14 +114,14 @@
 
             <tr>
                 <td class="col-md-3">styleUrls</td>
-                <td class="col-md-9"><code>./app-store-editor-toolbar.component.scss</code></td>
+                <td class="col-md-9"><code>./app-store-toolbar.component.scss</code></td>
             </tr>
 
 
 
             <tr>
                 <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>./app-store-editor-toolbar.component.html</code></td>
+                <td class="col-md-9"><code>./app-store-toolbar.component.html</code></td>
             </tr>
 
 
@@ -199,7 +199,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/app-store-editor-toolbar/app-store-editor-toolbar.component.ts:22</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/app-store-toolbar/app-store-toolbar.component.ts:22</a></div>
                             </td>
                         </tr>
                 <tr>
@@ -226,7 +226,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/app-store-editor-toolbar/app-store-editor-toolbar.component.ts:28</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/app-store-toolbar/app-store-toolbar.component.ts:28</a></div>
                             </td>
                         </tr>
                 <tr>
@@ -271,7 +271,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/app-store-editor-toolbar/app-store-editor-toolbar.component.ts:34</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/app-store-toolbar/app-store-toolbar.component.ts:34</a></div>
                         </td>
                     </tr>
 
@@ -296,31 +296,31 @@ import { ButtonModule } from &#x27;primeng/button&#x27;;
 import { ToolBarComponent } from &#x27;@his-component/tool-bar/dist/tool-bar&#x27;
 
 @Component({
-  selector: &#x27;his-app-store-editor-toolbar&#x27;,
+  selector: &#x27;his-app-store-toolbar&#x27;,
   standalone: true,
   imports: [CommonModule,
             ButtonModule,
             ToolBarComponent],
-  templateUrl: &#x27;./app-store-editor-toolbar.component.html&#x27;,
-  styleUrls: [&#x27;./app-store-editor-toolbar.component.scss&#x27;]
+  templateUrl: &#x27;./app-store-toolbar.component.html&#x27;,
+  styleUrls: [&#x27;./app-store-toolbar.component.scss&#x27;]
 })
-export class AppStoreEditorToolbarComponent {
+export class AppStoreToolbarComponent {
   /** 傳入的按鈕樣式
    * @type {TemplateRef&lt;any&gt;}
-   * @memberof AppStoreEditorToolbarComponent
+   * @memberof AppStoreToolbarComponent
    */
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   @Input() customTemplate!: TemplateRef&lt;any&gt;;
 
   /** 傳入的頁面標題
    * @type {string[]}
-   * @memberof AppStoreEditorToolbarComponent
+   * @memberof AppStoreToolbarComponent
    */
   @Input() title!: string[];
 
   /** 控制tool-bar的button
    * @type {boolean}
-   * @memberof AppStoreEditorToolbarComponent
+   * @memberof AppStoreToolbarComponent
    */
   sideButton: boolean &#x3D; false
 }
@@ -345,7 +345,7 @@ export class AppStoreEditorToolbarComponent {
 
     <div class="tab-pane fade " id="styleData">
                 <p class="comment">
-                    <code>./app-store-editor-toolbar.component.scss</code>
+                    <code>./app-store-toolbar.component.scss</code>
                 </p>
                 <pre class="line-numbers"><code class="language-scss">
 
@@ -383,9 +383,9 @@ export class AppStoreEditorToolbarComponent {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><div class="flex flex-wrap justify-content-between px-3" style="height: 48px; width: 100%;">  <div class="flex align-content-center flex-wrap">    <his-tool-bar [title]="title"                  [buttonVisible]="sideButton"></his-tool-bar>  </div>  <div class="flex align-content-center gap-2">    <ng-container [ngTemplateOutlet]="customTemplate || defaultToolbar"></ng-container>  </div></div><ng-template #defaultToolbar></ng-template></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'his-app-store-editor'},{'name': 'AppStoreEditorInfoComponent', 'selector': 'his-app-store-editor-info'},{'name': 'AppStoreEditorListComponent', 'selector': 'his-app-store-editor-list'},{'name': 'AppStoreEditorPageListComponent', 'selector': 'his-app-store-editor-page-list'},{'name': 'AppStoreEditorToolbarComponent', 'selector': 'his-app-store-editor-toolbar'}];
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'his-app-store-editor'},{'name': 'AppStoreInfoComponent', 'selector': 'his-app-store-info'},{'name': 'AppStoreListComponent', 'selector': 'his-app-store-list'},{'name': 'AppStoreEditorPageListComponent', 'selector': 'his-app-store-editor-page-list'},{'name': 'AppStoreToolbarComponent', 'selector': 'his-app-store-toolbar'}];
     var DIRECTIVES = [];
-    var ACTUAL_COMPONENT = {'name': 'AppStoreEditorToolbarComponent'};
+    var ACTUAL_COMPONENT = {'name': 'AppStoreToolbarComponent'};
 </script>
 <script src="../js/tree.js"></script>
 
@@ -431,7 +431,7 @@ export class AppStoreEditorToolbarComponent {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
-            var COMPODOC_CURRENT_PAGE_URL = 'AppStoreEditorToolbarComponent.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'AppStoreToolbarComponent.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

@@ -1,7 +1,7 @@
 <div class="flex flex-wrap justify-content-between px-3" style="height: 48px; width: 100%;">
   <div class="flex align-content-center flex-wrap">
     <his-tool-bar [title]="title"
-                  [buttonVisible]="sideButton"></his-tool-bar>
+                  [buttonVisible]="isSideButton"></his-tool-bar>
   </div>
   <div class="flex align-content-center gap-2">
     <ng-container [ngTemplateOutlet]="customTemplate || defaultToolbar"></ng-container>

@@ -2,41 +2,51 @@
 import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { AppStoreEditorInfoComponent } from './app-store-editor-info/app-store-editor-info.component';
-import { AppStoreEditorListComponent } from './app-store-editor-list/app-store-editor-list.component';
-import { AppStoreEditorToolbarComponent } from './app-store-editor-toolbar/app-store-editor-toolbar.component';
+import { AppStoreInfoComponent } from './app-store-info/app-store-info.component';
+import { AppStoreListComponent } from './app-store-list/app-store-list.component';
+import { AppStoreToolbarComponent } from './app-store-toolbar/app-store-toolbar.component';
 import { AppStoreService } from './app-store.service';
-import { HeaderComponent } from '@his-directive/header/dist/header'
+import { HeaderComponent } from '@his-directive/header/dist/header';
 
 @Component({
-  selector: 'his-app-store-editor',
+  selector: 'his-app-store',
   standalone: true,
   imports: [CommonModule,
             RouterOutlet,
-            AppStoreEditorInfoComponent,
-            AppStoreEditorListComponent,
-            AppStoreEditorToolbarComponent,
+            AppStoreInfoComponent,
+            AppStoreListComponent,
+            AppStoreToolbarComponent,
             HeaderComponent],
-  templateUrl: './app-store-editor.component.html',
-  styleUrls: ['./app-store-editor.component.scss']
+  templateUrl: './app-store.component.html',
+  styleUrls: ['./app-store.component.scss']
 })
-export class AppStoreEditorComponent implements OnInit, OnDestroy {
+export class AppStoreComponent implements OnInit, OnDestroy {
+  /** header的輸入框提示
+   * @type {string}
+   * @memberof AppStoreComponent
+   */
   headerHolder: string = "請輸入頁面標題";
+
+  /** header的詳細資料視窗標題
+   * @type {string}
+   * @memberof AppStoreComponent
+   */
   detailTitle: string = "詳細資料";
 
   #appStoreService: AppStoreService = inject(AppStoreService);
 
   /** 初始化設定 連線NATS及websocket
-   * @memberof AppStoreEditorComponent
+   * @memberof AppStoreComponent
    */
   async ngOnInit() {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
-    await this.#appStoreService.connect();
+    console.log("app ngoninit")
+    await this.#appStoreService.connect()
   }
 
   /** 清除連線
-   * @memberof AppStoreEditorComponent
+   * @memberof AppStoreComponent
    */
   async ngOnDestroy() {
     //Called once, before the instance is destroyed.

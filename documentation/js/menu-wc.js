@@ -57,16 +57,16 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="components/AppComponent.html" data-type="entity-link" >AppComponent</a>
                             </li>
                             <li class="link">
-                                <a href="components/AppStoreEditorInfoComponent.html" data-type="entity-link" >AppStoreEditorInfoComponent</a>
+                                <a href="components/AppStoreInfoComponent.html" data-type="entity-link" >AppStoreInfoComponent</a>
                             </li>
                             <li class="link">
-                                <a href="components/AppStoreEditorListComponent.html" data-type="entity-link" >AppStoreEditorListComponent</a>
+                                <a href="components/AppStoreListComponent.html" data-type="entity-link" >AppStoreListComponent</a>
                             </li>
                             <li class="link">
                                 <a href="components/AppStoreEditorPageListComponent.html" data-type="entity-link" >AppStoreEditorPageListComponent</a>
                             </li>
                             <li class="link">
-                                <a href="components/AppStoreEditorToolbarComponent.html" data-type="entity-link" >AppStoreEditorToolbarComponent</a>
+                                <a href="components/AppStoreToolbarComponent.html" data-type="entity-link" >AppStoreToolbarComponent</a>
                             </li>
                         </ul>
                     </li>
