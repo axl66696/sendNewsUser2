@@ -135,7 +135,7 @@
             <h6 i18n>版本</h6>
             <input type="text" pInputText [(ngModel)]="editableApp.versionNo" style="width: 100%;">
           </div>
-          <div class="col-12">
+          <div class="col-12 page-table">
             <div class="flex flex-wrap justify-content-start align-content-center gap-2 addBox">
                 <h6 i18n>應用頁面</h6>
                 <p-dialog [(visible)]="isTableVisible"
@@ -155,7 +155,7 @@
                                       (apply)="onApplyModify($event)"></his-add-pages-list>
                 </p-dialog>
             </div>
-            <p-table [value]="appPages" dataKey="id" [rows]="10" [loading]="false" [rowHover]="true" responsiveLayout="scroll">
+            <p-table  [value]="appPages" dataKey="id" [rows]="10" [loading]="false" [rowHover]="true" responsiveLayout="scroll">
               <ng-template pTemplate="header">
                 <tr>
                   <th style="width: 1rem;">
@@ -184,29 +184,34 @@
                 </tr>
               </ng-template>
               <ng-template pTemplate="body" let-appPage let-index="rowIndex">
-                <tr pDraggable="appPage" [pReorderableRow]="index" [pSelectableRow]="appPage">
-                  <td pReorderableRowHandle>
+                <tr pDraggable="appPages"
+                    (onDragStart)="onDragStart(appPage,index)"
+                    (onDragEnd)="onDragEnd()"
+                    [pSelectableRow]="appPage"
+                    pDroppable="appPages"
+                    (onDrop)="onDrop(index)">
+                  <td>
                     <span class="pi pi-bars"></span>
                   </td>
-                  <td pReorderableRowHandle>
+                  <td>
                     <button pButton pRipple icon="pi pi-minus" class="p-button-rounded p-button-warning p-button-form" (click)="onRemoveClick(appPage)"></button>
                   </td>
-                  <td pReorderableRowHandle>
+                  <td>
                     {{ appPage._id }}
                   </td>
-                  <td pReorderableRowHandle>
+                  <td>
                     {{ appPage.pageTitle }}
                   </td>
-                  <td pReorderableRowHandle>
+                  <td>
                     {{ appPage.pageUrl }}
                   </td>
-                  <td pReorderableRowHandle>
+                  <td>
                     {{ appPage.moduleName }}
                   </td>
-                  <td pReorderableRowHandle>
+                  <td>
                     {{ appPage.versionNo }}
                   </td>
-                  <td pReorderableRowHandle>
+                  <td>
                     <button pButton icon="pi pi-trash" class="p-button-rounded p-button-outlined" (click)="onRemoveClick(appPage)"></button>
                   </td>
                 </tr>

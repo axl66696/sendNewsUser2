@@ -137,6 +137,19 @@
   }
 }
 
+:host ::ng-deep {
+  .page-table {
+    .pi-bars {
+      color: transparent;
+    }
+    .p-datatable.p-datatable-hoverable-rows .p-datatable-tbody > tr:not(.p-highlight):hover {
+      .pi.pi-bars {
+        color: var(--surface-on-surface);;
+      }
+    }
+  }
+}
+
 .icon-preview {
   width: 72px;
   height: 72px;

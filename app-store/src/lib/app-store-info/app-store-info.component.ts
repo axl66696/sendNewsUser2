@@ -135,7 +135,11 @@ export class AppStoreInfoComponent implements OnInit, OnDestroy {
    * @type {ColorType}
    * @memberof AppStoreInfoComponent
    */
-  appType!: ColorType
+  appType!: ColorType;
+
+  draggedPage: AppPage | undefined | null;
+
+  pageIndex!: number;
 
   #appStoresService = inject(AppStoreService);
   router = inject(Router);
@@ -330,11 +334,21 @@ export class AppStoreInfoComponent implements OnInit, OnDestroy {
     this.appPages = [...this.appStore.appPages];
   }
 
-  // onDragStart(page: AppPage) {
+  onDragStart(page: AppPage, index: number) {
+    this.draggedPage = page;
+    this.pageIndex = index
+  }
 
-  // }
+  onDrop(index: number) {
+    if(this.draggedPage) {
+      this.appPages.splice(this.pageIndex, 1);
+      this.appPages.splice(index, 0, this.draggedPage);
+      this.draggedPage = null
+      console.log(this.appPages);
+    }
+  }
 
-  // onDragEnd() {
-
-  // }
+  onDragEnd() {
+    this.draggedPage = null
+  }
 }
