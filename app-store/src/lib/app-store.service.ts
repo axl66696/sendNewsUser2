@@ -64,8 +64,6 @@ export class AppStoreService {
    * @memberof AppStoreService
    */
   getAppStore = async (payload: string): Promise<Msg> => {
-    console.log(typeof(payload));
-    console.log(payload);
     const info: TransferInfo<string> = {
       data: payload
     }

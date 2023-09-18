@@ -137,8 +137,16 @@ export class AppStoreInfoComponent implements OnInit, OnDestroy {
    */
   appType!: ColorType;
 
+  /** 拖曳功能被選取的頁面資料
+   * @type {(AppPage | undefined | null)}
+   * @memberof AppStoreInfoComponent
+   */
   draggedPage: AppPage | undefined | null;
 
+  /** 被拖曳頁面在陣列中的順序
+   * @type {number}
+   * @memberof AppStoreInfoComponent
+   */
   pageIndex!: number;
 
   #appStoresService = inject(AppStoreService);
@@ -334,20 +342,32 @@ export class AppStoreInfoComponent implements OnInit, OnDestroy {
     this.appPages = [...this.appStore.appPages];
   }
 
+  /** 清單順序拖曳功能 選擇拖曳
+   * @param {AppPage} page
+   * @param {number} index
+   * @memberof AppStoreInfoComponent
+   */
   onDragStart(page: AppPage, index: number) {
     this.draggedPage = page;
     this.pageIndex = index
   }
 
+  /** 放開拖曳項目 變更項目在陣列中序位
+   * @param {number} index
+   * @memberof AppStoreInfoComponent
+   */
   onDrop(index: number) {
     if(this.draggedPage) {
       this.appPages.splice(this.pageIndex, 1);
       this.appPages.splice(index, 0, this.draggedPage);
-      this.draggedPage = null
-      console.log(this.appPages);
+      this.appPages = [...this.appPages];
+      this.draggedPage = null;
     }
   }
 
+  /** 方開拖曳項目時清空
+   * @memberof AppStoreInfoComponent
+   */
   onDragEnd() {
     this.draggedPage = null
   }
