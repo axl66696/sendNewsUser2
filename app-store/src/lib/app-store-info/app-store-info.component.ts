@@ -16,14 +16,14 @@ import { AppPage } from '@his-viewmodel/app-page-editor';
 import { AppStoreService } from '../app-store.service';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { AddPagesListComponent } from './add-pages-list/add-pages-list.component';
-import { JSONCodec, Msg } from '@his-base/jetstream-ws';
 import { ColorType } from './color-type';
 import { ImageModule } from 'primeng/image';
 import { MatIconModule } from '@angular/material/icon';
 import { DragDropModule } from 'primeng/dragdrop';
-import { $localize } from '@angular/localize/init';
+import '@angular/localize/init';
 import * as iconData from '../../assets/data/material-icon.json';
 import * as typeData from '../../assets/data/type.json'
+import { SharedService } from '@his-base/shared';
 
 @Component({
   selector: 'his-app-store-info',
@@ -57,7 +57,7 @@ export class AppStoreInfoComponent implements OnInit, OnDestroy {
    * @type {string}
    * @memberof AppStoreInfoComponent
    */
-  showIconStyle: string = '';
+  showIconStyle: string = 'help_clinic';
 
   /** 可選擇的圖標清單
    * @type {string[]}
@@ -83,29 +83,17 @@ export class AppStoreInfoComponent implements OnInit, OnDestroy {
    */
   appStore!: AppStore;
 
-  /** 接收replier訊息
-   * @type {Msg}
-   * @memberof AppStoreInfoComponent
-   */
-  appStore$!: Msg;
-
   /** 應用程式所擁有頁面
    * @type {AppPage[]}
    * @memberof AppStoreInfoComponent
    */
   appPages: AppPage[] = []
 
-  /** 暫存修改應用程式內容
-   * @type {AppStore}
-   * @memberof AppStoreInfoComponent
-   */
-  editableApp!: AppStore;
-
   /** 應用程式預覽標題
    * @type {string}
    * @memberof AppStoreInfoComponent
    */
-  previewTitle!: string;
+  previewTitle: string = $localize`應用程式標題`;
 
   /** 刪除視窗顯示
    * @type {boolean}
@@ -129,7 +117,7 @@ export class AppStoreInfoComponent implements OnInit, OnDestroy {
    * @type {string[]}
    * @memberof AppStoreInfoComponent
    */
-  title!: string[];
+  title: string[] = [$localize`網頁建檔系統`, $localize`應用程式`, $localize`應用程式內容`];
 
   /** 設定應用程式類別及圖標顏色
    * @type {ColorType}
@@ -149,43 +137,28 @@ export class AppStoreInfoComponent implements OnInit, OnDestroy {
    */
   pageIndex!: number;
 
-  #appStoresService = inject(AppStoreService);
   router = inject(Router);
-  route = inject(ActivatedRoute)
+  route = inject(ActivatedRoute);
+  #appStoresService = inject(AppStoreService);
+  #sharedService = inject(SharedService)
 
   /** 初始化設定 讀取應用程式內容
    * @memberof AppStoreInfoComponent
    */
   async ngOnInit() {
     this.iconList = Object.values(iconData)[0] as unknown as string[]
-
     this.typeOptions = Object.values(typeData)[0] as unknown as ColorType[]
-
     this.languageOptions = ['Angular16']
+    this.appType = new ColorType(this.typeOptions[3])
 
-    this.appType = new ColorType({
-      type: '門診',
-      colorClass: 'icon-clinic',
-      showColor: 'background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.00) 100%), var(--indigo-500)'
-    })
-
-    this.previewTitle = $localize`應用程式標題`;
     await this.#appStoresService.connect();
 
     if(this._id) {
       await this.getAppStore();
-
-      this.title = [$localize`網頁建檔系統`, $localize`應用程式`, $localize`應用程式內容`]
     }
     else {
-      this.appStore = new AppStore({appType: '門診'});
-      this.editableApp = Object.assign({}, this.appStore);
-      this.appStore.appIcon = 'help_clinic';
-      this.editableApp.appIcon = this.appStore.appIcon
-      this.showIconStyle = this.editableApp.appIcon;
+      this.appStore = new AppStore({appType: '門診', appIcon: this.showIconStyle});
       this.appPages = [...this.appStore.appPages];
-
-      this.title = [$localize`網頁建檔系統`, $localize`應用程式`, $localize`新增應用程式`]
     }
   }
 
@@ -218,7 +191,7 @@ export class AppStoreInfoComponent implements OnInit, OnDestroy {
    */
   onCancelSelect() {
     this.isIconVisible = false;
-    this.showIconStyle = this.editableApp.appIcon;
+    this.showIconStyle = this.appStore.appIcon;
   }
 
   /** 確認圖標選擇
@@ -226,22 +199,14 @@ export class AppStoreInfoComponent implements OnInit, OnDestroy {
    */
   onConfirmIcon() {
     this.isIconVisible = false;
-    this.editableApp.appIcon = this.showIconStyle;
+    this.appStore.appIcon = this.showIconStyle;
   }
 
   /** 復原編輯或清除內容
    * @memberof AppStoreInfoComponent
    */
   onClearClick() {
-    const currentType = this.typeOptions.find(x => {
-      return x.type === this.appStore.appType
-    })
-    this.appType = Object.assign({}, currentType);
-    this.editableApp.appTitle = this.appStore.appTitle;
-    this.editableApp.versionNo = this.appStore.versionNo;
-    this.showIconStyle = this.appStore.appIcon;
-    this.editableApp.appIcon = this.appStore.appIcon;
-    this.appPages = [...this.appStore.appPages]
+    this.router.navigate(['..'],{relativeTo:this.route});
   }
 
   /** 開啟頁面編輯視窗
@@ -300,22 +265,17 @@ export class AppStoreInfoComponent implements OnInit, OnDestroy {
   /** 新增應用程式
    * @memberof AppStoreInfoComponent
    */
-  onCreateClick() {
-    this.editableApp.appType = this.appType.type
-    this.appStore = Object.assign({}, this.editableApp);
+  async onCreateClick() {
+    this.appStore.appType = this.appType.type
     this.appStore.appPages = [...this.appPages];
-    this.#appStoresService.pubAppStore(this.appStore, 'appStore.insert');
-    this.appStore = new AppStore();
-    this.editableApp = Object.assign({}, this.appStore);
-    this.appPages = [...this.appStore.appPages]
+    await this.#appStoresService.pubAppStore(this.appStore, 'appStore.insert');
   }
 
   /** 儲存應用程式編輯
    * @memberof AppStoreInfoComponent
    */
   onSaveClick() {
-    this.editableApp.appType = this.appType.type
-    this.appStore = Object.assign({}, this.editableApp);
+    this.appStore.appType = this.appType.type
     this.appStore.appPages = [...this.appPages];
     this.#appStoresService.pubAppStore(this.appStore, 'appStore.update');
   }
@@ -324,21 +284,15 @@ export class AppStoreInfoComponent implements OnInit, OnDestroy {
    * @memberof AppStoreInfoComponent
    */
   async getAppStore() {
-    const jsonCodec = JSONCodec();
 
-    this.appStore$ = await this.#appStoresService.getAppStore(this._id);
-
-        // 處理資料邏輯的地方，取得reply回傳的資料
-    this.appStore = jsonCodec.decode(this.appStore$.data) as AppStore;
-    console.log(this.appStore)
-    this.editableApp = Object.assign({}, this.appStore)
+    this.appStore = this.#sharedService.getValue(this._id)
 
     const currentType = this.typeOptions.find(x => {
       return x.type === this.appStore.appType
     })
-
     this.appType = Object.assign({}, currentType);
-    this.showIconStyle = this.editableApp.appIcon;
+
+    this.showIconStyle = this.appStore.appIcon;
     this.appPages = [...this.appStore.appPages];
   }
 

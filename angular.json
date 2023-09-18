@@ -4,6 +4,12 @@
   "newProjectRoot": "projects",
   "projects": {
     "app-store": {
+      "i18n": {
+        "sourceLocale": "zh-Hant",
+        "locales": {
+          "en-Us": "app-store/src/assets/i18n/en-Us/messages.json"
+        }
+      },
       "projectType": "library",
       "root": "app-store",
       "sourceRoot": "app-store/src",
@@ -86,6 +92,16 @@
             "commonChunk": false
           },
           "configurations": {
+            "zh-Hant": {
+              "localize": [
+                "zh-Hant"
+              ]
+            },
+            "en-Us": {
+              "localize": [
+                "en-Us"
+              ]
+            },
             "production": {
               "budgets": [
                 {
@@ -122,6 +138,12 @@
             },
             "development": {
               "browserTarget": "app-store-editor:build:development"
+            },
+            "zh-Hant": {
+              "browserTarget": "app-store-editor:build:zh-Hant"
+            },
+            "en-Us": {
+              "browserTarget": "app-store-editor:build:en-Us"
             }
           },
           "defaultConfiguration": "development",
@@ -136,6 +158,12 @@
           "options": {
             "browserTarget": "app-store-editor:build",
             "extraWebpackConfig": "app-store-editor/webpack.config.js"
+          },
+          "configurations": {
+            "zh-Hant": {
+              "format": "json",
+              "outputPath": "app-store/src/assets/i18n/zh-Hant"
+            }
           }
         },
         "test": {

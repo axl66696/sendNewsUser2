@@ -1,8 +1,9 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import { Injectable, inject } from '@angular/core';
 import { AppStore } from '@his-viewmodel/app-store-editor';
-import { JetstreamWsService, Msg, TransferInfo } from '@his-base/jetstream-ws';
+import { JSONCodec, JetstreamWsService } from '@his-base/jetstream-ws';
 import { lastValueFrom } from 'rxjs';
+import { AppPage } from '@his-viewmodel/app-page-editor';
 
 @Injectable({
   providedIn: 'root'
@@ -15,14 +16,14 @@ export class AppStoreService {
   /** 建立連線
    * @memberof AppStoreService
    */
-  connect = async () => {
+  async connect() {
     await this.#jetStreamWsService.connect(this.#url)
   }
 
   /** 清除連線
    * @memberof AppStoreService
    */
-  disconnect = async () => {
+  async disconnect() {
     // 連線關閉前，會先將目前訂閱給排空
     await this.#jetStreamWsService.drain();
   }
@@ -32,43 +33,35 @@ export class AppStoreService {
    * @param {string} subject
    * @memberof AppStoreService
    */
-  pubAppStore = async (payload: AppStore, subject: string) => {
-    const info: TransferInfo<AppStore> = {
-      data: payload
-    }
+  async pubAppStore(payload: AppStore, subject: string) {
     // @ts-ignore
     // 需帶入指定發布主題以及要傳送的訊息
-    await this.#jetStreamWsService.publish(subject, info.data);
+    await this.#jetStreamWsService.publish(subject, payload);
   }
 
   /** 取得全部應用程式清單
+   * @return {*}  {Promise<AppStore[]>}
    * @memberof AppStoreService
    */
-  getAppStoreList = async (): Promise<Msg> => {
+  async getAppStoreList(): Promise<AppStore[]> {
     // @ts-ignore
     // 需帶入指定的主題跟要傳遞的資料
-    return await lastValueFrom(this.#jetStreamWsService.request('appStore.list', ''));
+    const appStore$ = await lastValueFrom(this.#jetStreamWsService.request('appStore.list', ''));
+    const jsonCodec = JSONCodec();
+
+    return jsonCodec.decode(appStore$.data) as AppStore[]
   }
 
   /** 取得全部應用頁面清單
+   * @return {*}  {Promise<AppPage[]>}
    * @memberof AppStoreService
    */
-  getAppPageList = async (): Promise<Msg> => {
+  async getAppPageList(): Promise<AppPage[]> {
     // @ts-ignore
     // 需帶入指定的主題跟要傳遞的資料
-    return await lastValueFrom(this.#jetStreamWsService.request('appPage.list',''));
-  }
-
-  /** 取得單一筆應用程式內容
-   * @param {string} payload
-   * @memberof AppStoreService
-   */
-  getAppStore = async (payload: string): Promise<Msg> => {
-    const info: TransferInfo<string> = {
-      data: payload
-    }
-    // @ts-ignore
-    // 需帶入指定的主題跟要傳遞的資料
-    return await lastValueFrom(this.#jetStreamWsService.request('appStore.get', info.data));
+    const appPages$ =  await lastValueFrom(this.#jetStreamWsService.request('appPage.list', ''));
+    const jsonCodec = JSONCodec();
+    // 處理資料邏輯的地方，取得reply回傳的資料
+    return jsonCodec.decode(appPages$.data) as AppPage[];
   }
 }

@@ -1,0 +1,2912 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@his-view/app-store-editor documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">@his-view/app-store-editor documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  AppStoreInfoComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>app-store/src/lib/app-store-info/app-store-info.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+                <code>OnDestroy</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>his-app-store-info</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">Standalone</td>
+                <td class="col-md-9"><code>true</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                            <code>CommonModule</code>
+                            <code>InputTextModule</code>
+                            <code>CalendarModule</code>
+                            <code>FormsModule</code>
+                            <code>DialogModule</code>
+                                <code><a href="../components/AppStoreToolbarComponent.html" target="_self" >AppStoreToolbarComponent</a></code>
+                            <code>RouterLink</code>
+                            <code>DropdownModule</code>
+                            <code>CheckboxModule</code>
+                            <code>TableModule</code>
+                            <code>RadioButtonModule</code>
+                                <code><a href="../components/AddPagesListComponent.html" target="_self" >AddPagesListComponent</a></code>
+                            <code>ImageModule</code>
+                            <code>MatIconModule</code>
+                            <code>DragDropModule</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./app-store-info.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./app-store-info.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="##appStoresService" >#appStoresService</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="##sharedService" >#sharedService</a>
+                            </li>
+                            <li>
+                                <a href="#appPages" >appPages</a>
+                            </li>
+                            <li>
+                                <a href="#appStore" >appStore</a>
+                            </li>
+                            <li>
+                                <a href="#appType" >appType</a>
+                            </li>
+                            <li>
+                                <a href="#draggedPage" >draggedPage</a>
+                            </li>
+                            <li>
+                                <a href="#iconList" >iconList</a>
+                            </li>
+                            <li>
+                                <a href="#isDeleteVisible" >isDeleteVisible</a>
+                            </li>
+                            <li>
+                                <a href="#isIconVisible" >isIconVisible</a>
+                            </li>
+                            <li>
+                                <a href="#isTableVisible" >isTableVisible</a>
+                            </li>
+                            <li>
+                                <a href="#languageOptions" >languageOptions</a>
+                            </li>
+                            <li>
+                                <a href="#pageIndex" >pageIndex</a>
+                            </li>
+                            <li>
+                                <a href="#previewTitle" >previewTitle</a>
+                            </li>
+                            <li>
+                                <a href="#route" >route</a>
+                            </li>
+                            <li>
+                                <a href="#router" >router</a>
+                            </li>
+                            <li>
+                                <a href="#showIconStyle" >showIconStyle</a>
+                            </li>
+                            <li>
+                                <a href="#title" >title</a>
+                            </li>
+                            <li>
+                                <a href="#typeOptions" >typeOptions</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#getAppStore" >getAppStore</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#ngOnDestroy" >ngOnDestroy</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onApplyModify" >onApplyModify</a>
+                            </li>
+                            <li>
+                                <a href="#onCancelDelete" >onCancelDelete</a>
+                            </li>
+                            <li>
+                                <a href="#onCancelModify" >onCancelModify</a>
+                            </li>
+                            <li>
+                                <a href="#onCancelSelect" >onCancelSelect</a>
+                            </li>
+                            <li>
+                                <a href="#onClearClick" >onClearClick</a>
+                            </li>
+                            <li>
+                                <a href="#onConfirmDelete" >onConfirmDelete</a>
+                            </li>
+                            <li>
+                                <a href="#onConfirmIcon" >onConfirmIcon</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#onCreateClick" >onCreateClick</a>
+                            </li>
+                            <li>
+                                <a href="#onDeleteClick" >onDeleteClick</a>
+                            </li>
+                            <li>
+                                <a href="#onDialog" >onDialog</a>
+                            </li>
+                            <li>
+                                <a href="#onDragEnd" >onDragEnd</a>
+                            </li>
+                            <li>
+                                <a href="#onDragStart" >onDragStart</a>
+                            </li>
+                            <li>
+                                <a href="#onDrop" >onDrop</a>
+                            </li>
+                            <li>
+                                <a href="#onModifyClick" >onModifyClick</a>
+                            </li>
+                            <li>
+                                <a href="#onRemoveClick" >onRemoveClick</a>
+                            </li>
+                            <li>
+                                <a href="#onSaveClick" >onSaveClick</a>
+                            </li>
+                            <li>
+                                <a href="#onSelectIcon" >onSelectIcon</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#_id" >_id</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+    <section data-compodoc="block-inputs">
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="_id"></a>
+                        <b>_id</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="54" class="link-to-prism">app-store/src/lib/app-store-info/app-store-info.component.ts:54</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>要顯示的應用程式_id</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getAppStore"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>getAppStore</b></span>
+                        <a href="#getAppStore"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getAppStore()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="286"
+                            class="link-to-prism">app-store/src/lib/app-store-info/app-store-info.component.ts:286</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>應用程式內容讀取及變數初始化</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnDestroy"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>ngOnDestroy</b></span>
+                        <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>ngOnDestroy()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="168"
+                            class="link-to-prism">app-store/src/lib/app-store-info/app-store-info.component.ts:168</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>清除連線</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="148"
+                            class="link-to-prism">app-store/src/lib/app-store-info/app-store-info.component.ts:148</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>初始化設定 讀取應用程式內容</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onApplyModify"></a>
+                    <span class="name">
+                        <span ><b>onApplyModify</b></span>
+                        <a href="#onApplyModify"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onApplyModify(appPages: AppPage[])</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="230"
+                            class="link-to-prism">app-store/src/lib/app-store-info/app-store-info.component.ts:230</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>套用頁面編輯</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>appPages</td>
+                                    <td>
+                                            <code>AppPage[]</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onCancelDelete"></a>
+                    <span class="name">
+                        <span ><b>onCancelDelete</b></span>
+                        <a href="#onCancelDelete"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onCancelDelete()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="253"
+                            class="link-to-prism">app-store/src/lib/app-store-info/app-store-info.component.ts:253</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>取消刪除</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onCancelModify"></a>
+                    <span class="name">
+                        <span ><b>onCancelModify</b></span>
+                        <a href="#onCancelModify"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onCancelModify()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="222"
+                            class="link-to-prism">app-store/src/lib/app-store-info/app-store-info.component.ts:222</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>取消頁面編輯</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onCancelSelect"></a>
+                    <span class="name">
+                        <span ><b>onCancelSelect</b></span>
+                        <a href="#onCancelSelect"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onCancelSelect()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="192"
+                            class="link-to-prism">app-store/src/lib/app-store-info/app-store-info.component.ts:192</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>取消並復原選擇圖標</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onClearClick"></a>
+                    <span class="name">
+                        <span ><b>onClearClick</b></span>
+                        <a href="#onClearClick"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onClearClick()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="208"
+                            class="link-to-prism">app-store/src/lib/app-store-info/app-store-info.component.ts:208</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>復原編輯或清除內容</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onConfirmDelete"></a>
+                    <span class="name">
+                        <span ><b>onConfirmDelete</b></span>
+                        <a href="#onConfirmDelete"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onConfirmDelete()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="260"
+                            class="link-to-prism">app-store/src/lib/app-store-info/app-store-info.component.ts:260</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>確認刪除</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onConfirmIcon"></a>
+                    <span class="name">
+                        <span ><b>onConfirmIcon</b></span>
+                        <a href="#onConfirmIcon"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onConfirmIcon()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="200"
+                            class="link-to-prism">app-store/src/lib/app-store-info/app-store-info.component.ts:200</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>確認圖標選擇</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onCreateClick"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>onCreateClick</b></span>
+                        <a href="#onCreateClick"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>onCreateClick()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="268"
+                            class="link-to-prism">app-store/src/lib/app-store-info/app-store-info.component.ts:268</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>新增應用程式</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onDeleteClick"></a>
+                    <span class="name">
+                        <span ><b>onDeleteClick</b></span>
+                        <a href="#onDeleteClick"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onDeleteClick()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="246"
+                            class="link-to-prism">app-store/src/lib/app-store-info/app-store-info.component.ts:246</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>開啟刪除應用程式視窗</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onDialog"></a>
+                    <span class="name">
+                        <span ><b>onDialog</b></span>
+                        <a href="#onDialog"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onDialog()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="177"
+                            class="link-to-prism">app-store/src/lib/app-store-info/app-store-info.component.ts:177</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>顯示選擇圖標視窗</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onDragEnd"></a>
+                    <span class="name">
+                        <span ><b>onDragEnd</b></span>
+                        <a href="#onDragEnd"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onDragEnd()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="325"
+                            class="link-to-prism">app-store/src/lib/app-store-info/app-store-info.component.ts:325</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>方開拖曳項目時清空</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onDragStart"></a>
+                    <span class="name">
+                        <span ><b>onDragStart</b></span>
+                        <a href="#onDragStart"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onDragStart(page: AppPage, index: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="304"
+                            class="link-to-prism">app-store/src/lib/app-store-info/app-store-info.component.ts:304</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>清單順序拖曳功能 選擇拖曳</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>page</td>
+                                    <td>
+                                            <code>AppPage</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>index</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onDrop"></a>
+                    <span class="name">
+                        <span ><b>onDrop</b></span>
+                        <a href="#onDrop"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onDrop(index: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="313"
+                            class="link-to-prism">app-store/src/lib/app-store-info/app-store-info.component.ts:313</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>放開拖曳項目 變更項目在陣列中序位</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>index</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onModifyClick"></a>
+                    <span class="name">
+                        <span ><b>onModifyClick</b></span>
+                        <a href="#onModifyClick"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onModifyClick()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="215"
+                            class="link-to-prism">app-store/src/lib/app-store-info/app-store-info.component.ts:215</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>開啟頁面編輯視窗</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onRemoveClick"></a>
+                    <span class="name">
+                        <span ><b>onRemoveClick</b></span>
+                        <a href="#onRemoveClick"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onRemoveClick(appPage: AppPage)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="239"
+                            class="link-to-prism">app-store/src/lib/app-store-info/app-store-info.component.ts:239</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>移除指定頁面</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>appPage</td>
+                                    <td>
+                                            <code>AppPage</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSaveClick"></a>
+                    <span class="name">
+                        <span ><b>onSaveClick</b></span>
+                        <a href="#onSaveClick"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onSaveClick()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="277"
+                            class="link-to-prism">app-store/src/lib/app-store-info/app-store-info.component.ts:277</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>儲存應用程式編輯</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSelectIcon"></a>
+                    <span class="name">
+                        <span ><b>onSelectIcon</b></span>
+                        <a href="#onSelectIcon"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onSelectIcon(icon: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="185"
+                            class="link-to-prism">app-store/src/lib/app-store-info/app-store-info.component.ts:185</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>點選圖標預覽</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>icon</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="#appStoresService"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>#appStoresService</b></span>
+                        <a href="##appStoresService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(AppStoreService)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="142" class="link-to-prism">app-store/src/lib/app-store-info/app-store-info.component.ts:142</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="#sharedService"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>#sharedService</b></span>
+                        <a href="##sharedService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(SharedService)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="143" class="link-to-prism">app-store/src/lib/app-store-info/app-store-info.component.ts:143</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="appPages"></a>
+                    <span class="name">
+                        <span ><b>appPages</b></span>
+                        <a href="#appPages"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>AppPage[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="90" class="link-to-prism">app-store/src/lib/app-store-info/app-store-info.component.ts:90</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>應用程式所擁有頁面</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="appStore"></a>
+                    <span class="name">
+                        <span ><b>appStore</b></span>
+                        <a href="#appStore"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>AppStore</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="84" class="link-to-prism">app-store/src/lib/app-store-info/app-store-info.component.ts:84</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>應用程式原始內容</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="appType"></a>
+                    <span class="name">
+                        <span ><b>appType</b></span>
+                        <a href="#appType"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/ColorType.html" target="_self" >ColorType</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="126" class="link-to-prism">app-store/src/lib/app-store-info/app-store-info.component.ts:126</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>設定應用程式類別及圖標顏色</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="draggedPage"></a>
+                    <span class="name">
+                        <span ><b>draggedPage</b></span>
+                        <a href="#draggedPage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>AppPage | undefined | null</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="132" class="link-to-prism">app-store/src/lib/app-store-info/app-store-info.component.ts:132</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>拖曳功能被選取的頁面資料</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="iconList"></a>
+                    <span class="name">
+                        <span ><b>iconList</b></span>
+                        <a href="#iconList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="66" class="link-to-prism">app-store/src/lib/app-store-info/app-store-info.component.ts:66</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>可選擇的圖標清單</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isDeleteVisible"></a>
+                    <span class="name">
+                        <span ><b>isDeleteVisible</b></span>
+                        <a href="#isDeleteVisible"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="102" class="link-to-prism">app-store/src/lib/app-store-info/app-store-info.component.ts:102</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>刪除視窗顯示</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isIconVisible"></a>
+                    <span class="name">
+                        <span ><b>isIconVisible</b></span>
+                        <a href="#isIconVisible"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="72" class="link-to-prism">app-store/src/lib/app-store-info/app-store-info.component.ts:72</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>圖標選擇視窗顯示</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isTableVisible"></a>
+                    <span class="name">
+                        <span ><b>isTableVisible</b></span>
+                        <a href="#isTableVisible"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="78" class="link-to-prism">app-store/src/lib/app-store-info/app-store-info.component.ts:78</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>所含應用頁面編輯視窗顯示</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="languageOptions"></a>
+                    <span class="name">
+                        <span ><b>languageOptions</b></span>
+                        <a href="#languageOptions"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string[]</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="114" class="link-to-prism">app-store/src/lib/app-store-info/app-store-info.component.ts:114</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>應用程式語言種類</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="pageIndex"></a>
+                    <span class="name">
+                        <span ><b>pageIndex</b></span>
+                        <a href="#pageIndex"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="138" class="link-to-prism">app-store/src/lib/app-store-info/app-store-info.component.ts:138</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>被拖曳頁面在陣列中的順序</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="previewTitle"></a>
+                    <span class="name">
+                        <span ><b>previewTitle</b></span>
+                        <a href="#previewTitle"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>$localize&#x60;應用程式標題&#x60;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="96" class="link-to-prism">app-store/src/lib/app-store-info/app-store-info.component.ts:96</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>應用程式預覽標題</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="route"></a>
+                    <span class="name">
+                        <span ><b>route</b></span>
+                        <a href="#route"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(ActivatedRoute)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="141" class="link-to-prism">app-store/src/lib/app-store-info/app-store-info.component.ts:141</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="router"></a>
+                    <span class="name">
+                        <span ><b>router</b></span>
+                        <a href="#router"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(Router)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="140" class="link-to-prism">app-store/src/lib/app-store-info/app-store-info.component.ts:140</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="showIconStyle"></a>
+                    <span class="name">
+                        <span ><b>showIconStyle</b></span>
+                        <a href="#showIconStyle"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;help_clinic&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="60" class="link-to-prism">app-store/src/lib/app-store-info/app-store-info.component.ts:60</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>顯示的圖標樣式</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="title"></a>
+                    <span class="name">
+                        <span ><b>title</b></span>
+                        <a href="#title"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[$localize&#x60;網頁建檔系統&#x60;, $localize&#x60;應用程式&#x60;, $localize&#x60;應用程式內容&#x60;]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="120" class="link-to-prism">app-store/src/lib/app-store-info/app-store-info.component.ts:120</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Breadcrumb標題</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="typeOptions"></a>
+                    <span class="name">
+                        <span ><b>typeOptions</b></span>
+                        <a href="#typeOptions"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/ColorType.html" target="_self" >ColorType[]</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="108" class="link-to-prism">app-store/src/lib/app-store-info/app-store-info.component.ts:108</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>類別及對應圖標顏色清單</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { DialogModule } from &#x27;primeng/dialog&#x27;;
+import { Component, Input, OnDestroy, OnInit, inject } from &#x27;@angular/core&#x27;;
+import { CommonModule } from &#x27;@angular/common&#x27;;
+import { InputTextModule } from &quot;primeng/inputtext&quot;;
+import { CalendarModule } from &#x27;primeng/calendar&#x27;;
+import { FormsModule } from &#x27;@angular/forms&#x27;;
+import { AppStoreToolbarComponent } from &#x27;../app-store-toolbar/app-store-toolbar.component&#x27;;
+import { ActivatedRoute, Router, RouterLink } from &#x27;@angular/router&#x27;;
+import { AppStore } from &#x27;@his-viewmodel/app-store-editor&#x27;;
+import { DropdownModule } from &#x27;primeng/dropdown&#x27;;
+import { CheckboxModule } from &#x27;primeng/checkbox&#x27;;
+import { TableModule } from &#x27;primeng/table&#x27;;
+import { AppPage } from &#x27;@his-viewmodel/app-page-editor&#x27;;
+import { AppStoreService } from &#x27;../app-store.service&#x27;;
+import { RadioButtonModule } from &#x27;primeng/radiobutton&#x27;;
+import { AddPagesListComponent } from &#x27;./add-pages-list/add-pages-list.component&#x27;;
+import { ColorType } from &#x27;./color-type&#x27;;
+import { ImageModule } from &#x27;primeng/image&#x27;;
+import { MatIconModule } from &#x27;@angular/material/icon&#x27;;
+import { DragDropModule } from &#x27;primeng/dragdrop&#x27;;
+import { $localize } from &#x27;@angular/localize/init&#x27;;
+import * as iconData from &#x27;../../assets/data/material-icon.json&#x27;;
+import * as typeData from &#x27;../../assets/data/type.json&#x27;
+import { SharedService } from &#x27;@his-base/shared&#x27;;
+
+@Component({
+  selector: &#x27;his-app-store-info&#x27;,
+  standalone: true,
+  imports: [CommonModule,
+            InputTextModule,
+            CalendarModule,
+            FormsModule,
+            DialogModule,
+            AppStoreToolbarComponent,
+            RouterLink,
+            DropdownModule,
+            CheckboxModule,
+            TableModule,
+            RadioButtonModule,
+            AddPagesListComponent,
+            ImageModule,
+            MatIconModule,
+            DragDropModule],
+  templateUrl: &#x27;./app-store-info.component.html&#x27;,
+  styleUrls: [&#x27;./app-store-info.component.scss&#x27;]
+})
+export class AppStoreInfoComponent implements OnInit, OnDestroy {
+  /** 要顯示的應用程式_id
+   * @type {string}
+   * @memberof AppStoreInfoComponent
+   */
+  @Input() _id!: string;
+
+  /** 顯示的圖標樣式
+   * @type {string}
+   * @memberof AppStoreInfoComponent
+   */
+  showIconStyle: string &#x3D; &#x27;help_clinic&#x27;;
+
+  /** 可選擇的圖標清單
+   * @type {string[]}
+   * @memberof AppStoreInfoComponent
+   */
+  iconList: string[] &#x3D; [];
+
+  /** 圖標選擇視窗顯示
+   * @type {boolean}
+   * @memberof AppStoreInfoComponent
+   */
+  isIconVisible: boolean &#x3D; false;
+
+  /** 所含應用頁面編輯視窗顯示
+   * @type {boolean}
+   * @memberof AppStoreInfoComponent
+   */
+  isTableVisible: boolean &#x3D; false;
+
+  /** 應用程式原始內容
+   * @type {AppStore}
+   * @memberof AppStoreInfoComponent
+   */
+  appStore!: AppStore;
+
+  /** 應用程式所擁有頁面
+   * @type {AppPage[]}
+   * @memberof AppStoreInfoComponent
+   */
+  appPages: AppPage[] &#x3D; []
+
+  /** 應用程式預覽標題
+   * @type {string}
+   * @memberof AppStoreInfoComponent
+   */
+  previewTitle: string &#x3D; $localize&#x60;應用程式標題&#x60;;
+
+  /** 刪除視窗顯示
+   * @type {boolean}
+   * @memberof AppStoreInfoComponent
+   */
+  isDeleteVisible: boolean &#x3D; false;
+
+  /** 類別及對應圖標顏色清單
+   * @type {ColorType[]}
+   * @memberof AppStoreInfoComponent
+   */
+  typeOptions!: ColorType[]
+
+  /** 應用程式語言種類
+   * @type {string[]}
+   * @memberof AppStoreInfoComponent
+   */
+  languageOptions!: string[];
+
+  /** Breadcrumb標題
+   * @type {string[]}
+   * @memberof AppStoreInfoComponent
+   */
+  title: string[] &#x3D; [$localize&#x60;網頁建檔系統&#x60;, $localize&#x60;應用程式&#x60;, $localize&#x60;應用程式內容&#x60;];
+
+  /** 設定應用程式類別及圖標顏色
+   * @type {ColorType}
+   * @memberof AppStoreInfoComponent
+   */
+  appType!: ColorType;
+
+  /** 拖曳功能被選取的頁面資料
+   * @type {(AppPage | undefined | null)}
+   * @memberof AppStoreInfoComponent
+   */
+  draggedPage: AppPage | undefined | null;
+
+  /** 被拖曳頁面在陣列中的順序
+   * @type {number}
+   * @memberof AppStoreInfoComponent
+   */
+  pageIndex!: number;
+
+  router &#x3D; inject(Router);
+  route &#x3D; inject(ActivatedRoute);
+  #appStoresService &#x3D; inject(AppStoreService);
+  #sharedService &#x3D; inject(SharedService)
+
+  /** 初始化設定 讀取應用程式內容
+   * @memberof AppStoreInfoComponent
+   */
+  async ngOnInit() {
+    this.iconList &#x3D; Object.values(iconData)[0] as unknown as string[]
+    this.typeOptions &#x3D; Object.values(typeData)[0] as unknown as ColorType[]
+    this.languageOptions &#x3D; [&#x27;Angular16&#x27;]
+    this.appType &#x3D; new ColorType(this.typeOptions[3])
+
+    await this.#appStoresService.connect();
+
+    if(this._id) {
+      await this.getAppStore();
+    }
+    else {
+      this.appStore &#x3D; new AppStore({appType: &#x27;門診&#x27;, appIcon: this.showIconStyle});
+      this.appPages &#x3D; [...this.appStore.appPages];
+    }
+  }
+
+  /** 清除連線
+   * @memberof AppStoreInfoComponent
+   */
+  async ngOnDestroy() {
+    //Called once, before the instance is destroyed.
+    //Add &#x27;implements OnDestroy&#x27; to the class.
+    await this.#appStoresService.disconnect()
+  }
+
+  /** 顯示選擇圖標視窗
+   * @memberof AppStoreInfoComponent
+   */
+  onDialog() {
+    this.isIconVisible &#x3D; true;
+  }
+
+  /** 點選圖標預覽
+   * @param {string} icon
+   * @memberof AppStoreInfoComponent
+   */
+  onSelectIcon(icon: string) {
+    this.showIconStyle &#x3D; icon;
+  }
+
+  /** 取消並復原選擇圖標
+   * @memberof AppStoreInfoComponent
+   */
+  onCancelSelect() {
+    this.isIconVisible &#x3D; false;
+    this.showIconStyle &#x3D; this.appStore.appIcon;
+  }
+
+  /** 確認圖標選擇
+   * @memberof AppStoreInfoComponent
+   */
+  onConfirmIcon() {
+    this.isIconVisible &#x3D; false;
+    this.appStore.appIcon &#x3D; this.showIconStyle;
+  }
+
+  /** 復原編輯或清除內容
+   * @memberof AppStoreInfoComponent
+   */
+  onClearClick() {
+    this.router.navigate([&#x27;..&#x27;],{relativeTo:this.route});
+  }
+
+  /** 開啟頁面編輯視窗
+   * @memberof AppStoreInfoComponent
+   */
+  onModifyClick() {
+    this.isTableVisible &#x3D; true
+  }
+
+  /** 取消頁面編輯
+   * @memberof AppStoreInfoComponent
+   */
+  onCancelModify() {
+    this.isTableVisible &#x3D; false;
+  }
+
+  /** 套用頁面編輯
+   * @param {AppPage[]} appPages
+   * @memberof AppStoreInfoComponent
+   */
+  onApplyModify(appPages: AppPage[]) {
+    this.isTableVisible &#x3D; false;
+    this.appPages &#x3D; [...appPages];
+  }
+
+  /** 移除指定頁面
+   * @param {AppPage} appPage
+   * @memberof AppStoreInfoComponent
+   */
+  onRemoveClick(appPage: AppPage) {
+    this.appPages &#x3D; this.appPages?.filter((v) &#x3D;&gt; v._id !&#x3D;&#x3D; appPage._id)
+  }
+
+  /** 開啟刪除應用程式視窗
+   * @memberof AppStoreInfoComponent
+   */
+  onDeleteClick() {
+    this.isDeleteVisible &#x3D; true;
+  }
+
+  /** 取消刪除
+   * @memberof AppStoreInfoComponent
+   */
+  onCancelDelete() {
+    this.isDeleteVisible &#x3D; false;
+  }
+
+  /** 確認刪除
+   * @memberof AppStoreInfoComponent
+   */
+  onConfirmDelete() {
+    this.#appStoresService.pubAppStore(this.appStore, &#x27;appStore.delete&#x27;)
+    this.router.navigate([&#x27;..&#x27;],{relativeTo:this.route});
+  }
+
+  /** 新增應用程式
+   * @memberof AppStoreInfoComponent
+   */
+  async onCreateClick() {
+    this.appStore.appType &#x3D; this.appType.type
+    this.appStore.appPages &#x3D; [...this.appPages];
+    await this.#appStoresService.pubAppStore(this.appStore, &#x27;appStore.insert&#x27;);
+  }
+
+  /** 儲存應用程式編輯
+   * @memberof AppStoreInfoComponent
+   */
+  onSaveClick() {
+    this.appStore.appType &#x3D; this.appType.type
+    this.appStore.appPages &#x3D; [...this.appPages];
+    this.#appStoresService.pubAppStore(this.appStore, &#x27;appStore.update&#x27;);
+  }
+
+  /** 應用程式內容讀取及變數初始化
+   * @memberof AppStoreInfoComponent
+   */
+  async getAppStore() {
+
+    this.appStore &#x3D; this.#sharedService.getValue(this._id)
+
+    const currentType &#x3D; this.typeOptions.find(x &#x3D;&gt; {
+      return x.type &#x3D;&#x3D;&#x3D; this.appStore.appType
+    })
+    this.appType &#x3D; Object.assign({}, currentType);
+
+    this.showIconStyle &#x3D; this.appStore.appIcon;
+    this.appPages &#x3D; [...this.appStore.appPages];
+  }
+
+  /** 清單順序拖曳功能 選擇拖曳
+   * @param {AppPage} page
+   * @param {number} index
+   * @memberof AppStoreInfoComponent
+   */
+  onDragStart(page: AppPage, index: number) {
+    this.draggedPage &#x3D; page;
+    this.pageIndex &#x3D; index
+  }
+
+  /** 放開拖曳項目 變更項目在陣列中序位
+   * @param {number} index
+   * @memberof AppStoreInfoComponent
+   */
+  onDrop(index: number) {
+    if(this.draggedPage) {
+      this.appPages.splice(this.pageIndex, 1);
+      this.appPages.splice(index, 0, this.draggedPage);
+      this.appPages &#x3D; [...this.appPages];
+      this.draggedPage &#x3D; null;
+    }
+  }
+
+  /** 方開拖曳項目時清空
+   * @memberof AppStoreInfoComponent
+   */
+  onDragEnd() {
+    this.draggedPage &#x3D; null
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;!-- eslint-disable @angular-eslint/template/elements-content --&gt;
+&lt;div class&#x3D;&quot;flex flex-column&quot; style&#x3D;&quot;width: 100%; height: 100%;&quot;&gt;
+  &lt;div class&#x3D;&quot;flex toolbar&quot;&gt;
+    &lt;his-app-store-toolbar
+      [customTemplate]&#x3D;&quot;!_id ? createToolbar : updateToolbar&quot;
+      [title]&#x3D;&quot;title&quot;&gt;
+    &lt;/his-app-store-toolbar&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;flex flex-1&quot;&gt;
+    &lt;div class&#x3D;&quot;p-3 h-full flex flex-column&quot; style&#x3D;&quot;width: 100%;&quot;&gt;
+      &lt;div class&#x3D;&quot;p-card flex-1 p-2&quot;&gt;
+        &lt;div *ngIf&#x3D;&quot;!_id; else editTitle&quot;&gt;
+          &lt;h5 i18n&gt;新增應用程式&lt;/h5&gt;
+        &lt;/div&gt;
+        &lt;ng-template #editTitle&gt;
+          &lt;h5 i18n&gt;編輯應用程式&lt;/h5&gt;
+        &lt;/ng-template&gt;
+        &lt;div class&#x3D;&quot;grid&quot;&gt;
+          &lt;div class&#x3D;&quot;col-12 xl:col&quot;&gt;
+            &lt;div class&#x3D;&quot;grid&quot;&gt;
+              &lt;div class&#x3D;&quot;col-6&quot;&gt;
+                &lt;h6 i18n&gt;應用程式名稱&lt;/h6&gt;
+                &lt;input type&#x3D;&quot;text&quot; pInputText [(ngModel)]&#x3D;&quot;appStore.appTitle&quot; style&#x3D;&quot;width: 100%;&quot;&gt;
+              &lt;/div&gt;
+              &lt;div class&#x3D;&quot;col-6&quot;&gt;
+                &lt;h6 i18n&gt;應用程式代號&lt;/h6&gt;
+                &lt;input type&#x3D;&quot;text&quot; pInputText [(ngModel)]&#x3D;&quot;appStore._id&quot; [disabled]&#x3D;&quot;true&quot; style&#x3D;&quot;width: 100%;&quot;&gt;
+              &lt;/div&gt;
+              &lt;div class&#x3D;&quot;col-6&quot;&gt;
+                &lt;h6 i18n&gt;類別&lt;/h6&gt;
+                &lt;p-dropdown [options]&#x3D;&quot;typeOptions&quot;
+                            [(ngModel)]&#x3D;&quot;appType&quot;
+                            i18n-placeholder
+                            placeholder&#x3D;&quot;請選擇&quot;
+                            [showClear]&#x3D;&quot;true&quot;
+                            [style]&#x3D;&quot;{&#x27;width&#x27;:&#x27;100%&#x27;}&quot;
+                            optionLabel&#x3D;&quot;type&quot;&gt;&lt;/p-dropdown&gt;
+              &lt;/div&gt;
+              &lt;div class&#x3D;&quot;col-fixed flex gap-4 align-items-end justify-content-start&quot;&gt;
+                &lt;div class&#x3D;&quot;authorityBox&quot;&gt;
+                  &lt;p-checkbox name&#x3D;&quot;group1&quot; [binary]&#x3D;&quot;true&quot; [(ngModel)]&#x3D;&quot;appStore.isAuth&quot; id&#x3D;&quot;authNeed&quot;&gt;&lt;/p-checkbox&gt;
+                  &lt;label for&#x3D;&quot;authNeed&quot; i18n&gt;是否需要授權&lt;/label&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+              &lt;div class&#x3D;&quot;col flex align-items-end justify-content-start&quot;&gt;
+                &lt;div class&#x3D;&quot;iconBox&quot;&gt;
+                  &lt;h6 i18n&gt;圖標&lt;/h6&gt;
+                  &lt;button pButton pRipple (click)&#x3D;&quot;onDialog()&quot; class&#x3D;&quot;pi icon-selector&quot; [style]&#x3D;&quot;appType.showColor&quot;&gt;
+                    &lt;span class&#x3D;&quot;material-symbols-outlined icon-content&quot;&gt;
+                      {{showIconStyle}}
+                    &lt;/span&gt;
+                  &lt;/button&gt;
+                  &lt;p-dialog header&#x3D;&quot;Header&quot; [(visible)]&#x3D;&quot;isIconVisible&quot; [style]&#x3D;&quot;{ width: &#x27;769px&#x27;, height: &#x27;59.1%&#x27; }&quot; [closable]&#x3D;&quot;false&quot;&gt;
+                    &lt;ng-template pTemplate&#x3D;&quot;header&quot;&gt;
+                      &lt;div class&#x3D;&quot;flex flex-1 justify-content-between align-items-center&quot;&gt;
+                        &lt;div class&#x3D;&quot;align-items-center&quot;&gt;
+                          &lt;span class&#x3D;&quot;text-xl font-bold text-center&quot; i18n&gt;選擇圖標&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class&#x3D;&quot;cross&quot;&gt;
+                          &lt;p-button icon&#x3D;&quot;pi pi-times&quot; (click)&#x3D;&quot;onCancelSelect()&quot;&gt;&lt;/p-button&gt;
+                        &lt;/div&gt;
+                      &lt;/div&gt;
+                    &lt;/ng-template&gt;
+                    &lt;div class&#x3D;&quot;flex flex-wrap align-content-start align-items-start pick-box&quot;&gt;
+                      &lt;ng-container *ngFor&#x3D;&quot;let icon of iconList&quot;&gt;
+                        &lt;div class&#x3D;&quot;flex text-center&quot; style&#x3D;&quot;min-height: 56px; min-width: 56px;&quot;&gt;
+                          &lt;button pButton class&#x3D;&quot;icon-selected&quot; [class]&#x3D;&quot;appType.colorClass&quot; (click)&#x3D;&quot;onSelectIcon(icon)&quot;&gt;
+                            &lt;span class&#x3D;&quot;material-symbols-outlined icon-dialog&quot;&gt;
+                              {{icon}}
+                            &lt;/span&gt;
+                          &lt;/button&gt;
+                        &lt;/div&gt;
+                      &lt;/ng-container&gt;
+                    &lt;/div&gt;
+                    &lt;ng-template pTemplate&#x3D;&quot;footer&quot;&gt;
+                      &lt;p-button (click)&#x3D;&quot;onCancelSelect()&quot; i18n-label label&#x3D;&quot;取消&quot; styleClass&#x3D;&quot;p-button-secondary&quot;&gt;&lt;/p-button&gt;
+                      &lt;p-button (click)&#x3D;&quot;onConfirmIcon()&quot; i18n-label label&#x3D;&quot;確定&quot;&gt;&lt;/p-button&gt;
+                    &lt;/ng-template&gt;
+                  &lt;/p-dialog&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;col-fixed&quot; style&#x3D;&quot;width: 344px;&quot;&gt;
+            &lt;h6 i18n&gt;預覽&lt;/h6&gt;
+            &lt;div class&#x3D;&quot;back&quot; style&#x3D;&quot;min-width: 175px&quot;&gt;
+              &lt;div class&#x3D;&quot;p-card flex app-preview&quot; style&#x3D;&quot;height: 100%;&quot;&gt;
+                &lt;div class&#x3D;&quot;flex align-items-center justify-content-center icon-preview&quot; [style]&#x3D;&quot;appType.showColor&quot;  &gt;
+                  &lt;!-- &lt;i class&#x3D;&quot;pi {{showIconStyle}}&quot; style&#x3D;&quot;color: white; font-size: 48px&quot;&gt;&lt;/i&gt; --&gt;
+                  &lt;span class&#x3D;&quot;material-symbols-outlined icon-content&quot;&gt;
+                    {{showIconStyle}}
+                  &lt;/span&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;flex flex-1 flex-column text-preview&quot;&gt;
+                  &lt;div class&#x3D;&quot;flex align-items-center top-text&quot;&gt;
+                    &lt;div class&#x3D;&quot;flex align-items-start&quot;&gt;
+                      &lt;p class&#x3D;&quot;caption-s&quot;&gt;v{{appStore.versionNo}}&lt;/p&gt;
+                    &lt;/div&gt;
+                    &lt;div class&#x3D;&quot;flex align-items-center justify-content-center&quot;&gt;
+                      &lt;i class&#x3D;&quot;pi pi-star&quot; style&#x3D;&quot;font-size: 18px;&quot;&gt;&lt;/i&gt;
+                    &lt;/div&gt;
+                  &lt;/div&gt;
+                  &lt;div class&#x3D;&quot;flex align-items-start align-self-stretch label-l&quot;&gt;
+                    {{appStore.appTitle || previewTitle}}
+                  &lt;/div&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;col-12&quot;&gt;
+            &lt;h6 i18n&gt;網頁路徑&lt;/h6&gt;
+            &lt;input type&#x3D;&quot;text&quot; pInputText [(ngModel)]&#x3D;&quot;appStore.appUrl&quot; style&#x3D;&quot;width: 100%;&quot;&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;col-4&quot;&gt;
+            &lt;h6 i18n&gt;首頁清單&lt;/h6&gt;
+            &lt;p-dropdown [options]&#x3D;&quot;appPages&quot;
+                        [(ngModel)]&#x3D;&quot;appStore.appHome.display&quot;
+                        i18n-placeholder
+                        placeholder&#x3D;&quot;請選擇&quot;
+                        [showClear]&#x3D;&quot;true&quot;
+                        [style]&#x3D;&quot;{&#x27;width&#x27;:&#x27;100%&#x27;}&quot;
+                        optionLabel&#x3D;&quot;pageTitle&quot;
+                        [filter]&#x3D;&quot;true&quot;&gt;&lt;/p-dropdown&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;col-4&quot;&gt;
+            &lt;h6 i18n&gt;使用語言&lt;/h6&gt;
+            &lt;p-dropdown [options]&#x3D;&quot;languageOptions&quot;
+                        [(ngModel)]&#x3D;&quot;appStore.appLanguage&quot;
+                        i18n-placeholder
+                        placeholder&#x3D;&quot;請選擇&quot;
+                        [showClear]&#x3D;&quot;true&quot;
+                        [style]&#x3D;&quot;{&#x27;width&#x27;:&#x27;100%&#x27;}&quot;&gt;&lt;/p-dropdown&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;col-4&quot;&gt;
+            &lt;h6 i18n&gt;版本&lt;/h6&gt;
+            &lt;input type&#x3D;&quot;text&quot; pInputText [(ngModel)]&#x3D;&quot;appStore.versionNo&quot; style&#x3D;&quot;width: 100%;&quot;&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;col-12 page-table&quot;&gt;
+            &lt;div class&#x3D;&quot;flex flex-wrap justify-content-start align-content-center gap-2 addBox&quot;&gt;
+                &lt;h6 i18n&gt;應用頁面&lt;/h6&gt;
+                &lt;p-dialog [(visible)]&#x3D;&quot;isTableVisible&quot;
+                          [position]&#x3D;&quot;&#x27;bottom&#x27;&quot;
+                          [modal]&#x3D;&quot;true&quot;
+                          [style]&#x3D;&quot;{ width: &#x27;100%&#x27;, height: &#x27;90vh&#x27; , margin: &#x27;0&#x27;}&quot;
+                          class&#x3D;&quot;page-list&quot; [closable]&#x3D;&quot;false&quot;&gt;
+                  &lt;ng-template pTemplate&#x3D;&quot;header&quot;&gt;
+                    &lt;div class&#x3D;&quot;flex flex-1 justify-content-between align-items-center&quot;&gt;
+                        &lt;span class&#x3D;&quot;text-xl font-bold&quot; i18n&gt;加入應用頁面&lt;/span&gt;
+                        &lt;button pButton pRipple icon&#x3D;&quot;pi pi-times&quot; class&#x3D;&quot;p-button-text p-button-rounded&quot; (click)&#x3D;&quot;onCancelModify()&quot;&gt;&lt;/button&gt;
+                    &lt;/div&gt;
+                  &lt;/ng-template&gt;
+                  &lt;his-add-pages-list [appPagesList]&#x3D;&quot;appPages&quot;
+                                      [visible]&#x3D;&quot;isTableVisible&quot;
+                                      (cancel)&#x3D;&quot;onCancelModify()&quot;
+                                      (apply)&#x3D;&quot;onApplyModify($event)&quot;&gt;&lt;/his-add-pages-list&gt;
+                &lt;/p-dialog&gt;
+            &lt;/div&gt;
+            &lt;p-table  [value]&#x3D;&quot;appPages&quot; dataKey&#x3D;&quot;id&quot; [rows]&#x3D;&quot;10&quot; [loading]&#x3D;&quot;false&quot; [rowHover]&#x3D;&quot;true&quot; responsiveLayout&#x3D;&quot;scroll&quot;&gt;
+              &lt;ng-template pTemplate&#x3D;&quot;header&quot;&gt;
+                &lt;tr&gt;
+                  &lt;th style&#x3D;&quot;width: 1rem;&quot;&gt;
+                  &lt;/th&gt;
+                  &lt;th style&#x3D;&quot;width: 2rem&quot;&gt;
+                    &lt;button pButton pRipple icon&#x3D;&quot;pi pi-plus&quot; (click)&#x3D;&quot;onModifyClick()&quot; class&#x3D;&quot;p-button-rounded p-button-success p-button-form&quot;&gt;&lt;/button&gt;
+                  &lt;/th&gt;
+                  &lt;th pSortableColumn&#x3D;&quot;id&quot; style&#x3D;&quot;min-width: 4rem&quot; i18n&gt;
+                    頁面代碼
+                  &lt;/th&gt;
+                  &lt;th pSortableColumn&#x3D;&quot;title&quot; style&#x3D;&quot;min-width: 4rem&quot; i18n&gt;
+                    頁面標題
+                  &lt;/th&gt;
+                  &lt;th pSortableColumn&#x3D;&quot;path&quot; style&#x3D;&quot;min-width: 16rem&quot; i18n&gt;
+                    頁面連結路徑
+                  &lt;/th&gt;
+                  &lt;th style&#x3D;&quot;min-width: 12rem&quot; i18n&gt;
+                    輸出模組名稱
+                  &lt;/th&gt;
+                  &lt;th style&#x3D;&quot;min-width: 12rem&quot; i18n&gt;
+                    版本
+                  &lt;/th&gt;
+                  &lt;th style&#x3D;&quot;min-width: 4rem&quot; i18n&gt;
+                    刪除
+                  &lt;/th&gt;
+                &lt;/tr&gt;
+              &lt;/ng-template&gt;
+              &lt;ng-template pTemplate&#x3D;&quot;body&quot; let-appPage let-index&#x3D;&quot;rowIndex&quot;&gt;
+                &lt;tr pDraggable&#x3D;&quot;appPages&quot;
+                    (onDragStart)&#x3D;&quot;onDragStart(appPage,index)&quot;
+                    (onDragEnd)&#x3D;&quot;onDragEnd()&quot;
+                    [pSelectableRow]&#x3D;&quot;appPage&quot;
+                    pDroppable&#x3D;&quot;appPages&quot;
+                    (onDrop)&#x3D;&quot;onDrop(index)&quot;&gt;
+                  &lt;td&gt;
+                    &lt;span class&#x3D;&quot;pi pi-bars&quot;&gt;&lt;/span&gt;
+                  &lt;/td&gt;
+                  &lt;td&gt;
+                    &lt;button pButton pRipple icon&#x3D;&quot;pi pi-minus&quot; class&#x3D;&quot;p-button-rounded p-button-warning p-button-form&quot; (click)&#x3D;&quot;onRemoveClick(appPage)&quot;&gt;&lt;/button&gt;
+                  &lt;/td&gt;
+                  &lt;td&gt;
+                    {{ appPage._id }}
+                  &lt;/td&gt;
+                  &lt;td&gt;
+                    {{ appPage.pageTitle }}
+                  &lt;/td&gt;
+                  &lt;td&gt;
+                    {{ appPage.pageUrl }}
+                  &lt;/td&gt;
+                  &lt;td&gt;
+                    {{ appPage.moduleName }}
+                  &lt;/td&gt;
+                  &lt;td&gt;
+                    {{ appPage.versionNo }}
+                  &lt;/td&gt;
+                  &lt;td&gt;
+                    &lt;button pButton icon&#x3D;&quot;pi pi-trash&quot; class&#x3D;&quot;p-button-rounded p-button-outlined&quot; (click)&#x3D;&quot;onRemoveClick(appPage)&quot;&gt;&lt;/button&gt;
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+              &lt;/ng-template&gt;
+            &lt;/p-table&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;ng-template #createToolbar&gt;
+  &lt;div class&#x3D;&quot;flex align-items-center&quot;&gt;
+    &lt;p-button i18n-label label&#x3D;&quot;查詢&quot; [routerLink]&#x3D;&quot;[&#x27;list&#x27;]&quot; routerLinkActive&#x3D;&quot;router-link-active&quot; &gt;&lt;/p-button&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;flex align-items-center&quot;&gt;
+    &lt;p-button (click)&#x3D;&quot;onClearClick()&quot; i18n-label label&#x3D;&quot;清除內容&quot; styleClass&#x3D;&quot;p-button-secondary&quot;&gt;&lt;/p-button&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;flex align-items-center&quot;&gt;
+    &lt;p-button i18n-label label&#x3D;&quot;完成&quot; (onClick)&#x3D;&quot;onCreateClick()&quot;&gt;&lt;/p-button&gt;
+  &lt;/div&gt;
+&lt;/ng-template&gt;
+
+&lt;ng-template #updateToolbar&gt;
+  &lt;div class&#x3D;&quot;flex align-items-center&quot;&gt;
+    &lt;p-button i18n-label label&#x3D;&quot;查詢&quot; [routerLink]&#x3D;&quot;[&#x27;..&#x27;]&quot; routerLinkActive&#x3D;&quot;router-link-active&quot; &gt;&lt;/p-button&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;flex align-items-center&quot;&gt;
+    &lt;p-dialog [style]&#x3D;&quot;{width: &#x27;20vw&#x27;}&quot; [(visible)]&#x3D;&quot;isDeleteVisible&quot; [closable]&#x3D;&quot;false&quot; [modal]&#x3D;&quot;true&quot;&gt;
+      &lt;ng-template pTemplate&#x3D;&quot;header&quot;&gt;
+        &lt;div class&#x3D;&quot;flex flex-1 justify-content-between&quot;&gt;
+          &lt;div&gt;
+            &lt;span class&#x3D;&quot;text-xl font-bold&quot; i18n&gt;刪除應用頁面&lt;/span&gt;
+          &lt;/div&gt;
+          &lt;div&gt;
+            &lt;p-button icon&#x3D;&quot;pi pi-times&quot; (click)&#x3D;&quot;onCancelDelete()&quot;&gt;&lt;/p-button&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/ng-template&gt;
+      &lt;ng-template pTemplate&#x3D;&quot;body&quot;&gt;
+        &lt;div class&#x3D;&quot;flex flex-wrap align-items-center gap-2&quot;&gt;
+          &lt;div&gt;
+            &lt;i class&#x3D;&quot;pi pi-question-circle font-bold notification-icon&quot;&gt;&lt;/i&gt;
+          &lt;/div&gt;
+          &lt;div&gt;
+            &lt;span class&#x3D;&quot;text-xl font-bold notification-text&quot; i18n&gt;您是否要刪除應用頁面&lt;/span&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;p i18n&gt;當應用頁面被永久刪除，便不能再復原，且資料庫所儲存的資料亦同步刪除。&lt;/p&gt;
+      &lt;/ng-template&gt;
+      &lt;ng-template pTemplate&#x3D;&quot;footer&quot;&gt;
+        &lt;p-button icon&#x3D;&quot;pi pi-times&quot; (click)&#x3D;&quot;onCancelDelete()&quot; i18n-label label&#x3D;&quot;取消&quot; styleClass&#x3D;&quot;p-button-secondary&quot;&gt;&lt;/p-button&gt;
+        &lt;p-button icon&#x3D;&quot;pi pi-check&quot; (click)&#x3D;&quot;onConfirmDelete()&quot; i18n-label label&#x3D;&quot;確定&quot;&gt;&lt;/p-button&gt;
+      &lt;/ng-template&gt;
+    &lt;/p-dialog&gt;
+    &lt;p-button i18n-label label&#x3D;&quot;刪除&quot; styleClass&#x3D;&quot;p-button-secondary&quot; (onClick)&#x3D;&quot;onDeleteClick()&quot;&gt;&lt;/p-button&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;flex align-items-center&quot;&gt;
+    &lt;p-button (click)&#x3D;&quot;onClearClick()&quot; i18n-label label&#x3D;&quot;復原&quot; styleClass&#x3D;&quot;p-button-secondary&quot;&gt;&lt;/p-button&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;flex align-items-center&quot;&gt;
+    &lt;p-button i18n-label label&#x3D;&quot;完成&quot; (onClick)&#x3D;&quot;onSaveClick()&quot;&gt;&lt;/p-button&gt;
+  &lt;/div&gt;
+&lt;/ng-template&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./app-store-info.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.icon-selector {
+  min-width: 0px;
+  width: 72px;
+  height: 72px;
+  border-radius: 18px;
+  box-shadow: 0px 3px 1.5px -1.5px rgba(0, 0, 0, 0.02), 0px 1.5px 1.5px 0px rgba(0, 0, 0, 0.14), 0px 1.5px 4.5px 0px rgba(0, 0, 0, 0.12);
+}
+
+.icon-selected {
+  width: 56px;
+  height: 56px;
+  border-radius: 4px;
+  background-color: transparent;
+  justify-content: center;
+}
+
+.icon-administration {
+  color: var(--surface-on-surface);
+  &amp;:hover {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.00) 100%), var(--primary-main);
+    .icon-dialog {
+      color: var(--surface-overlay);
+    }
+  }
+  &amp;:focus,
+  &amp;:active {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.00) 100%), var(--primary-main);
+    .icon-dialog {
+      color: var(--surface-overlay);
+    }
+  }
+}
+
+.icon-medical {
+  color: var(--surface-on-surface);
+  &amp;:hover {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.00) 100%), var(--tertiary-main);
+    .icon-dialog {
+      color: var(--surface-overlay);
+    }
+  }
+  &amp;:focus,
+  &amp;:active {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.00) 100%), var(--tertiary-main);
+    .icon-dialog {
+      color: var(--surface-overlay);
+    }
+  }
+  .icon-dialog {
+    font-size: 40px;
+    color: var(--surface-on-surface);
+  }
+}
+
+.icon-drug {
+  color: var(--surface-on-surface);
+  &amp;:hover {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.00) 100%), var(--orange-500);
+    .icon-dialog {
+      color: var(--surface-overlay);
+    }
+  }
+  &amp;:focus,
+  &amp;:active {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.00) 100%), var(--orange-500);
+    .icon-dialog {
+      color: var(--surface-overlay);
+    }
+  }
+}
+
+.icon-clinic{
+  color: var(--surface-on-surface);
+  &amp;:hover {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.00) 100%), var(--indigo-500);
+    .icon-dialog {
+      color: var(--surface-overlay);
+    }
+  }
+  &amp;:focus,
+  &amp;:active {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.00) 100%), var(--indigo-500);
+    .icon-dialog {
+      color: var(--surface-overlay);
+    }
+  }
+}
+
+.icon-dialog {
+  font-size: 40px;
+  color: var(--surface-on-surface);
+}
+
+.back {
+  background-color: var(--surface-ground);
+  padding: var(--spacing-md);
+}
+
+.authorityBox {
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+.iconBox {
+  display: flex;
+  gap: var(--spacing-sm);
+}
+
+.toolbar {
+  color: var(--secondary-main);
+}
+
+
+:host ::ng-deep {
+  .page-list .p-dialog .p-dialog-header {
+    background-color: var(--surface-overlay);
+    color: var(--surface-on-surface);
+  }
+  .p-dialog .p-dialog-content {
+    background-color: var(--surface-overlay);
+  }
+  .p-dialog .p-dialog-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+  h6 {
+    margin-bottom: var(--spacing-sm);
+  }
+  .addBox {
+    align-items: center;
+    margin-bottom: var(--spacing-sm);
+    h6 {
+      margin-bottom: 0;
+    }
+  }
+}
+
+:host ::ng-deep {
+  .page-table {
+    .pi-bars {
+      color: transparent;
+    }
+    .p-datatable.p-datatable-hoverable-rows .p-datatable-tbody &gt; tr:not(.p-highlight):hover {
+      .pi.pi-bars {
+        color: var(--surface-on-surface);;
+      }
+    }
+  }
+}
+
+.icon-preview {
+  width: 72px;
+  height: 72px;
+  border-radius: 18px;
+  box-shadow: 0px 3px 1.5px -1.5px rgba(0, 0, 0, 0.02), 0px 1.5px 1.5px 0px rgba(0, 0, 0, 0.14), 0px 1.5px 4.5px 0px rgba(0, 0, 0, 0.12);
+}
+
+.icon-add {
+  height: 34px;
+  min-width: auto;
+}
+
+:host ::ng-deep {
+  .iconBox {
+    .icon-selector {
+      .p-button.p-button-icon-only{
+        width: 40px;
+        height: 40px;
+      }
+    }
+    .icon-selector {
+      .p-button {
+        min-width: 0;
+        width: 72px;
+        height: 72px;
+      }
+    }
+    .pick-box {
+      .p-button {
+        min-width: 0;
+        width: 56px;
+        height: 56px;
+      }
+    }
+    .p-button.p-button-icon-only .pi {
+      font-size: 2rem;
+    }
+    .p-dialog {
+      .p-button.p-button-icon-only .pi {
+        font-size: 38px;
+      }
+    }
+    .p-dialog .p-dialog-content {
+      background-color: var(--surface-card);
+      padding: var(--spacing-md);
+    }
+    .p-dropdown {
+      min-height: 40px;
+    }
+    .col-6 {
+      padding: 4px 8px;
+    }
+    .cross {
+      .p-button.p-button-icon-only{
+        width: 32px;
+        height: 32px;
+      }
+      .p-button.p-button-icon-only .pi {
+        font-size: 24px;
+      }
+    }
+  }
+}
+
+.icon-style {
+  font-size: 1.5rem;
+}
+
+his-app-store-toolbar {
+  width: 100%;
+}
+
+.pick-box {
+  border-radius: var(--border-radius-input, 4px);
+  border: 1px solid var(--outline);
+  background: var(--surface-card);
+  padding: var(--spacing-md, 12px) var(--spacing-lg, 16px);
+  gap: 8px var(--spacing-sm, 8px);
+  height: 100%;
+  overflow: auto;
+
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--surface-card)
+  }
+}
+
+.text-preview {
+  gap: var(--spacing-xs);
+  align-items: flex-end;
+  align-self: stretch;
+}
+
+.top-text {
+  gap: var(--spacing-sm);
+}
+
+.icon-content {
+  font-size: 48px;
+  color: var(--surface-0);
+}
+
+.app-preview {
+  padding: var(--spacing-md);
+  justify-content: center;
+  gap: var(--spacing-sm);
+  align-items: center;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><!-- eslint-disable @angular-eslint/template/elements-content --><div class="flex flex-column" style="width: 100%; height: 100%;">  <div class="flex toolbar">    <his-app-store-toolbar      [customTemplate]="!_id ? createToolbar : updateToolbar"      [title]="title">    </his-app-store-toolbar>  </div>  <div class="flex flex-1">    <div class="p-3 h-full flex flex-column" style="width: 100%;">      <div class="p-card flex-1 p-2">        <div *ngIf="!_id; else editTitle">          <h5 i18n>新增應用程式</h5>        </div>        <ng-template #editTitle>          <h5 i18n>編輯應用程式</h5>        </ng-template>        <div class="grid">          <div class="col-12 xl:col">            <div class="grid">              <div class="col-6">                <h6 i18n>應用程式名稱</h6>                <input type="text" pInputText [(ngModel)]="appStore.appTitle" style="width: 100%;">              </div>              <div class="col-6">                <h6 i18n>應用程式代號</h6>                <input type="text" pInputText [(ngModel)]="appStore._id" [disabled]="true" style="width: 100%;">              </div>              <div class="col-6">                <h6 i18n>類別</h6>                <p-dropdown [options]="typeOptions"                            [(ngModel)]="appType"                            i18n-placeholder                            placeholder="請選擇"                            [showClear]="true"                            [style]="{\'width\':\'100%\'}"                            optionLabel="type"></p-dropdown>              </div>              <div class="col-fixed flex gap-4 align-items-end justify-content-start">                <div class="authorityBox">                  <p-checkbox name="group1" [binary]="true" [(ngModel)]="appStore.isAuth" id="authNeed"></p-checkbox>                  <label for="authNeed" i18n>是否需要授權</label>                </div>              </div>              <div class="col flex align-items-end justify-content-start">                <div class="iconBox">                  <h6 i18n>圖標</h6>                  <button pButton pRipple (click)="onDialog()" class="pi icon-selector" [style]="appType.showColor">                    <span class="material-symbols-outlined icon-content">                      {{showIconStyle}}                    </span>                  </button>                  <p-dialog header="Header" [(visible)]="isIconVisible" [style]="{ width: \'769px\', height: \'59.1%\' }" [closable]="false">                    <ng-template pTemplate="header">                      <div class="flex flex-1 justify-content-between align-items-center">                        <div class="align-items-center">                          <span class="text-xl font-bold text-center" i18n>選擇圖標</span>                        </div>                        <div class="cross">                          <p-button icon="pi pi-times" (click)="onCancelSelect()"></p-button>                        </div>                      </div>                    </ng-template>                    <div class="flex flex-wrap align-content-start align-items-start pick-box">                      <ng-container *ngFor="let icon of iconList">                        <div class="flex text-center" style="min-height: 56px; min-width: 56px;">                          <button pButton class="icon-selected" [class]="appType.colorClass" (click)="onSelectIcon(icon)">                            <span class="material-symbols-outlined icon-dialog">                              {{icon}}                            </span>                          </button>                        </div>                      </ng-container>                    </div>                    <ng-template pTemplate="footer">                      <p-button (click)="onCancelSelect()" i18n-label label="取消" styleClass="p-button-secondary"></p-button>                      <p-button (click)="onConfirmIcon()" i18n-label label="確定"></p-button>                    </ng-template>                  </p-dialog>                </div>              </div>            </div>          </div>          <div class="col-fixed" style="width: 344px;">            <h6 i18n>預覽</h6>            <div class="back" style="min-width: 175px">              <div class="p-card flex app-preview" style="height: 100%;">                <div class="flex align-items-center justify-content-center icon-preview" [style]="appType.showColor"  >                  <!-- <i class="pi {{showIconStyle}}" style="color: white; font-size: 48px"></i> -->                  <span class="material-symbols-outlined icon-content">                    {{showIconStyle}}                  </span>                </div>                <div class="flex flex-1 flex-column text-preview">                  <div class="flex align-items-center top-text">                    <div class="flex align-items-start">                      <p class="caption-s">v{{appStore.versionNo}}</p>                    </div>                    <div class="flex align-items-center justify-content-center">                      <i class="pi pi-star" style="font-size: 18px;"></i>                    </div>                  </div>                  <div class="flex align-items-start align-self-stretch label-l">                    {{appStore.appTitle || previewTitle}}                  </div>                </div>              </div>            </div>          </div>          <div class="col-12">            <h6 i18n>網頁路徑</h6>            <input type="text" pInputText [(ngModel)]="appStore.appUrl" style="width: 100%;">          </div>          <div class="col-4">            <h6 i18n>首頁清單</h6>            <p-dropdown [options]="appPages"                        [(ngModel)]="appStore.appHome.display"                        i18n-placeholder                        placeholder="請選擇"                        [showClear]="true"                        [style]="{\'width\':\'100%\'}"                        optionLabel="pageTitle"                        [filter]="true"></p-dropdown>          </div>          <div class="col-4">            <h6 i18n>使用語言</h6>            <p-dropdown [options]="languageOptions"                        [(ngModel)]="appStore.appLanguage"                        i18n-placeholder                        placeholder="請選擇"                        [showClear]="true"                        [style]="{\'width\':\'100%\'}"></p-dropdown>          </div>          <div class="col-4">            <h6 i18n>版本</h6>            <input type="text" pInputText [(ngModel)]="appStore.versionNo" style="width: 100%;">          </div>          <div class="col-12 page-table">            <div class="flex flex-wrap justify-content-start align-content-center gap-2 addBox">                <h6 i18n>應用頁面</h6>                <p-dialog [(visible)]="isTableVisible"                          [position]="\'bottom\'"                          [modal]="true"                          [style]="{ width: \'100%\', height: \'90vh\' , margin: \'0\'}"                          class="page-list" [closable]="false">                  <ng-template pTemplate="header">                    <div class="flex flex-1 justify-content-between align-items-center">                        <span class="text-xl font-bold" i18n>加入應用頁面</span>                        <button pButton pRipple icon="pi pi-times" class="p-button-text p-button-rounded" (click)="onCancelModify()"></button>                    </div>                  </ng-template>                  <his-add-pages-list [appPagesList]="appPages"                                      [visible]="isTableVisible"                                      (cancel)="onCancelModify()"                                      (apply)="onApplyModify($event)"></his-add-pages-list>                </p-dialog>            </div>            <p-table  [value]="appPages" dataKey="id" [rows]="10" [loading]="false" [rowHover]="true" responsiveLayout="scroll">              <ng-template pTemplate="header">                <tr>                  <th style="width: 1rem;">                  </th>                  <th style="width: 2rem">                    <button pButton pRipple icon="pi pi-plus" (click)="onModifyClick()" class="p-button-rounded p-button-success p-button-form"></button>                  </th>                  <th pSortableColumn="id" style="min-width: 4rem" i18n>                    頁面代碼                  </th>                  <th pSortableColumn="title" style="min-width: 4rem" i18n>                    頁面標題                  </th>                  <th pSortableColumn="path" style="min-width: 16rem" i18n>                    頁面連結路徑                  </th>                  <th style="min-width: 12rem" i18n>                    輸出模組名稱                  </th>                  <th style="min-width: 12rem" i18n>                    版本                  </th>                  <th style="min-width: 4rem" i18n>                    刪除                  </th>                </tr>              </ng-template>              <ng-template pTemplate="body" let-appPage let-index="rowIndex">                <tr pDraggable="appPages"                    (onDragStart)="onDragStart(appPage,index)"                    (onDragEnd)="onDragEnd()"                    [pSelectableRow]="appPage"                    pDroppable="appPages"                    (onDrop)="onDrop(index)">                  <td>                    <span class="pi pi-bars"></span>                  </td>                  <td>                    <button pButton pRipple icon="pi pi-minus" class="p-button-rounded p-button-warning p-button-form" (click)="onRemoveClick(appPage)"></button>                  </td>                  <td>                    {{ appPage._id }}                  </td>                  <td>                    {{ appPage.pageTitle }}                  </td>                  <td>                    {{ appPage.pageUrl }}                  </td>                  <td>                    {{ appPage.moduleName }}                  </td>                  <td>                    {{ appPage.versionNo }}                  </td>                  <td>                    <button pButton icon="pi pi-trash" class="p-button-rounded p-button-outlined" (click)="onRemoveClick(appPage)"></button>                  </td>                </tr>              </ng-template>            </p-table>          </div>        </div>      </div>    </div>  </div></div><ng-template #createToolbar>  <div class="flex align-items-center">    <p-button i18n-label label="查詢" [routerLink]="[\'list\']" routerLinkActive="router-link-active" ></p-button>  </div>  <div class="flex align-items-center">    <p-button (click)="onClearClick()" i18n-label label="清除內容" styleClass="p-button-secondary"></p-button>  </div>  <div class="flex align-items-center">    <p-button i18n-label label="完成" (onClick)="onCreateClick()"></p-button>  </div></ng-template><ng-template #updateToolbar>  <div class="flex align-items-center">    <p-button i18n-label label="查詢" [routerLink]="[\'..\']" routerLinkActive="router-link-active" ></p-button>  </div>  <div class="flex align-items-center">    <p-dialog [style]="{width: \'20vw\'}" [(visible)]="isDeleteVisible" [closable]="false" [modal]="true">      <ng-template pTemplate="header">        <div class="flex flex-1 justify-content-between">          <div>            <span class="text-xl font-bold" i18n>刪除應用頁面</span>          </div>          <div>            <p-button icon="pi pi-times" (click)="onCancelDelete()"></p-button>          </div>        </div>      </ng-template>      <ng-template pTemplate="body">        <div class="flex flex-wrap align-items-center gap-2">          <div>            <i class="pi pi-question-circle font-bold notification-icon"></i>          </div>          <div>            <span class="text-xl font-bold notification-text" i18n>您是否要刪除應用頁面</span>          </div>        </div>        <p i18n>當應用頁面被永久刪除，便不能再復原，且資料庫所儲存的資料亦同步刪除。</p>      </ng-template>      <ng-template pTemplate="footer">        <p-button icon="pi pi-times" (click)="onCancelDelete()" i18n-label label="取消" styleClass="p-button-secondary"></p-button>        <p-button icon="pi pi-check" (click)="onConfirmDelete()" i18n-label label="確定"></p-button>      </ng-template>    </p-dialog>    <p-button i18n-label label="刪除" styleClass="p-button-secondary" (onClick)="onDeleteClick()"></p-button>  </div>  <div class="flex align-items-center">    <p-button (click)="onClearClick()" i18n-label label="復原" styleClass="p-button-secondary"></p-button>  </div>  <div class="flex align-items-center">    <p-button i18n-label label="完成" (onClick)="onSaveClick()"></p-button>  </div></ng-template></div>'
+    var COMPONENTS = [{'name': 'AddPagesListComponent', 'selector': 'his-add-pages-list'},{'name': 'AppStoreComponent', 'selector': 'his-app-store'},{'name': 'AppStoreInfoComponent', 'selector': 'his-app-store-info'},{'name': 'AppStoreListComponent', 'selector': 'his-app-store-list'},{'name': 'AppStoreToolbarComponent', 'selector': 'his-app-store-toolbar'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'AppStoreInfoComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'AppStoreInfoComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

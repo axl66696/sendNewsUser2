@@ -15,7 +15,7 @@ customElements.define('compodoc-menu', class extends HTMLElement {
         <nav>
             <ul class="list">
                 <li class="title">
-                    <a href="index.html" data-type="index-link">app-store-editor documentation</a>
+                    <a href="index.html" data-type="index-link">@his-view/app-store-editor documentation</a>
                 </li>
 
                 <li class="divider"></li>
@@ -54,7 +54,10 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         </div>
                         <ul class="links collapse " ${ isNormalMode ? 'id="components-links"' : 'id="xs-components-links"' }>
                             <li class="link">
-                                <a href="components/AppComponent.html" data-type="entity-link" >AppComponent</a>
+                                <a href="components/AddPagesListComponent.html" data-type="entity-link" >AddPagesListComponent</a>
+                            </li>
+                            <li class="link">
+                                <a href="components/AppStoreComponent.html" data-type="entity-link" >AppStoreComponent</a>
                             </li>
                             <li class="link">
                                 <a href="components/AppStoreInfoComponent.html" data-type="entity-link" >AppStoreInfoComponent</a>
@@ -63,10 +66,20 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="components/AppStoreListComponent.html" data-type="entity-link" >AppStoreListComponent</a>
                             </li>
                             <li class="link">
-                                <a href="components/AppStoreEditorPageListComponent.html" data-type="entity-link" >AppStoreEditorPageListComponent</a>
-                            </li>
-                            <li class="link">
                                 <a href="components/AppStoreToolbarComponent.html" data-type="entity-link" >AppStoreToolbarComponent</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="chapter">
+                        <div class="simple menu-toggler" data-bs-toggle="collapse" ${ isNormalMode ? 'data-bs-target="#classes-links"' :
+                            'data-bs-target="#xs-classes-links"' }>
+                            <span class="icon ion-ios-paper"></span>
+                            <span>Classes</span>
+                            <span class="icon ion-ios-arrow-down"></span>
+                        </div>
+                        <ul class="links collapse " ${ isNormalMode ? 'id="classes-links"' : 'id="xs-classes-links"' }>
+                            <li class="link">
+                                <a href="classes/ColorType.html" data-type="entity-link" >ColorType</a>
                             </li>
                         </ul>
                     </li>
@@ -83,19 +96,6 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 </li>
                             </ul>
                         </li>
-                    <li class="chapter">
-                        <div class="simple menu-toggler" data-bs-toggle="collapse" ${ isNormalMode ? 'data-bs-target="#miscellaneous-links"'
-                            : 'data-bs-target="#xs-miscellaneous-links"' }>
-                            <span class="icon ion-ios-cube"></span>
-                            <span>Miscellaneous</span>
-                            <span class="icon ion-ios-arrow-down"></span>
-                        </div>
-                        <ul class="links collapse " ${ isNormalMode ? 'id="miscellaneous-links"' : 'id="xs-miscellaneous-links"' }>
-                            <li class="link">
-                                <a href="miscellaneous/variables.html" data-type="entity-link">Variables</a>
-                            </li>
-                        </ul>
-                    </li>
                     <li class="chapter">
                         <a data-type="chapter-link" href="coverage.html"><span class="icon ion-ios-stats"></span>Documentation coverage</a>
                     </li>

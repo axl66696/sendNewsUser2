@@ -11,7 +11,8 @@
     "compodoc:build": "compodoc -p tsconfig.doc.json",
     "compodoc:build-and-serve": "compodoc -p tsconfig.doc.json -s",
     "compodoc:serve": "compodoc -s",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "i18n:gen": "ng extract-i18n -c zh-Hant"
   },
   "private": true,
   "dependencies": {
@@ -27,6 +28,7 @@
     "@angular/router": "^16.2.0-next.0",
     "@his-base/jetstream-manager": "git+https://gitlab.aservice.com.tw/hpc-his/base/jetstream-manager.git#develop",
     "@his-base/jetstream-ws": "git+https://gitlab.aservice.com.tw/hpc-his/base/jetstream-ws.git#develop",
+    "@his-base/shared": "git+https://gitlab.aservice.com.tw/hpc-his/base/shared.git#develop",
     "@his-directive/header": "git+https://gitlab.aservice.com.tw/hpc-his/directive/header.git#develop",
     "@his-directive/tool-bar": "git+https://gitlab.aservice.com.tw/hpc-his/directive/tool-bar.git#develop",
     "@his-viewmodel/app-page-editor": "git+https://gitlab.aservice.com.tw/hpc-dev/viewmodel/app-page-editor.git",

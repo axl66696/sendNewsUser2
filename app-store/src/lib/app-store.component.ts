@@ -1,3 +1,4 @@
+import '@angular/localize/init';
 /* eslint-disable @typescript-eslint/no-inferrable-types */
 import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -25,13 +26,13 @@ export class AppStoreComponent implements OnInit, OnDestroy {
    * @type {string}
    * @memberof AppStoreComponent
    */
-  headerHolder: string = "請輸入頁面標題";
+  headerHolder: string = $localize`請輸入頁面標題`;
 
   /** header的詳細資料視窗標題
    * @type {string}
    * @memberof AppStoreComponent
    */
-  detailTitle: string = "詳細資料";
+  detailTitle: string = $localize`詳細資料`;
 
   #appStoreService: AppStoreService = inject(AppStoreService);
 
@@ -41,7 +42,6 @@ export class AppStoreComponent implements OnInit, OnDestroy {
   async ngOnInit() {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
-    console.log("app ngoninit")
     await this.#appStoreService.connect()
   }
 

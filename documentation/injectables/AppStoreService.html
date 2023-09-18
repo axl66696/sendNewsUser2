@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>app-store-editor documentation</title>
+        <title>@his-view/app-store-editor documentation</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,7 +14,7 @@
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
-            <a href="../" class="navbar-brand">app-store-editor documentation</a>
+            <a href="../" class="navbar-brand">@his-view/app-store-editor documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
@@ -45,15 +45,15 @@
 
 <ul class="nav nav-tabs" role="tablist">
         <li class="nav-item">
-            <a href="#info"
+            <a href="#info" 
                 class="nav-link"
                 class="nav-link active"
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#source"
+            <a href="#source" 
                 class="nav-link"
-
+                
                 role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
         </li>
 </ul>
@@ -64,7 +64,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/app/app-store.service.ts</code>
+            <code>app-store/src/lib/app-store.service.ts</code>
         </p>
 
 
@@ -112,20 +112,16 @@
                                 <a href="#disconnect" >disconnect</a>
                             </li>
                             <li>
+                                    <span class="modifier">Async</span>
                                 <a href="#getAppPageList" >getAppPageList</a>
                             </li>
                             <li>
-                                <a href="#getAppStore" >getAppStore</a>
-                            </li>
-                            <li>
+                                    <span class="modifier">Async</span>
                                 <a href="#getAppStoreList" >getAppStoreList</a>
                             </li>
                             <li>
                                     <span class="modifier">Async</span>
                                 <a href="#pubAppStore" >pubAppStore</a>
-                            </li>
-                            <li>
-                                <a href="#searchAppStore" >searchAppStore</a>
                             </li>
                         </ul>
                     </td>
@@ -141,7 +137,7 @@
 
 
             <section data-compodoc="block-methods">
-
+    
     <h3 id="methods">
         Methods
     </h3>
@@ -167,14 +163,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="14"
-                            class="link-to-prism">src/app/app-store.service.ts:14</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="19"
+                            class="link-to-prism">app-store/src/lib/app-store.service.ts:19</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>建立連線</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
@@ -206,14 +204,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="18"
-                            class="link-to-prism">src/app/app-store.service.ts:18</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="26"
+                            class="link-to-prism">app-store/src/lib/app-store.service.ts:26</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>清除連線</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
@@ -229,6 +229,7 @@
                 <td class="col-md-4">
                     <a name="getAppPageList"></a>
                     <span class="name">
+                        <span class="modifier">Async</span>
                         <span ><b>getAppPageList</b></span>
                         <a href="#getAppPageList"><span class="icon ion-ios-link"></span></a>
                     </span>
@@ -236,93 +237,33 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>getAppPageList()</code>
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getAppPageList()</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="42"
-                            class="link-to-prism">src/app/app-store.service.ts:42</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="59"
+                            class="link-to-prism">app-store/src/lib/app-store.service.ts:59</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>取得全部應用頁面清單</p>
+</div>
 
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="getAppStore"></a>
-                    <span class="name">
-                        <span ><b>getAppStore</b></span>
-                        <a href="#getAppStore"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>getAppStore(payload: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="51"
-                            class="link-to-prism">src/app/app-store.service.ts:51</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>payload</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                        <b>Returns : </b>    <code>Promise&lt;AppPage[]&gt;</code>
 
                     </div>
                     <div class="io-description">
+                        <p>{Promise&lt;AppPage[]&gt;}</p>
 
                     </div>
                 </td>
@@ -335,6 +276,7 @@
                 <td class="col-md-4">
                     <a name="getAppStoreList"></a>
                     <span class="name">
+                        <span class="modifier">Async</span>
                         <span ><b>getAppStoreList</b></span>
                         <a href="#getAppStoreList"><span class="icon ion-ios-link"></span></a>
                     </span>
@@ -342,24 +284,33 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>getAppStoreList()</code>
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getAppStoreList()</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="33"
-                            class="link-to-prism">src/app/app-store.service.ts:33</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="46"
+                            class="link-to-prism">app-store/src/lib/app-store.service.ts:46</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>取得全部應用程式清單</p>
+</div>
 
+                    <div>
+                    </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                        <b>Returns : </b>    <code>Promise&lt;AppStore[]&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>{Promise&lt;AppStore[]&gt;}</p>
 
                     </div>
                 </td>
@@ -388,18 +339,20 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="23"
-                            class="link-to-prism">src/app/app-store.service.ts:23</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="36"
+                            class="link-to-prism">app-store/src/lib/app-store.service.ts:36</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>publish部分 對應有新增 刪除 修改</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
-
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -443,76 +396,7 @@
 
                     </div>
                     <div class="io-description">
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="searchAppStore"></a>
-                    <span class="name">
-                        <span ><b>searchAppStore</b></span>
-                        <a href="#searchAppStore"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>searchAppStore(payload: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="60"
-                            class="link-to-prism">src/app/app-store.service.ts:60</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>payload</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
-
-                    </div>
-                    <div class="io-description">
-
+                        
                     </div>
                 </td>
             </tr>
@@ -520,7 +404,7 @@
     </table>
 </section>
             <section data-compodoc="block-properties">
-
+    
     <h3 id="inputs">
         Properties
     </h3>
@@ -543,7 +427,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/app-store.service.ts:10</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">app-store/src/lib/app-store.service.ts:12</a></div>
                         </td>
                     </tr>
 
@@ -575,7 +459,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/app-store.service.ts:12</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">app-store/src/lib/app-store.service.ts:14</a></div>
                         </td>
                     </tr>
 
@@ -590,7 +474,9 @@
     <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable, inject } from &#x27;@angular/core&#x27;;
 import { AppStore } from &#x27;@his-viewmodel/app-store-editor&#x27;;
-import { JetstreamWsService, TransferInfo } from &#x27;@his-base/jetstream-ws&#x27;;
+import { JSONCodec, JetstreamWsService } from &#x27;@his-base/jetstream-ws&#x27;;
+import { lastValueFrom } from &#x27;rxjs&#x27;;
+import { AppPage } from &#x27;@his-viewmodel/app-page-editor&#x27;;
 
 @Injectable({
   providedIn: &#x27;root&#x27;
@@ -600,59 +486,56 @@ export class AppStoreService {
 
   #url &#x3D; &#x27;ws://10.251.42.37:8080&#x27;;
 
+  /** 建立連線
+   * @memberof AppStoreService
+   */
   async connect() {
     await this.#jetStreamWsService.connect(this.#url)
   }
 
+  /** 清除連線
+   * @memberof AppStoreService
+   */
   async disconnect() {
     // 連線關閉前，會先將目前訂閱給排空
     await this.#jetStreamWsService.drain();
   }
 
+  /** publish部分 對應有新增 刪除 修改
+   * @param {AppStore} payload
+   * @param {string} subject
+   * @memberof AppStoreService
+   */
   async pubAppStore(payload: AppStore, subject: string) {
-    const info: TransferInfo&lt;AppStore&gt; &#x3D; {
-      data: payload,
-    };
-
     // @ts-ignore
     // 需帶入指定發布主題以及要傳送的訊息
-    await this.#jetStreamWsService.publish(subject, info.data);
+    await this.#jetStreamWsService.publish(subject, payload);
   }
 
-  getAppStoreList() {
-    const info: TransferInfo&lt;string&gt; &#x3D; {
-      data: &#x27;&#x27;,
-    };
+  /** 取得全部應用程式清單
+   * @return {*}  {Promise&lt;AppStore[]&gt;}
+   * @memberof AppStoreService
+   */
+  async getAppStoreList(): Promise&lt;AppStore[]&gt; {
     // @ts-ignore
     // 需帶入指定的主題跟要傳遞的資料
-    return this.#jetStreamWsService.request(&#x27;appStore.list&#x27;,info.data);
+    const appStore$ &#x3D; await lastValueFrom(this.#jetStreamWsService.request(&#x27;appStore.list&#x27;, &#x27;&#x27;));
+    const jsonCodec &#x3D; JSONCodec();
+
+    return jsonCodec.decode(appStore$.data) as AppStore[]
   }
 
-  getAppPageList() {
-    const info: TransferInfo&lt;string&gt; &#x3D; {
-      data: &#x27;&#x27;,
-    };
+  /** 取得全部應用頁面清單
+   * @return {*}  {Promise&lt;AppPage[]&gt;}
+   * @memberof AppStoreService
+   */
+  async getAppPageList(): Promise&lt;AppPage[]&gt; {
     // @ts-ignore
     // 需帶入指定的主題跟要傳遞的資料
-    return this.#jetStreamWsService.request(&#x27;appPage.list&#x27;,info.data);
-  }
-
-  getAppStore(payload: string) {
-    const info: TransferInfo&lt;string&gt; &#x3D; {
-      data: payload,
-    };
-    // @ts-ignore
-    // 需帶入指定的主題跟要傳遞的資料
-    return this.#jetStreamWsService.request(&#x27;appStore.get&#x27;, info.data);
-  }
-
-  searchAppStore(payload: string) {
-    const info: TransferInfo&lt;string&gt; &#x3D; {
-      data: payload,
-    };
-    // @ts-ignore
-    // 需帶入指定的主題跟要傳遞的資料
-    return this.#jetStreamWsService.request(&#x27;appStore.search&#x27;, info.data);
+    const appPages$ &#x3D;  await lastValueFrom(this.#jetStreamWsService.request(&#x27;appPage.list&#x27;, &#x27;&#x27;));
+    const jsonCodec &#x3D; JSONCodec();
+    // 處理資料邏輯的地方，取得reply回傳的資料
+    return jsonCodec.decode(appPages$.data) as AppPage[];
   }
 }
 </code></pre>

@@ -10,7 +10,6 @@ import { TableModule } from 'primeng/table';
 import { AppPage, AppPageReq } from '@his-viewmodel/app-page-editor';
 import { AppStoreService } from '../../app-store.service';
 import { InputTextModule } from 'primeng/inputtext';
-import { JSONCodec, Msg } from '@his-base/jetstream-ws';
 
 @Component({
   selector: 'his-add-pages-list',
@@ -38,7 +37,6 @@ export class AddPagesListComponent implements OnInit {
     this.appPagesSelected = [...value];
     this.appPagesInclude = [...this.appPagesSelected];
     this.pageResult = [...this.appPagesSelected];
-    console.log(value);
   }
 
   /** 編輯視窗是否顯示
@@ -95,12 +93,6 @@ export class AddPagesListComponent implements OnInit {
    * @memberof AppStoreEditorPageListComponent
    */
   appPages: AppPage[] = [];
-
-  /** 接收replier訊息
-   * @type {Msg}
-   * @memberof AddPagesListComponent
-   */
-  appPages$!: Msg;
 
   /** 已包含應用頁面清單
    * @type {AppPage[]}
@@ -278,9 +270,7 @@ export class AddPagesListComponent implements OnInit {
    * @memberof AddPagesListComponent
    */
   async getAppPages() {
-    this.appPages$ = await this.#appStoreService.getAppPageList()
-    const jsonCodec = JSONCodec();
-    this.origAppPages = jsonCodec.decode(this.appPages$.data) as AppPage[];
+    this.origAppPages = await this.#appStoreService.getAppPageList()
     this.appPages = this.getExcludedPages(this.origAppPages);
   }
 

@@ -46,7 +46,7 @@
               </tr>
             </ng-template>
             <ng-template pTemplate="body" let-appStore>
-              <tr [routerLink]="[appStore._id]" [pSelectableRow]="appStore">
+              <tr (click)="onSelect(appStore)" [pSelectableRow]="appStore">
                 <td>
                   {{ appStore._id }}
                 </td>

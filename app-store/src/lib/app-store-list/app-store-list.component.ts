@@ -7,11 +7,11 @@ import { FormsModule } from '@angular/forms';
 import { DropdownModule } from 'primeng/dropdown';
 import { ButtonModule } from 'primeng/button';
 import { AppStoreToolbarComponent } from '../app-store-toolbar/app-store-toolbar.component';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { AppStore } from '@his-viewmodel/app-store-editor';
 import { AppStoreService } from '../app-store.service';
-import { JSONCodec, Msg } from '@his-base/jetstream-ws';
 import * as typeData from '../../assets/data/type-text.json'
+import { SharedService } from '@his-base/shared';
 
 @Component({
   selector: 'his-app-store-list',
@@ -42,12 +42,6 @@ export class AppStoreListComponent implements OnInit, OnDestroy {
    */
   condition: string = $localize`請選擇查詢條件： `;
 
-  /** 接收replier內容
-   * @type {Msg}
-   * @memberof AppStoreListComponent
-   */
-  appStores$!: Msg;
-
   /** 查詢類別
    * @type {string}
    * @memberof AppStoreListComponent
@@ -73,6 +67,8 @@ export class AppStoreListComponent implements OnInit, OnDestroy {
   #appStores: AppStore[] = [];
 
   #appStoreService = inject(AppStoreService);
+  #sharedService = inject(SharedService);
+  #router = inject(Router)
 
   /** 初始化抓取資料及連線
    * @memberof AppStoreListComponent
@@ -113,13 +109,12 @@ export class AppStoreListComponent implements OnInit, OnDestroy {
    * @memberof AppStoreListComponent
    */
   async getAppStoreList() {
-    console.log("get")
+    this.#appStores = await this.#appStoreService.getAppStoreList()
+    this.appStores = [...this.#appStores]
+  }
 
-    this.appStores$ = await this.#appStoreService.getAppStoreList()
-
-    console.log("is get")
-    const jsonCodec = JSONCodec();
-    this.appStores = jsonCodec.decode(this.appStores$.data) as AppStore[];
-    this.#appStores = [...this.appStores]
+  onSelect(appStore: AppStore) {
+    const key = this.#sharedService.setValue(appStore);
+    this.#router.navigate(['/list', key])
   }
 }
