@@ -272,8 +272,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="41"
-                            class="link-to-prism">app-store/src/lib/app-store.component.ts:41</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="42"
+                            class="link-to-prism">app-store/src/lib/app-store.component.ts:42</a></div>
                 </td>
             </tr>
 
@@ -322,7 +322,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">app-store/src/lib/app-store.component.ts:36</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">app-store/src/lib/app-store.component.ts:37</a></div>
                         </td>
                     </tr>
 
@@ -348,12 +348,12 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>&quot;詳細資料&quot;</code>
+                        <i>Default value : </i><code>$localize&#x60;詳細資料&#x60;</code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">app-store/src/lib/app-store.component.ts:34</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">app-store/src/lib/app-store.component.ts:35</a></div>
                         </td>
                     </tr>
 
@@ -385,12 +385,12 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>&quot;請輸入頁面標題&quot;</code>
+                        <i>Default value : </i><code>$localize&#x60;請輸入頁面標題&#x60;</code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">app-store/src/lib/app-store.component.ts:28</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">app-store/src/lib/app-store.component.ts:29</a></div>
                         </td>
                     </tr>
 
@@ -409,7 +409,9 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnDestroy, OnInit, inject } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import &#x27;@angular/localize/init&#x27;;
+/* eslint-disable @typescript-eslint/no-inferrable-types */
+import { Component, OnDestroy, OnInit, inject } from &#x27;@angular/core&#x27;;
 import { CommonModule } from &#x27;@angular/common&#x27;;
 import { RouterOutlet } from &#x27;@angular/router&#x27;;
 import { AppStoreInfoComponent } from &#x27;./app-store-info/app-store-info.component&#x27;;
@@ -435,13 +437,13 @@ export class AppStoreComponent implements OnInit, OnDestroy {
    * @type {string}
    * @memberof AppStoreComponent
    */
-  headerHolder: string &#x3D; &quot;請輸入頁面標題&quot;;
+  headerHolder: string &#x3D; $localize&#x60;請輸入頁面標題&#x60;;
 
   /** header的詳細資料視窗標題
    * @type {string}
    * @memberof AppStoreComponent
    */
-  detailTitle: string &#x3D; &quot;詳細資料&quot;;
+  detailTitle: string &#x3D; $localize&#x60;詳細資料&#x60;;
 
   #appStoreService: AppStoreService &#x3D; inject(AppStoreService);
 
@@ -451,7 +453,6 @@ export class AppStoreComponent implements OnInit, OnDestroy {
   async ngOnInit() {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add &#x27;implements OnInit&#x27; to the class.
-    console.log(&quot;app ngoninit&quot;)
     await this.#appStoreService.connect()
   }
 
