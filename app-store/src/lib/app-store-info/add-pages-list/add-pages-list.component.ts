@@ -37,7 +37,8 @@ export class AddPagesListComponent implements OnInit {
   set appPagesList(value: AppPage[]){
     this.appPagesSelected = [...value];
     this.appPagesInclude = [...this.appPagesSelected];
-    this.pageResult = [...this.appPagesSelected]
+    this.pageResult = [...this.appPagesSelected];
+    console.log(value);
   }
 
   /** 編輯視窗是否顯示
