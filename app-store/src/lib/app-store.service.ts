@@ -10,6 +10,7 @@ import { AppPage } from '@his-viewmodel/app-page-editor';
 })
 export class AppStoreService {
   #jetStreamWsService = inject(JetstreamWsService);
+  #token = '';
 
   #url = 'ws://10.251.42.37:8080';
 
@@ -64,4 +65,16 @@ export class AppStoreService {
     // 處理資料邏輯的地方，取得reply回傳的資料
     return jsonCodec.decode(appPages$.data) as AppPage[];
   }
+
+  /** 跳出視窗通知使用者自最新消息收到的資料（token）
+   *
+   *
+   * @memberof AppStoreService
+   */
+  getTokenAlert(){
+    this.#token = window.history.state.token;
+    alert(`從app protal接到的值 ： ${this.#token}`)
+    console.log("get token",this.#token);
+  }
+
 }
